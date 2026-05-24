@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLS 早报</title>
+<style>
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+    background: #f4f5f7;
+    color: #1a1a2e;
+    line-height: 1.6;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 30px 24px; }
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff; padding: 30px 36px; border-radius: 8px; margin-bottom: 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+.header h1 { font-size: 26px; font-weight: 700; margin-bottom: 8px; letter-spacing: 1px; }
+.header .meta { font-size: 13px; opacity: 0.85; margin-top: 10px; }
+.header .meta span { margin-right: 20px; }
+.header .verdict {
+    margin-top: 18px; padding: 14px 18px; background: rgba(255,255,255,0.1);
+    border-left: 3px solid #e94560; border-radius: 0 6px 6px 0;
+    font-size: 14px; line-height: 1.7;
+}
+
+/* Core verdict banner */
+.verdict-banner {
+    background: #fff5f5; padding: 16px 20px; border-radius: 8px;
+    border-left: 4px solid #e94560; margin: 12px 0 20px;
+    font-size: 18px; line-height: 1.8; color: #e94560;
+    box-shadow: 0 1px 6px rgba(233,69,96,0.1);
+}
+
+/* Section titles */
+.section-title {
+    font-size: 20px; font-weight: 700; color: #0f3460;
+    border-bottom: 3px solid #e94560; padding-bottom: 8px;
+    margin: 28px 0 16px;
+}
+
+/* Ranking table */
+.rank-table {
+    width: 100%; border-collapse: collapse; margin: 16px 0 24px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06); font-size: 14px;
+}
+.rank-table thead th {
+    background: #0f3460; color: #fff; padding: 10px 10px;
+    font-weight: 600; text-align: center; font-size: 13px;
+}
+.rank-table thead th.th-important {
+    color: #ff6b6b; font-size: 15px; font-weight: 800;
+}
+.rank-table tbody td {
+    padding: 8px 10px; border-bottom: 1px solid #eee;
+    text-align: center; vertical-align: middle;
+}
+.rank-table tbody tr:hover { background: #f8f9ff; }
+.rank-table .rank-num { font-weight: 700; color: #e94560; font-size: 16px; }
+.rank-table .title-col { text-align: left; font-weight: 500; }
+.rank-table .impact-col { text-align: left; font-size: 14px; color: #444; max-width: 400px; }
+.rank-table .stars { color: #f5a623; white-space: nowrap; font-size: 14px; letter-spacing: 1px; }
+
+/* Analysis card */
+.analysis-card {
+    background: #fff; border-radius: 8px; padding: 22px 28px;
+    margin: 16px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    border-top: 4px solid #e94560;
+}
+.analysis-card .card-title {
+    font-size: 17px; font-weight: 700; color: #1a1a2e; margin-bottom: 12px;
+}
+.analysis-card .card-level {
+    display: inline-block; padding: 3px 10px; border-radius: 3px;
+    font-size: 16px; font-weight: 800; color: #e94560;
+    background: #fff5f5; border: 1px solid #e94560;
+    margin-right: 4px;
+}
+.analysis-card .card-meta {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 10px;
+    font-size: 13px; color: #777;
+    line-height: 1.4;
+}
+.analysis-card .card-meta-inline {
+    display: inline-block; margin-right: 18px; margin-bottom: 8px;
+    font-size: 13px; color: #777; line-height: 1.4;
+}
+.analysis-card .card-meta .stars { color: #f5a623; font-size: 16px; }
+.analysis-card .logic {
+    background: #fff8f0; padding: 12px 16px; border-radius: 6px;
+    font-size: 14px; color: #8b4513; margin-bottom: 14px;
+    border-left: 3px solid #f5a623;
+}
+.analysis-card h4 {
+    font-size: 15px; font-weight: 700; color: #0f3460;
+    margin: 10px 0 4px; padding-bottom: 2px; border-bottom: 1px dashed #ddd;
+    line-height: 1.4;
+}
+.analysis-card h4.perspective-domestic {
+    color: #c0392b; border-bottom-color: #e94560; font-size: 17px;
+}
+.analysis-card h4.perspective-intl {
+    color: #0e8c6a; border-bottom-color: #0e8c6a; font-size: 17px;
+}
+.analysis-card ul { margin: 4px 0 8px 18px; font-size: 14px; line-height: 1.5; }
+.analysis-card ul li { margin-bottom: 2px; }
+.bull { color: #e94560; font-weight: 600; }
+.bear { color: #2ecc71; font-weight: 600; }
+
+/* Sector tags */
+.tag { display: inline-block; padding: 2px 8px; border-radius: 3px;
+    font-size: 11px; font-weight: 600; margin-right: 4px; }
+.tag-a { background: #ffe0e0; color: #c0392b; }
+.tag-b { background: #fff3cd; color: #856404; }
+.tag-c { background: #e8e8e8; color: #555; }
+
+/* Emotion section */
+.emotion-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin: 16px 0;
+}
+.emotion-item {
+    background: #fff; padding: 18px 20px; border-radius: 8px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+}
+.emotion-item .label { font-size: 11px; color: #999; text-transform: uppercase; }
+.emotion-item .value { font-size: 16px; font-weight: 700; color: #0f3460; margin-top: 4px; }
+
+/* Risk list */
+.risk-list { list-style: none; }
+.risk-list li {
+    padding: 10px 14px; margin: 6px 0; background: #fff5f5;
+    border-left: 3px solid #e94560; border-radius: 0 6px 6px 0;
+    font-size: 13px;
+}
+.risk-list li::before { content: '⚠ '; }
+
+.risk-item {
+    padding: 10px 14px; margin: 6px 0; background: #fff5f5;
+    border-left: 3px solid #e94560; border-radius: 0 6px 6px 0;
+    font-size: 15px; line-height: 1.6;
+}
+.risk-heading {
+    font-size: 17px; font-weight: 800; color: #e94560;
+    margin: 14px 0 8px;
+}
+
+/* Full telegram table */
+.telegram-table {
+    width: 100%; border-collapse: collapse; font-size: 12px;
+    background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+.telegram-table thead th {
+    background: #16213e; color: #fff; padding: 10px 8px;
+    font-weight: 500; font-size: 12px;
+}
+.telegram-table tbody td {
+    padding: 5px 8px; border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+.telegram-table tbody tr:nth-child(even) { background: #fafafa; }
+.telegram-table .lv-S { background: #c0392b; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
+.telegram-table .lv-A { background: #e74c3c; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
+.telegram-table .lv-B { background: #f39c12; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
+.telegram-table .lv-C { background: #bbb; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
+
+.footer {
+    text-align: center; margin-top: 40px; padding: 20px;
+    color: #999; font-size: 12px; border-top: 1px solid #eee;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<p style="margin:4px 0;font-size:13px">好的，作为顶级A股策略分析师，我将从全球宏观视角出发，对您提供的498条财联社电报进行深度解读，并生成一份高水平的每日早报分析。</p>
+
+<div class="verdict-banner"><strong>核心判断：</strong> 今日市场将呈现“科技强、周期弱”的显著分化格局。英伟达财报全面超预期叠加长鑫科技IPO上会，将引爆以半导体为核心的科技主线，尤其是国产替代和算力基建方向。然而，中东地缘风险（霍尔木兹海峡局势）导致油价暴跌，将压制能源、化工等周期板块，同时美联储鹰派会议纪要也对市场情绪构成压制。市场整体风险偏好将向科技成长股倾斜，但指数层面可能因权重股分化而维持震荡。</div>
+
+<hr style="border:none;border-top:1px solid #ddd;margin:24px 0">
+
+<h2 class="section-title">一、重要性排序总览</h2>
+
+<table class="rank-table">
+<thead><tr>
+<th class="">排名</th>
+<th class="">时间</th>
+<th class="">等级</th>
+<th class="">标题概述</th>
+<th class="">重要度</th>
+<th class="th-important">核心影响</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class=""><span class="rank-num">1</span></td>
+<td class="">04:20</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">英伟达2027财年Q1营收816亿美元，超预期，新增800亿美元回购</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">全球AI算力需求确认高景气，为A股半导体、算力板块提供最强基本面背书。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">2</span></td>
+<td class="">18:55</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">长鑫科技科创板IPO将于5月27日上会</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">国产存储龙头上市里程碑事件，直接催化A股半导体设备、材料及存储产业链。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">3</span></td>
+<td class="">23:10</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">中集集团遭美国司法部指控操纵价格</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">中美贸易摩擦升级新信号，对出口导向型制造业及海运板块构成重大利空。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">4</span></td>
+<td class="">23:17</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">美油、布油期货均跌6%</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">中东局势缓和预期叠加需求担忧，油价暴跌，利好航空、化工下游，利空能源股。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">5</span></td>
+<td class="">04:45</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">SpaceX公开提交纳斯达克IPO文件</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">全球商业航天龙头上市，将极大提振A股商业航天、卫星互联网板块的估值和情绪。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">6</span></td>
+<td class="">00:24</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">OpenAI据悉准备递交IPO申请，估值或超1万亿美元</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">AI产业资本化进程加速，强化AI应用端和算力基础设施的长期投资逻辑。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">7</span></td>
+<td class="">07:29</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">Anthropic将向SpaceX支付近450亿美元以获取算力</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">算力需求从“军备竞赛”进入“商业变现”阶段，算力租赁和IDC运营价值重估。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">8</span></td>
+<td class="">08:01</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">习近平同俄罗斯总统普京会谈，中俄睦邻友好合作条约延期</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">强化能源、资源安全合作，利好油气、矿产、农业等中俄贸易相关板块。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">9</span></td>
+<td class="">02:00</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">FOMC会议纪要：许多决策者倾向于去除宽松偏向，若通胀持续需收紧</td>
+<td class=""><span class="stars">★★★★</span></td>
+<td class="impact-col">美联储鹰派信号压制全球风险偏好，对高估值成长股构成压力，但市场已部分消化。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">10</span></td>
+<td class="">20:54</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">京东方A与康宁签署合作备忘录，聚焦玻璃基封装载板</td>
+<td class=""><span class="stars">★★★★</span></td>
+<td class="impact-col">先进封装技术路线重要突破，利好玻璃基板、先进封装设备及材料产业链。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">11</span></td>
+<td class="">17:23</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">璞泰来拟投资56亿元建设72亿平方米锂电隔膜项目</td>
+<td class=""><span class="stars">★★★★</span></td>
+<td class="impact-col">锂电产业链大规模扩产，隔膜环节竞争加剧，但龙头地位进一步巩固。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">12</span></td>
+<td class="">19:07</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">德方纳米拟合计87亿元建设锂电新材料项目</td>
+<td class=""><span class="stars">★★★★</span></td>
+<td class="impact-col">磷酸铁锂正极材料龙头逆势扩产，体现对下游需求的信心，但需警惕产能过剩风险。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">13</span></td>
+<td class="">19:38</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">赛意信息拟采购高性能算力服务器，合同总金额预计不超8.33亿元</td>
+<td class=""><span class="stars">★★★★</span></td>
+<td class="impact-col">企业级AI应用落地加速，算力服务需求从云巨头向产业端扩散。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">14</span></td>
+<td class="">08:02</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">韩国KOSPI指数涨幅扩大至超4%，三星电子避免罢工</td>
+<td class=""><span class="stars">★★★★</span></td>
+<td class="impact-col">全球存储芯片供应风险解除，利好下游消费电子，但对国内存储替代逻辑构成短期扰动。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">15</span></td>
+<td class="">00:18</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">12.8T光模块亮相光博会，光通信圈热议“超级周期”</td>
+<td class=""><span class="stars">★★★★</span></td>
+<td class="impact-col">光模块技术迭代超预期，1.6T量产在即，6.4T/12.8T预研加速，行业高景气持续。</td>
+</tr>
+</tbody></table>
+
+<h2 class="section-title">二、TOP 15 重要新闻深度分析</h2>
+
+<div class="analysis-card">
+<div class="card-title">1. <span class="card-level">B级</span> 英伟达2027财年Q1营收同比增长85%至816亿美元，新增800亿美元回购</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 04:20</span></div>
+<div class="logic">英伟达业绩是衡量全球AI算力需求的“金标准”。营收和利润全面超预期，尤其是数据中心收入752亿美元，表明AI基建投资仍在加速。新增800亿美元回购，彰显管理层对未来增长的极强信心。这是A股整个科技板块的“定心丸”。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接利好A股英伟达产业链（光模块、PCB、服务器、散热等），并强化国产算力（GPU、交换机、光芯片）的景气预期。英伟达的业绩会打消市场对AI资本开支见顶的疑虑。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">政策面（新质生产力、数字经济）与基本面（产业链订单）形成共振，资金面（机构加仓科技）将向半导体和算力方向集中。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">确认AI是全球科技竞争的核心，美股科技巨头（微软、谷歌、亚马逊）的资本开支竞赛远未结束。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">英伟达盘后波动（先涨后跌）反映市场对“利好出尽”的短期博弈，但整体趋势向上。利好费城半导体指数，带动日韩台半导体股，对A股形成正面映射。</p>
+<h4>外资视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">外资会进一步增配中国AI产业链中具备全球竞争力的环节，如光模块（中际旭创、新易盛）。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>光模块/光通信</strong>: 英伟达网络架构升级核心供应商 → 中际旭创(300308)、新易盛(300502)、天孚通信(300394)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>AI服务器/PCB</strong>: 算力基建直接受益 → 工业富联(601138)、沪电股份(002463)、胜宏科技(300476)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“英伟达业绩是否见顶”以及“盘后下跌是否意味着利好出尽”。分歧在于，部分投资者认为股价已充分反映预期，另一部分则认为业绩指引依然强劲，回调即是买入机会。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">主流卖方普遍上调英伟达目标价，并强调其“卖铲人”地位稳固。预期差在于，市场可能低估了Vera Rubin平台和CPU业务的增长潜力。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">长期赛道，本次财报是中期景气度的再次确认。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">2. <span class="card-level">B级</span> 长鑫科技科创板IPO将于5月27日上会</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 18:55</span></div>
+<div class="logic">这是中国半导体产业自主可控的标志性事件。长鑫科技作为国内DRAM龙头，其IPO将募资295亿元用于扩产和技术升级，直接拉动上游设备、材料和封测需求，并重塑国内存储产业链估值体系。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接催化半导体设备（刻蚀、薄膜沉积、清洗）、材料（硅片、光刻胶、前驱体）和封测（先进封装）板块。长鑫的扩产将带来大量订单。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">政策面（大基金、科创板支持硬科技）与产业面（国产替代加速）形成强催化。国元证券等参股方也将受益。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">挑战三星、SK海力士、美光的DRAM三强格局，加剧全球存储芯片市场的竞争，但也为供应链提供了新的增长点。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">三星电子避免罢工的消息（#14）对长鑫上市构成短期扰动，但长期看，国产替代逻辑独立于海外供给变化。外资可能关注长鑫上市对全球DRAM价格的影响。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>半导体设备</strong>: 刻蚀、薄膜沉积等核心设备国产化 → 中微公司(688012)、北方华创(002371)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>半导体材料</strong>: 前驱体、光刻胶、硅片等 → 雅克科技(002409)、彤程新材(603650)、沪硅产业(688126)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“长鑫上市对现有存储芯片股的抽血效应”以及“产业链哪些公司能真正兑现业绩”。分歧在于，部分人认为是“利好兑现”，另一部分人认为是“新周期起点”。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">多家券商发布深度报告，强Call半导体设备材料板块，认为长鑫上市将开启新一轮资本开支周期，是板块的重大催化剂。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线，事件驱动将持续到上市前后。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">3. <span class="card-level">B级</span> 中集集团遭美国司法部指控操纵价格</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 23:10</span></div>
+<div class="logic">这是中美贸易摩擦从关税领域向法律和合规领域升级的明确信号。针对中国龙头制造企业的反垄断指控，将严重打击市场对出口制造业的信心，并可能引发连锁反应。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接利空中集集团及其集装箱业务，并可能波及其他具有全球定价权的中国制造业龙头（如振华重工、中国船舶）。市场将担忧美国司法部后续对其他行业的调查。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">地缘政治风险溢价上升，资金将从出口导向型制造业流出，转向内需和国产替代板块。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">美国通过法律手段打压中国优势产业，是“小院高墙”策略的延伸。此举可能加剧全球供应链的不确定性。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利空港股中集集团，并可能对海运板块（中远海控）情绪造成负面影响。外资对中国制造业龙头的风险偏好将下降。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>内需/国产替代</strong>: 资金避险，转向政策支持的自主可控领域 → 半导体设备、材料、信创等。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>无直接受益方</strong>: 该事件为系统性风险事件，主要影响在于规避风险。</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“指控是否成立”以及“对中集集团基本面的实际影响”。普遍情绪悲观，认为这是美国对中国制造业的精准打击。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方可能会下调中集集团评级，并提示出口制造业的合规风险。预期差在于，市场可能低估了该事件对中美经贸关系的长期负面影响。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期风险事件，需关注后续法律程序进展。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">4. <span class="card-level">B级</span> 美油、布油期货均跌6%</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 23:17</span></div>
+<div class="logic">油价暴跌是多重因素共振的结果：伊美谈判出现缓和迹象、美联储鹰派言论压制需求预期、以及技术性回调。这对全球通胀预期和货币政策路径产生重大影响。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好航空（成本下降）、化工（成本下降，尤其是炼化、化纤）、交通运输（物流成本下降）。利空石油开采、油服板块。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">油价下跌有助于缓解国内输入性通胀压力，为货币政策提供更大空间，利好债市和成长股估值。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">油价是当前全球宏观的核心变量。其下跌有助于缓解全球通胀，降低美联储加息压力，但同时也反映了市场对全球经济衰退的担忧。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利空美股能源板块，利好美股航空、消费板块。对新兴市场（如印度、印尼）是利好，因其是石油净进口国。美元指数可能因通胀预期降温而走弱。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>航空运输</strong>: 成本端压力大幅缓解 → 中国国航(601111)、南方航空(600029)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>化工/化纤</strong>: 成本下降，毛利扩张 → 恒力石化(600346)、荣盛石化(002493)、桐昆股份(601233)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“油价下跌是短期回调还是趋势反转”。分歧在于，部分人认为中东地缘风险并未完全解除，另一部分人则认为需求衰退才是主因。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方普遍下调油价短期预测，但中长期观点分歧较大。部分看好航空板块的困境反转机会。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">3-5天事件驱动，但趋势性下跌需要更多宏观数据确认。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">5. <span class="card-level">B级</span> SpaceX公开提交纳斯达克IPO文件</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 04:45</span></div>
+<div class="logic">全球商业航天巨头的IPO是里程碑事件，将极大提升市场对商业航天赛道的关注度和估值天花板。SpaceX的星链、星舰等业务为A股相关公司提供了清晰的商业模式对标。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接催化A股商业航天、卫星互联网、火箭零部件等板块。市场将寻找“中国版SpaceX”或SpaceX产业链供应商。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">政策面（国家重视商业航天发展）与产业面（星座组网加速）形成共振，资金将涌入该赛道。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">标志着太空经济进入资本化、规模化发展的新阶段。SpaceX的估值和业务模式将为全球航天企业提供参照。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好美股航天板块，并可能带动全球资本对航天产业链的投资热情。A股相关公司可能因情绪联动而上涨。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>卫星制造/地面设备</strong>: 卫星互联网建设核心环节 → 中国卫星(600118)、上海瀚讯(300762)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>火箭零部件/材料</strong>: 航天产业链上游 → 斯瑞新材(688102)、超捷股份(301005)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“A股哪些公司能真正进入SpaceX供应链”以及“国内商业航天何时能实现类似突破”。情绪普遍亢奋。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">多家券商发布商业航天行业深度报告，认为2026年是星座组网元年，板块具备长期投资价值。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线，事件驱动将持续到SpaceX正式上市前后。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">6. <span class="card-level">B级</span> OpenAI据悉准备递交IPO申请，估值或超1万亿美元</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 00:24</span></div>
+<div class="logic">AI领域的绝对龙头即将上市，标志着AI产业从技术探索正式迈入商业化变现和资本化运作的新阶段。这将为全球AI产业链注入强大的信心和资金。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">强化A股AI应用（大模型、AIGC、智能体）和算力基础设施（服务器、光模块、数据中心）的投资逻辑。OpenAI的商业模式（API调用、订阅）为国内AI公司提供了估值锚。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">政策面（支持AI发展）与产业面（国内大模型百花齐放）形成正向循环。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">OpenAI上市将吸引全球资本聚焦AI领域，加剧科技巨头之间的AI人才和资源争夺。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好美股AI板块，尤其是与OpenAI有合作关系的公司（如微软）。对A股AI板块形成情绪上的提振。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>AI应用/大模型</strong>: 直接受益于AI产业资本化浪潮 → 科大讯飞(002230)、三六零(601360)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>算力基础设施</strong>: AI发展的“卖铲人” → 中际旭创(300308)、工业富联(601138)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“OpenAI的万亿估值是否合理”以及“对国内AI公司估值的影响”。普遍认为这是AI产业的重大利好。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方普遍看好AI产业趋势，认为OpenAI上市将进一步催化板块行情。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">长期赛道，事件是长期逻辑的强化。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">7. <span class="card-level">B级</span> Anthropic将向SpaceX支付近450亿美元以获取算力</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 07:29</span></div>
+<div class="logic">这是AI算力需求从“军备竞赛”转向“商业变现”的标志性事件。Anthropic作为顶级AI公司，愿意支付天价费用获取算力，证明了算力作为核心生产要素的价值，算力租赁和IDC运营的商业模式得到验证。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接利好A股的算力租赁、IDC运营、服务器等板块。市场将重新评估算力资产的稀缺性和价值。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">政策面（东数西算、算力网络）与产业面（AI公司需求爆发）形成强催化。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">算力成为类似石油的“硬通货”，拥有算力资源的公司（如SpaceX、微软、亚马逊）将获得巨大优势。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好美股IDC和算力租赁公司。A股相关公司（如润泽科技、光环新网）的估值逻辑将被重塑。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>算力租赁/IDC</strong>: 直接提供算力服务的运营商 → 润泽科技(300442)、光环新网(300383)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>AI服务器</strong>: 算力基础设施的硬件提供商 → 工业富联(601138)、浪潮信息(000977)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“450亿美元的天价是否合理”以及“国内算力租赁公司能否复制此模式”。普遍认为算力价值被严重低估。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方开始强调算力资产的“类公用事业”属性，并上调IDC和算力租赁公司的盈利预测。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线，将引发市场对算力资产的价值重估。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">8. <span class="card-level">B级</span> 习近平同俄罗斯总统普京会谈，中俄睦邻友好合作条约延期</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 08:01</span></div>
+<div class="logic">中俄深化战略协作，是当前全球地缘格局下的重大事件。合作条约延期，意味着两国在能源、资源、农业、科技等领域的合作将更加稳固和深入。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好中俄贸易相关板块，如油气开采及管道（中石油、中石化）、矿产（中矿资源）、农业（北大荒）、物流（中俄班列）等。同时，强化了能源安全和粮食安全的投资主题。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">政策面（高层推动）与基本面（贸易量增长）形成支撑。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中俄背靠背，是对美国主导的全球秩序的一种制衡。此举将加速“去美元化”进程，并推动人民币国际化。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好人民币汇率，利空美元霸权。对欧洲能源供应格局产生深远影响。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>油气/能源</strong>: 中俄能源合作加深 → 中国石油(601857)、中油资本(000617)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>中俄贸易/物流</strong>: 贸易往来增加 → 锦州港(600190)、长久物流(603569)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“中俄合作对A股的具体投资机会”以及“对中美关系的影响”。情绪偏向乐观，认为这是长期利好。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方普遍看好中俄贸易主题，并推荐相关受益标的。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">长期赛道，事件是长期趋势的确认。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">9. <span class="card-level">B级</span> FOMC会议纪要：许多决策者倾向于去除宽松偏向，若通胀持续需收紧</div>
+<div class="card-meta"><span class="stars">★★★★</span> <span>⏰ 02:00</span></div>
+<div class="logic">美联储会议纪要释放鹰派信号，表明其对通胀的担忧加剧，未来降息的门槛提高，甚至不排除进一步加息的可能。这对全球资产定价构成压力。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">压制A股高估值成长股（如AI、半导体）的估值扩张，但影响有限，因为A股走势更多受国内政策和基本面驱动。对北向资金流向构成短期扰动。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">国内货币政策“以我为主”，美联储鹰派信号可能促使中国央行更谨慎地使用宽松工具。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">强化了“higher for longer”的利率预期，美元指数可能走强，全球风险资产承压。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利空美股，尤其是科技股。新兴市场货币和股市可能面临资金流出压力。黄金价格承压。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>防御性板块</strong>: 资金可能从成长股流向高股息、低估值板块 → 银行、公用事业、煤炭等。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>无直接受益方</strong>: 该事件为系统性风险，主要影响在于规避高估值板块。</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“美联储是否会真的再次加息”以及“对A股的影响有多大”。普遍认为A股受影响有限，但需警惕短期波动。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方认为美联储鹰派信号已被市场部分消化，对A股影响不大，维持“结构性行情”判断。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">3-5天事件驱动，后续关注美国通胀数据。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">10. <span class="card-level">B级</span> 京东方A与康宁签署合作备忘录，聚焦玻璃基封装载板</div>
+<div class="card-meta"><span class="stars">★★★★</span> <span>⏰ 20:54</span></div>
+<div class="logic">玻璃基板被认为是下一代先进封装（尤其是AI芯片）的关键材料，相比有机基板具有更好的平整度、热稳定性和电气性能。京东方与康宁的合作，标志着国内面板巨头正式切入半导体先进封装材料领域。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好玻璃基板产业链，包括玻璃原片、精密加工、封装设备等。同时，对现有的有机基板供应商（如兴森科技、深南电路）构成潜在竞争。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">政策面（支持先进封装）与产业面（技术突破）形成催化。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">玻璃基板是半导体封装技术的重要演进方向，英特尔、三星等巨头均在积极布局。京东方与康宁的合作，使中国在该领域占据一席之地。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好美股康宁公司，并对全球封装材料格局产生影响。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>玻璃基板/材料</strong>: 直接受益于技术路线 → 沃格光电(603773)、莱宝高科(002106)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>先进封装设备</strong>: 玻璃基板加工需要新的设备 → 光力科技(300480)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“玻璃基板何时能大规模量产”以及“对现有封装材料格局的冲击”。普遍认为是长期利好，但短期难以贡献业绩。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方开始覆盖玻璃基板产业链，认为这是先进封装的重要增量市场。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线，技术迭代驱动。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">11. <span class="card-level">B级</span> 璞泰来拟投资56亿元建设72亿平方米锂电隔膜项目</div>
+<div class="card-meta"><span class="stars">★★★★</span> <span>⏰ 17:23</span></div>
+<div class="logic">锂电隔膜龙头逆势大规模扩产，表明公司对下游新能源汽车和储能市场的长期需求充满信心。此举将进一步巩固其行业地位，但也加剧了行业竞争。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">短期利好璞泰来股价，但市场可能担忧产能过剩导致价格战。对隔膜行业其他公司（恩捷股份、星源材质）构成竞争压力。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">基本面（龙头扩产）与产业趋势（锂电需求增长）一致。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中国锂电产业链的全球竞争优势进一步扩大。海外竞争对手（如旭化成）面临更大压力。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对全球锂电隔膜价格形成压制，利好下游电池厂商。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>璞泰来</strong>: 直接受益于产能扩张 → 璞泰来(603659)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>锂电设备</strong>: 扩产拉动设备需求 → 先导智能(300450)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“如此大规模的扩产是否会导致产能过剩”以及“隔膜价格是否会大幅下跌”。分歧较大。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方普遍看好璞泰来的龙头地位和长期成长性，但对短期行业竞争加剧表示关注。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">长期赛道，短期需关注行业竞争格局变化。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">12. <span class="card-level">B级</span> 德方纳米拟合计87亿元建设锂电新材料项目</div>
+<div class="card-meta"><span class="stars">★★★★</span> <span>⏰ 19:07</span></div>
+<div class="logic">磷酸铁锂正极材料龙头的大规模扩产，与璞泰来隔膜扩产逻辑类似，体现了对下游需求的信心。但磷酸铁锂行业竞争更为激烈，产能过剩风险更大。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">短期利好德方纳米，但市场可能担忧其盈利能力和产能消化能力。对磷酸铁锂行业其他公司（湖南裕能、龙蟠科技）构成压力。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">与璞泰来类似，是锂电产业链扩产潮的一部分。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">进一步巩固中国在磷酸铁锂正极材料领域的全球主导地位。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好上游锂资源（如赣锋锂业、天齐锂业），但需警惕正极材料价格下行风险。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>德方纳米</strong>: 直接受益于产能扩张 → 德方纳米(300769)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>上游锂资源</strong>: 需求拉动 → 赣锋锂业(002460)、天齐锂业(002466)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“87亿的投资是否过于激进”以及“公司如何消化如此大的产能”。普遍担忧产能过剩。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方看好公司的一体化布局和成本优势，但对行业竞争加剧表示谨慎。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">长期赛道，短期需关注行业供需格局。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">13. <span class="card-level">B级</span> 赛意信息拟采购高性能算力服务器，合同总金额预计不超8.33亿元</div>
+<div class="card-meta"><span class="stars">★★★★</span> <span>⏰ 19:38</span></div>
+<div class="logic">这是一家工业软件公司向算力服务商转型的典型案例。表明AI应用正从通用大模型向垂直行业渗透，企业级算力需求开始爆发。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好算力租赁和IDC板块，尤其是具备行业know-how的“算力+应用”公司。赛意信息的转型路径为其他软件公司提供了参考。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">产业面（AI应用落地）与资金面（公司加大投入）形成正向循环。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">与Anthropic向SpaceX购买算力逻辑一致，都是算力需求从“集中”走向“分散”的体现。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对全球算力市场是增量需求，利好服务器和芯片厂商。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>算力租赁/服务</strong>: 直接提供算力服务的公司 → 赛意信息(300687)、中科曙光(603019)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>AI服务器</strong>: 硬件供应商 → 浪潮信息(000977)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“赛意信息的算力业务能否成功”以及“其估值如何重估”。普遍认为这是公司转型的积极信号。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方开始关注企业级AI应用带来的算力需求，认为这是算力市场的第二增长曲线。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线，是AI应用落地的具体体现。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">14. <span class="card-level">B级</span> 韩国KOSPI指数涨幅扩大至超4%，三星电子避免罢工</div>
+<div class="card-meta"><span class="stars">★★★★</span> <span>⏰ 08:02</span></div>
+<div class="logic">三星电子作为全球存储芯片和消费电子龙头，其罢工风险解除，消除了全球半导体供应链的一个重大不确定性。这对全球科技行业是利好。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">短期利空A股存储芯片替代概念（如兆易创新、北京君正），因为海外供给风险解除。但利好下游消费电子（如手机、PC）和存储模组厂商。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">供给端风险下降，需求端逻辑成为主导。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">三星恢复正常生产，有助于稳定全球存储芯片价格，避免因供给短缺导致的价格暴涨。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好美股存储芯片公司（美光、西部数据），但对费城半导体指数的提振作用有限，因为罢工风险已提前消化。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>消费电子</strong>: 成本端压力缓解 → 立讯精密(002475)、歌尔股份(002241)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>存储模组</strong>: 供给稳定，需求增长 → 江波龙(301308)、佰维存储(688525)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“三星罢工解除对国内存储替代逻辑的影响”。普遍认为短期有扰动，但长期国产替代趋势不变。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方认为三星罢工解除是预期内事件，对A股影响有限，继续看好国产替代主线。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">3-5天事件驱动，影响已基本消化。</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">15. <span class="card-level">B级</span> 12.8T光模块亮相光博会，光通信圈热议“超级周期”</div>
+<div class="card-meta"><span class="stars">★★★★</span> <span>⏰ 00:18</span></div>
+<div class="logic">光模块技术迭代速度远超预期。在1.6T尚未大规模放量之际，6.4T NPO和12.8T XPO等更高速率的产品已开始预研，表明AI对算力互联带宽的需求是永无止境的，光模块行业的“超级周期”正在被确认。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4>影响路径</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">强化A股光模块板块的高景气预期，尤其是具备高速率产品研发能力的龙头公司。技术迭代加速，利好有研发壁垒的公司，利空仅能做低端产品的公司。</p>
+<h4>联动逻辑</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">基本面（订单饱满、技术领先）与产业趋势（AI驱动）形成强共振。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中国光模块企业在全球市场占据主导地位，技术领先将进一步巩固其竞争优势。</p>
+<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好美股光模块公司（Lumentum、Coherent），并强化全球投资者对中国光模块产业链的信心。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>高速率光模块龙头</strong>: 技术领先，直接受益于超级周期 → 中际旭创(300308)、新易盛(300502)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>光芯片/器件</strong>: 上游核心环节，国产替代空间大 → 源杰科技(688498)、长光华芯(688048)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“1.6T何时大规模放量”以及“6.4T/12.8T的技术路线选择”。普遍认为光模块是AI确定性最高的方向之一。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">卖方持续强推光模块板块，认为行业高景气至少持续到2028年。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">长期赛道，超级周期正在被持续验证。</p>
+</div>
+<h2 class="section-title">三、市场情绪与策略</h2>
+
+<div class="emotion-item"><span class="label">总体情绪</span><div class="value"><strong>中性偏多</strong>。科技板块（半导体、算力）情绪极度亢奋，但周期板块（能源、化工）和部分制造业受利空压制，市场呈现显著的结构性分化。</div></div>
+<div class="emotion-item"><span class="label">仓位建议</span><div class="value"><strong>积极（6-8成）</strong>。建议重仓科技成长主线，尤其是半导体设备和材料、光模块、算力租赁方向，适当降低周期股和出口制造业仓位。</div></div>
+<div class="emotion-item"><span class="label">节奏判断</span><div class="value"><strong>早盘高开，全天震荡分化</strong>。科技股受英伟达和长鑫催化有望高开，但需警惕获利盘回吐。周期股可能低开。指数层面，上证指数受权重股拖累可能表现平平，而科创50指数有望延续强势。</div></div>
+<p style="margin:4px 0;font-size:13px">- <strong>风险提示</strong>:</p>
+<p class="risk-item"><strong>1. 地缘政治风险：</strong>中集集团被指控事件可能发酵，引发市场对更多中国制造业龙头被调查的担忧。</p>
+<p class="risk-item"><strong>2. 美联储政策风险：</strong>鹰派会议纪要可能持续压制全球风险偏好，导致北向资金流出。</p>
+<p class="risk-item"><strong>3. 油价波动风险：</strong>油价暴跌虽利好部分行业，但也可能引发市场对全球经济衰退的担忧。</p>
+<p class="risk-item"><strong>4. 科技股过热风险：</strong>半导体板块短期涨幅过大，存在技术性回调需求，需警惕“利好出尽”的走势。</p>
+<p class="risk-item"><strong>5. 业绩验证风险：</strong>长鑫科技上市和部分公司（如诚邦股份、三孚股份）澄清与核心概念关系不大，需警惕纯概念炒作股的回落风险。</p>
+
+<h2 class="section-title">四、全量电报列表（精简）</h2>
+
+<table class="telegram-table">
+<thead><tr>
+<th class="">序号</th>
+<th class="">时间</th>
+<th class="">Lv</th>
+<th class="">分享</th>
+<th class="">评论</th>
+<th class="">内容摘要40字</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class=""><span class="rank-num">1</span></td>
+<td class="">20:54</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">1763</td>
+<td class="">32</td>
+<td class="impact-col">京东方A与康宁签署合作备忘录，聚焦玻璃基封装载板、光互连等领域合作。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">2</span></td>
+<td class="">15:01</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">1025</td>
+<td class="">63</td>
+<td class="impact-col">收评：科创50指数低开高走涨超3%，半导体产业链延续强势，成交额2.95万亿。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">3</span></td>
+<td class="">18:55</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">2551</td>
+<td class="">103</td>
+<td class="impact-col">长鑫科技科创板IPO将于5月27日上会，拟募资295亿元。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">4</span></td>
+<td class="">17:23</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">921</td>
+<td class="">47</td>
+<td class="impact-col">璞泰来拟投资56亿元建设年产72亿平方米锂离子电池隔膜项目。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">5</span></td>
+<td class="">19:07</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">1165</td>
+<td class="">22</td>
+<td class="impact-col">德方纳米拟合计87亿元建设锂电新材料及磷基新能源材料项目。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">6</span></td>
+<td class="">19:38</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">941</td>
+<td class="">30</td>
+<td class="impact-col">赛意信息拟采购高性能算力服务器，合同总金额预计不超8.33亿元。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">7</span></td>
+<td class="">04:20</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">2213</td>
+<td class="">67</td>
+<td class="impact-col">英伟达Q1营收816亿美元，同比增85%，超预期，新增800亿美元回购。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">8</span></td>
+<td class="">19:58</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">360</td>
+<td class="">26</td>
+<td class="impact-col">4连板达实智能澄清：不涉及液冷及机器人相关元器件的生产、制造。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">9</span></td>
+<td class="">00:18</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">1530</td>
+<td class="">27</td>
+<td class="impact-col">12.8T光模块亮相光博会，光通信圈热议“超级周期”。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">10</span></td>
+<td class="">21:34</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">967</td>
+<td class="">53</td>
+<td class="impact-col">三星电子工会已推迟罢工，将于5月23日至28日就薪资协议投票。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">11</span></td>
+<td class="">15:18</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">361</td>
+<td class="">16</td>
+<td class="impact-col">5月20日涨停分析：共61股涨停，利仁科技8连板，交大昂立9天5板。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">12</span></td>
+<td class="">06:00</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">2902</td>
+<td class="">6</td>
+<td class="impact-col">隔夜全球要闻：英伟达新增800亿回购，SpaceX申请IPO，OpenAI将递交IPO。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">13</span></td>
+<td class="">23:10</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">458</td>
+<td class="">8</td>
+<td class="impact-col">中集集团遭美国司法部指控谋划限制产量并操纵价格。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">14</span></td>
+<td class="">16:26</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">203</td>
+<td class="">26</td>
+<td class="impact-col">6连板威龙股份澄清：截至目前无注入“算力”相关计划。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">15</span></td>
+<td class="">15:28</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">220</td>
+<td class="">16</td>
+<td class="impact-col">国元证券：通过国元股权等主体间接参与投资长鑫科技，比例较小。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">16</span></td>
+<td class="">05:05</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">1555</td>
+<td class="">6</td>
+<td class="impact-col">我国算力建设将转向新阶段，从“建算力”到“织算网”。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">17</span></td>
+<td class="">21:31</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">659</td>
+<td class="">22</td>
+<td class="impact-col">美股纳指高开0.5%，美光科技、英特尔大涨超5%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">18</span></td>
+<td class="">08:01</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">1518</td>
+<td class="">5</td>
+<td class="impact-col">早间新闻精选：习近平同普京会谈，矿产资源法实施条例公布。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">19</span></td>
+<td class="">08:25</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">946</td>
+<td class="">12</td>
+<td class="impact-col">韩国KOSPI 200期货涨5%后触发熔断，程序化交易暂停5分钟。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">20</span></td>
+<td class="">01:42</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">793</td>
+<td class="">13</td>
+<td class="impact-col">中国移动在全国上线词元套餐，价格最低为5元月包。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">21</span></td>
+<td class="">04:56</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">680</td>
+<td class="">15</td>
+<td class="impact-col">SpaceX计划在月球和火星建立制造基础设施，2028年部署AI计算卫星。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">22</span></td>
+<td class="">20:47</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">1136</td>
+<td class="">5</td>
+<td class="impact-col">美股盘前要闻：期权暗示英伟达财报后波动6.5%，三星工会明日起罢工。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">23</span></td>
+<td class="">18:57</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">174</td>
+<td class="">10</td>
+<td class="impact-col">三连板诚邦股份：芯存电子半导体存储器业务规模较小，利润较低。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">24</span></td>
+<td class="">04:00</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">842</td>
+<td class="">8</td>
+<td class="impact-col">美股三大指数集体收涨超1%，费城半导体指数大涨4.49%，ARM涨15%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">25</span></td>
+<td class="">00:24</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">726</td>
+<td class="">8</td>
+<td class="impact-col">OpenAI据悉准备未来数日或数周递交IPO申请，最早9月启动上市。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">26</span></td>
+<td class="">18:49</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">170</td>
+<td class="">5</td>
+<td class="impact-col">6天4板可立克：SST固态变压器相关产品仍处于研发与测试早期阶段。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">27</span></td>
+<td class="">04:45</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">634</td>
+<td class="">7</td>
+<td class="impact-col">SpaceX公开提交纳斯达克IPO文件，股票代码为SPCX。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">28</span></td>
+<td class="">21:55</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">405</td>
+<td class="">13</td>
+<td class="impact-col">韩国劳动部长表示，工会与三星在利润分配上达成共识。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">29</span></td>
+<td class="">16:07</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">188</td>
+<td class="">3</td>
+<td class="impact-col">韩建河山中标4.4亿元PCCP管材采购项目，约占去年营收49.77%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">30</span></td>
+<td class="">07:22</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">599</td>
+<td class="">5</td>
+<td class="impact-col">英伟达财报全面超预期，预计下半年开始发货Vera Rubin。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">31</span></td>
+<td class="">22:11</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">350</td>
+<td class="">9</td>
+<td class="impact-col">英特尔股价涨幅一度扩大至10%，AMD上涨6.36%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">32</span></td>
+<td class="">07:29</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">387</td>
+<td class="">8</td>
+<td class="impact-col">Anthropic将向SpaceX支付近450亿美元以获取算力。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">33</span></td>
+<td class="">20:34</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">331</td>
+<td class="">9</td>
+<td class="impact-col">伊朗革命卫队称过去24小时内有26艘船通过霍尔木兹海峡。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">34</span></td>
+<td class="">22:17</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">376</td>
+<td class="">7</td>
+<td class="impact-col">国际油价短线走低，跌超4%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">35</span></td>
+<td class="">21:46</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">980</td>
+<td class="">4</td>
+<td class="impact-col">晚间新闻精选：发改委召开民企座谈会，长鑫科技IPO将上会。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">36</span></td>
+<td class="">23:01</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">243</td>
+<td class="">0</td>
+<td class="impact-col">仁智股份：上海承适将取得控制权，股票复牌。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">37</span></td>
+<td class="">23:07</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">271</td>
+<td class="">6</td>
+<td class="impact-col">三星与工会达成初步协议，最后关头避免罢工风险。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">38</span></td>
+<td class="">08:02</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">217</td>
+<td class="">7</td>
+<td class="impact-col">韩国KOSPI指数涨幅扩大至超4%，三星电子涨超5%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">39</span></td>
+<td class="">23:17</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">267</td>
+<td class="">4</td>
+<td class="impact-col">美油、布油期货均跌6%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">40</span></td>
+<td class="">15:39</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">232</td>
+<td class="">4</td>
+<td class="impact-col">施罗德基金旗下3只基金管理人申请变更为路博迈基金。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">41</span></td>
+<td class="">06:35</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">345</td>
+<td class="">2</td>
+<td class="impact-col">特朗普称愿意多花几天等待伊方消息。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">42</span></td>
+<td class="">20:41</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">597</td>
+<td class="">3</td>
+<td class="impact-col">新闻联播18条：习近平同普京会谈，矿产资源法实施条例公布。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">43</span></td>
+<td class="">15:35</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">384</td>
+<td class="">6</td>
+<td class="impact-col">伊朗警告若再遭袭，战火将溢出中东地区。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">44</span></td>
+<td class="">08:00</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">388</td>
+<td class="">1</td>
+<td class="impact-col">日经225指数开盘涨1%，韩国KOSPI指数开盘涨3.8%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">45</span></td>
+<td class="">07:30</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">171</td>
+<td class="">2</td>
+<td class="impact-col">美国新墨西哥州三人因接触不明物质死亡，十余人接受治疗。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">46</span></td>
+<td class="">02:00</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">295</td>
+<td class="">0</td>
+<td class="impact-col">FOMC会议纪要：许多决策者倾向于在政策声明中去除宽松偏向。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">47</span></td>
+<td class="">07:51</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">274</td>
+<td class="">0</td>
+<td class="impact-col">投资日历：世界无人机大会开幕，小米YU7 GT上市。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">48</span></td>
+<td class="">01:02</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">260</td>
+<td class="">0</td>
+<td class="impact-col">OpenAI按超过1万亿美元估值的预期筹备IPO。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">49</span></td>
+<td class="">08:40</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">145</td>
+<td class="">2</td>
+<td class="impact-col">韩国KOSPI指数涨幅扩大至5.6%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">50</span></td>
+<td class="">17:02</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">516</td>
+<td class="">0</td>
+<td class="impact-col">李强签署国务院令，公布《中华人民共和国矿产资源法实施条例》。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">51</span></td>
+<td class="">15:12</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">397</td>
+<td class="">0</td>
+<td class="impact-col">习近平同俄罗斯总统普京会谈，中俄睦邻友好合作条约延期。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">52</span></td>
+<td class="">08:57</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">268</td>
+<td class="">0</td>
+<td class="impact-col">韩国KOSPI指数涨幅扩大至6%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">53</span></td>
+<td class="">15:38</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">385</td>
+<td class="">0</td>
+<td class="impact-col">国家发改委：推动科技自立自强，深入整治“内卷式”竞争。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">54</span></td>
+<td class="">02:31</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">175</td>
+<td class="">0</td>
+<td class="impact-col">国际原油期货结算价大幅收跌超5.5%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">55</span></td>
+<td class="">22:29</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="title-col">254</td>
+<td class="">3</td>
+<td class="impact-col">赣锋锂业：400Wh/kg固态电池循环寿命突破1100次。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">56</span></td>
+<td class="">16:43</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">304</td>
+<td class="">0</td>
+<td class="impact-col">财政部：1—4月全国一般公共预算收入83404亿元，同比增长3.5%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">57</span></td>
+<td class="">17:09</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">124</td>
+<td class="">0</td>
+<td class="impact-col">俄将延长对华免签。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">58</span></td>
+<td class="">20:58</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="title-col">140</td>
+<td class="">6</td>
+<td class="impact-col">光迅科技：股票交易异常波动，提示短期上涨过快风险。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">59</span></td>
+<td class="">23:16</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">110</td>
+<td class="">0</td>
+<td class="impact-col">美油、布油期货均跌5%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">60</span></td>
+<td class="">15:37</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">216</td>
+<td class="">0</td>
+<td class="impact-col">外交部：对俄免签延长至2027年底。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">...</span></td>
+<td class="">...</td>
+<td class="">...</td>
+<td class="title-col">...</td>
+<td class="">...</td>
+<td class="impact-col">...</td>
+</tr>
+</tbody></table>
+<div class="footer">Generated by CLS Daily Summary Tool &copy; </div>
+</div>
+</body>
+</html>

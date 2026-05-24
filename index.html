@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLS 财联社每日早报</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f4f5f7;
+  --sidebar-bg: #1a1a2e;
+  --sidebar-hover: #16213e;
+  --sidebar-active: #0f3460;
+  --accent: #e94560;
+  --text: #1a1a2e;
+  --text-light: #999;
+}
+
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 280px; min-width: 280px;
+  background: var(--sidebar-bg);
+  color: #fff;
+  display: flex; flex-direction: column;
+  position: fixed; top: 0; left: 0; bottom: 0;
+  z-index: 100;
+  overflow-y: auto;
+  box-shadow: 2px 0 20px rgba(0,0,0,0.2);
+}
+
+.sidebar-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-header h2 {
+  font-size: 20px; font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.sidebar-header .subtitle {
+  font-size: 12px; color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+.sidebar-header .live-dot {
+  display: inline-block; width: 7px; height: 7px;
+  background: #2ecc71; border-radius: 50%;
+  margin-right: 4px; animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.sidebar-nav {
+  flex: 1; padding: 12px 0;
+}
+
+.sidebar-nav a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 20px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+}
+
+.sidebar-nav a:hover {
+  background: var(--sidebar-hover);
+  color: #fff;
+  border-left-color: rgba(255,255,255,0.3);
+}
+
+.sidebar-nav a.active {
+  background: var(--sidebar-active);
+  color: #fff;
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+.sidebar-nav a .date-icon {
+  font-size: 16px; width: 22px; text-align: center;
+}
+
+.sidebar-nav a .badge-new {
+  display: inline-block;
+  background: var(--accent); color: #fff;
+  font-size: 10px; padding: 2px 6px; border-radius: 3px;
+  font-weight: 600; letter-spacing: 0.5px;
+  margin-left: auto;
+}
+
+.sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 11px; color: rgba(255,255,255,0.3);
+  line-height: 1.6;
+}
+
+/* ── Main ── */
+.main {
+  margin-left: 280px;
+  flex: 1;
+  display: flex; flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-header {
+  background: #fff;
+  padding: 14px 30px;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 10;
+}
+
+.main-header .breadcrumb {
+  font-size: 14px; color: var(--text-light);
+}
+
+.main-header .breadcrumb strong {
+  color: var(--text); font-weight: 600;
+}
+
+.main-header .refresh-hint {
+  font-size: 12px; color: var(--text-light);
+}
+
+.iframe-wrap {
+  flex: 1;
+  background: #fff;
+}
+
+.iframe-wrap iframe {
+  width: 100%; height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Mobile toggle */
+.menu-toggle {
+  display: none;
+  position: fixed; top: 12px; left: 12px; z-index: 200;
+  background: var(--sidebar-bg); color: #fff; border: none;
+  width: 40px; height: 40px; border-radius: 8px;
+  font-size: 20px; cursor: pointer;
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  z-index: 99;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-overlay.show { display: block; }
+  .main { margin-left: 0; }
+  .menu-toggle { display: flex; align-items: center; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<button class="menu-toggle" onclick="toggleSidebar()" title="菜单">☰</button>
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<!-- ── Sidebar ── -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h2><span class="live-dot"></span>CLS 每日早报</h2>
+    <div class="subtitle">财联社电报 · AI 深度分析</div>
+  </div>
+  <nav class="sidebar-nav" id="reportList">
+    <div style="padding:20px;color:rgba(255,255,255,0.4);font-size:13px;text-align:center">加载中...</div>
+  </nav>
+  <div class="sidebar-footer">
+    数据源: 财联社 cls.cn<br>
+    分析: DeepSeek AI<br>
+    托管: GitHub Pages
+  </div>
+</aside>
+
+<!-- ── Main Content ── -->
+<main class="main">
+  <div class="main-header">
+    <span class="breadcrumb" id="breadcrumb">CLS 早报 / <strong>最新报告</strong></span>
+    <span class="refresh-hint" id="refreshHint"></span>
+  </div>
+  <div class="iframe-wrap">
+    <iframe id="reportFrame" src="" title="CLS早报内容"></iframe>
+  </div>
+</main>
+
+<script src="reports.js"></script>
+<script>
+var REPORT_LIST = window.__REPORT_LIST__ || [];
+
+function loadReport(item) {
+  document.getElementById('reportFrame').src = item.file;
+  document.getElementById('breadcrumb').innerHTML = 'CLS 早报 / <strong>' + item.label + '</strong>';
+  document.getElementById('refreshHint').textContent = '报告日期: ' + item.label;
+  var links = document.querySelectorAll('.sidebar-nav a');
+  links.forEach(function(a) {
+    a.classList.toggle('active', a.getAttribute('data-date') === item.date);
+  });
+}
+
+function renderSidebar() {
+  var listEl = document.getElementById('reportList');
+  if (!REPORT_LIST.length) {
+    listEl.innerHTML = '<div style="padding:20px;color:rgba(255,255,255,0.4);font-size:13px;text-align:center">暂无报告</div>';
+    return;
+  }
+  var html = '';
+  REPORT_LIST.forEach(function(item, i) {
+    var badge = i === 0 ? ' <span class="badge-new">最新</span>' : '';
+    html += '<a data-date="' + item.date + '" data-file="' + item.file + '" onclick="loadReport(REPORT_LIST[' + i + '])">' +
+      '<span class="date-icon">📋</span>' +
+      '<span class="report-label">' + item.label + '</span>' + badge + '</a>';
+  });
+  listEl.innerHTML = html;
+  loadReport(REPORT_LIST[0]);
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('show');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderSidebar();
+  var now = new Date();
+  document.getElementById('refreshHint').textContent =
+    '页面更新: ' + now.getFullYear() + '-' +
+    String(now.getMonth()+1).padStart(2,'0') + '-' +
+    String(now.getDate()).padStart(2,'0');
+});
+</script>
+
+</body>
+</html>
