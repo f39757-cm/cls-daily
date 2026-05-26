@@ -2,9 +2,8 @@ name: CLS Daily Report
 
 on:
   schedule:
-    # Monday-Friday at 01:00 UTC = 09:00 Beijing time
     - cron: '0 1 * * 1-5'
-  workflow_dispatch:  # manual trigger for testing
+  workflow_dispatch:
 
 jobs:
   generate-report:
@@ -12,27 +11,21 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
-          cache-dependency-path: cls_tool/requirements.txt
 
       - name: Install dependencies
-        run: pip install -r cls_tool/requirements.txt
+        run: pip install requests akshare
 
       - name: Generate daily report
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          CI: 'true'
         run: |
           cd cls_tool
           python main.py
-          # Move generated files to reports/ for GitHub Pages
           cp outputs/CLS_早报_*.md ../reports/ 2>/dev/null || true
           cp outputs/CLS_早报_*.html ../reports/ 2>/dev/null || true
 
