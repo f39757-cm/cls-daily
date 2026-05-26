@@ -1,6 +1,10 @@
 name: CLS Daily Report
 
 on:
+  push:
+    paths:
+      - '.github/workflows/**'
+      - 'cls_tool/**'
   schedule:
     - cron: '0 1 * * 1-5'
   workflow_dispatch:
