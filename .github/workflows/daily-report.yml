@@ -2,12 +2,13 @@ name: CLS Daily Report
 
 on:
   push:
-    paths:
-      - '.github/workflows/**'
-      - 'cls_tool/**'
+    branches: [main]
   schedule:
     - cron: '0 1 * * 1-5'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   generate-report:
