@@ -172,7 +172,6 @@ body {
     width: 100%; border-collapse: collapse; font-size: 12px;
     background: #fff; border-radius: 6px; overflow: hidden;
     box-shadow: 0 1px 6px rgba(0,0,0,0.04);
-    table-layout: fixed;
 }
 .telegram-table thead th {
     background: #16213e; color: #fff; padding: 10px 8px;
@@ -180,23 +179,21 @@ body {
 }
 .telegram-table thead th:first-child { width: 42px; }
 .telegram-table thead th:nth-child(2) { width: 48px; }
-.telegram-table thead th:nth-child(3) { width: 34px; }
-.telegram-table thead th:nth-child(4) { width: 50px; }
-.telegram-table thead th:nth-child(5) { width: 44px; }
+.telegram-table thead th:nth-child(3) { width: 38px; }
+.telegram-table thead th:last-child { width: auto; }
 .telegram-table tbody td {
     padding: 5px 8px; border-bottom: 1px solid #f0f0f0;
-    vertical-align: middle; overflow: hidden; text-overflow: ellipsis;
+    vertical-align: middle;
 }
 .telegram-table tbody td:first-child,
 .telegram-table tbody td:nth-child(2),
-.telegram-table tbody td:nth-child(3),
-.telegram-table tbody td:nth-child(4),
-.telegram-table tbody td:nth-child(5) {
+.telegram-table tbody td:nth-child(3) {
     text-align: center;
 }
-.telegram-table .content-col {
-    text-align: left;
+.telegram-table tbody td:last-child {
+    text-align: left; white-space: normal; word-break: break-all;
 }
+.telegram-table tbody tr:nth-child(even) { background: #fafafa; }
 .telegram-table .lv-S { background: #c0392b; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
 .telegram-table .lv-A { background: #e74c3c; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
 .telegram-table .lv-B { background: #f39c12; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
