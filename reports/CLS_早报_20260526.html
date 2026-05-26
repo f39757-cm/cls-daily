@@ -124,6 +124,19 @@ body {
 .analysis-card h4.perspective-intl {
     color: #0e8c6a; border-bottom-color: #0e8c6a; font-size: 17px;
 }
+/* When a perspective h4 is immediately followed by another h4, make it inline */
+.analysis-card h4.perspective-domestic + h4,
+.analysis-card h4.perspective-intl + h4 {
+    margin-top: 0; padding-top: 0; border-top: none;
+}
+.analysis-card h4.perspective-domestic + h4::before {
+    content: 'B8  ';
+    color: #c0392b;
+}
+.analysis-card h4.perspective-intl + h4::before {
+    content: 'B8  ';
+    color: #0e8c6a;
+}
 .analysis-card ul { margin: 4px 0 8px 18px; font-size: 14px; line-height: 1.5; }
 .analysis-card ul li { margin-bottom: 2px; }
 .bull { color: #e94560; font-weight: 600; }
@@ -217,14 +230,15 @@ body {
 <div class="verdict-section">
 <h2 class="section-title" style="margin-top:0">核心判断</h2>
 <div class="verdict-content">
-<p>*   <strong>一句话定调</strong>：今日市场核心矛盾在于<strong>中国半导体产业“换道超车”的宏大叙事</strong>与<strong>中东地缘风险缓释带来的全球风险偏好修复</strong>之间的共振，前者主导了科技成长股的爆发，后者为市场提供了稳定的外部环境。</p>
-<p>*   <strong>3个关键信号</strong>：</p>
-<p>1.  <strong>华为“韬定律”</strong>：中国半导体产业首次提出指导性发展原则，标志着从“追赶者”向“定义者”的角色转变，引爆了以先进封装、3D集成为核心的“新半导体”行情。</p>
-<p>2.  <strong>中东局势缓和</strong>：美伊谈判取得实质性进展，霍尔木兹海峡分阶段开放，全球原油价格暴跌，直接缓解了市场对通胀和供应链中断的担忧，利好全球股市。</p>
-<p>3.  <strong>几内亚铝土矿出口管制</strong>：资源民族主义抬头，上游关键矿产的供给约束正在成为新的全球性主题，将重塑相关产业链的估值体系。</p>
-<p>*   <strong>策略一句话</strong>：<strong>坚定拥抱“新半导体”主线</strong>，利用中东缓和带来的市场情绪窗口，积极布局以华为“韬定律”为核心、扩散至先进封装、设备、材料的科技成长板块，同时警惕高位连板股的退潮风险。</p>
+<p><strong>一句话定调</strong>: 今日市场核心矛盾在于<strong>“华为‘韬定律’引爆的半导体国产替代新叙事”</strong>与<strong>“中东地缘缓和带来的全球风险偏好修复”</strong>之间的共振，前者主导结构性主线，后者提供系统性支撑。</p>
+<p><strong>3个关键信号</strong>:</p>
+<p>1. <strong>华为“韬定律”</strong>：中国首次提出半导体产业发展的“第二曲线”，以“时间缩微”替代“几何缩微”，标志着中国半导体从“追赶者”向“规则定义者”的转变，是今日最核心的产业催化剂。</p>
+<p>2. <strong>几内亚铝土矿出口管制</strong>：全球最大铝土矿生产国计划6月推出出口管制，直接冲击全球铝供应链，强化资源安全逻辑，利好国内铝土矿及氧化铝企业。</p>
+<p>3. <strong>美伊谈判进展与霍尔木兹海峡分阶段开放</strong>：中东局势缓和信号明确，原油暴跌超5%，航运风险溢价回落，利好下游用油行业，但利空能源股及航运。</p>
+<p><strong>策略一句话</strong>: <strong>聚焦“国产替代”主线，以半导体设备/材料/先进封装为核心进攻方向，同时配置铝土矿/氧化铝作为防御对冲，警惕原油暴跌对能源板块的短期冲击。</strong></p>
 </div></div>
 <h2 class="section-title">一、重要性排序总览</h2>
+
 <table class="rank-table">
 <thead><tr>
 <th class="">排名</th>
@@ -241,393 +255,305 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="title-col">人民锐评：半导体迎来“韬（τ）定律” 中国定义将改写世界</td>
 <td class=""><span class="stars">★★★★★</span></td>
-<td class="impact-col">引爆市场核心主线，重塑中国半导体产业估值逻辑和投资方向。</td>
+<td class="impact-col">中国半导体产业范式革命，重塑估值体系，引爆芯片全产业链</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">2</span></td>
-<td class="">23:00</td>
+<td class="">00:17</td>
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="title-col">全球最大铝土矿生产国计划下月推出出口管制措施</td>
 <td class=""><span class="stars">★★★★★</span></td>
-<td class="impact-col">资源民族主义标志性事件，将深刻影响全球铝、氧化铝及电解铝产业链格局。</td>
+<td class="impact-col">资源安全逻辑强化，铝产业链上游迎来重大催化</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">3</span></td>
-<td class="">07:08</td>
+<td class="">20:14</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="title-col">美军称在伊朗南部实施自卫打击</td>
+<td class="title-col">宇树科技科创板IPO将于6月1日上会 拟募资42.02亿元</td>
 <td class=""><span class="stars">★★★★★</span></td>
-<td class="impact-col">中东局势的“最后一击”，随后出现缓和信号，构成市场情绪转折点。</td>
+<td class="impact-col">人形机器人赛道里程碑事件，提振板块估值</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">4</span></td>
-<td class="">20:27</td>
+<td class="">23:00</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="title-col">宇树科技科创板IPO将于6月1日上会 拟募资42.02亿元</td>
-<td class=""><span class="stars">★★★★☆</span></td>
-<td class="impact-col">人形机器人赛道里程碑事件，将极大提振板块估值和关注度。</td>
+<td class="title-col">拓日新能：实控人陈五奎、李粉莉夫妇就股权纠纷将女儿告上法庭</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">家族内斗风险暴露，警示中小市值公司治理风险</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">5</span></td>
-<td class="">19:17</td>
-<td class=""><span class="tag tag-b">B</span></td>
-<td class="title-col">2连板鹏鼎控股：第一大股东及其一致行动人减持3999.99万股</td>
-<td class=""><span class="stars">★★★★☆</span></td>
-<td class="impact-col">高位热门股大股东精准减持，对PCB及光模块板块情绪构成重大压制。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">6</span></td>
-<td class="">20:05</td>
-<td class=""><span class="tag tag-b">B</span></td>
-<td class="title-col">5天3板风华高科：未与英伟达直接开展业务合作</td>
-<td class=""><span class="stars">★★★★☆</span></td>
-<td class="impact-col">热门概念股主动“澄清”，揭示市场炒作风险，可能导致板块分化。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">7</span></td>
 <td class="">15:01</td>
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="title-col">收评：科创50指数放量反弹涨近6% 芯片产业链持续走强</td>
-<td class=""><span class="stars">★★★★☆</span></td>
-<td class="impact-col">市场结果确认，科技成长风格确立，成交量放大显示增量资金入场。</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">市场资金已提前定价，确认半导体为当前最强主线</td>
 </tr>
 <tr>
-<td class=""><span class="rank-num">8</span></td>
-<td class="">20:14</td>
+<td class=""><span class="rank-num">6</span></td>
+<td class="">07:08</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">美军称在伊朗南部实施自卫打击</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">中东局势反复，但整体缓和趋势未改，原油波动加剧</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">7</span></td>
+<td class="">20:27</td>
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="title-col">宇树科技第一季度扣非净利润同比下降52.55%</td>
 <td class=""><span class="stars">★★★★☆</span></td>
-<td class="impact-col">揭示人形机器人商业化初期的现实困境，为板块炒作提供分歧点。</td>
+<td class="impact-col">人形机器人商业化盈利压力显现，需警惕估值泡沫</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">8</span></td>
+<td class="">19:17</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">鹏鼎控股：第一大股东大宗交易减持3999.99万股</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">高位减持信号，PCB板块短期过热风险</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">9</span></td>
-<td class="">20:36</td>
-<td class=""><span class="tag tag-b">B</span></td>
-<td class="title-col">行云科技：签订3.22亿元企业级SSD硬盘销售框架协议</td>
-<td class=""><span class="stars">★★★☆☆</span></td>
-<td class="impact-col">AI算力需求向存储侧传导的微观验证，利好国产存储产业链。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">10</span></td>
-<td class="">19:49</td>
-<td class=""><span class="tag tag-b">B</span></td>
-<td class="title-col">鼎龙股份：CMP抛光液产品获头部晶圆厂奖项及新订单</td>
-<td class=""><span class="stars">★★★☆☆</span></td>
-<td class="impact-col">半导体材料国产替代加速的微观案例，验证“韬定律”下产业链受益逻辑。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">11</span></td>
 <td class="">18:03</td>
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="title-col">*ST闻泰：控股股东闻天下所持全部1.54亿股被司法冻结</td>
-<td class=""><span class="stars">★★★☆☆</span></td>
-<td class="impact-col">个股黑天鹅事件，对ODM及半导体封装板块情绪有负面影响。</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">债务风险暴露，科技白马信用风险需警惕</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">10</span></td>
+<td class="">20:36</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">行云科技：签订3.22亿元企业级SSD硬盘销售框架协议</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">AI服务器存储需求落地，国产存储替代逻辑强化</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">11</span></td>
+<td class="">19:49</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">鼎龙股份：CMP抛光液产品获头部晶圆厂奖项及新订单</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">半导体材料国产替代加速，验证行业高景气</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">12</span></td>
-<td class="">20:32</td>
+<td class="">18:01</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="title-col">和仁科技：筹划控制权变更事项 股票停牌</td>
-<td class=""><span class="stars">★★★☆☆</span></td>
-<td class="impact-col">医疗IT领域并购重组信号，可能引发市场对相关板块的关注。</td>
+<td class="title-col">澜起科技：初步确定本次询价转让价格为250.08元/股</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">机构大额接盘，显示对半导体龙头长期信心</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">13</span></td>
-<td class="">17:38</td>
+<td class="">20:05</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="title-col">安徽：支持科技创新 着力投早、投小、投长期、投硬科技</td>
-<td class=""><span class="stars">★★★☆☆</span></td>
-<td class="impact-col">地方政策积极响应国家战略，为科技股行情提供政策面支撑。</td>
+<td class="title-col">风华高科：未与英伟达直接开展业务合作</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">概念炒作风险提示，MLCC板块需去伪存真</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">14</span></td>
-<td class="">08:21</td>
+<td class="">15:30</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="title-col">财联社5月26日早间新闻精选</td>
-<td class=""><span class="stars">★★★☆☆</span></td>
-<td class="impact-col">综合信息汇总，确认了“韬定律”和几内亚出口管制两大核心事件。</td>
+<td class="title-col">单日涨跌可达±60%！韩国将上市三星电子及SK海力士杠杆ETF</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">全球半导体投资工具创新，提升板块波动性</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">15</span></td>
-<td class="">18:51</td>
+<td class="">19:30</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="title-col">欧科亿：第二大股东格林美拟询价转让5.5%公司股份</td>
-<td class=""><span class="stars">★★★☆☆</span></td>
-<td class="impact-col">工业刀具领域重要股东减持，对相关板块构成一定压力。</td>
+<td class="title-col">博云新材：未与蓝箭航天签署任何框架协议</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">商业航天概念炒作风险暴露，需警惕伪概念股</td>
 </tr>
 </tbody></table>
 
 
 <h2 class="section-title">二、TOP 15 重要新闻深度分析</h2>
+
 <div class="analysis-card">
 <div class="card-title">1. <span class="card-level">B级</span> 人民锐评：半导体迎来“韬（τ）定律” 中国定义将改写世界</div>
 <div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 2026年05月26日 2026年5月25日 16:03</span></div>
-<div class="logic">华为提出的“韬定律”是中国首次在全球半导体领域提出指导产业发展的新原则，标志着中国半导体产业从“摩尔定律”的追随者，转向“时间缩微”新范式的定义者。这不仅是技术路径的突破，更是产业话语权的争夺，将彻底改变市场对中国半导体产业的估值逻辑。</div>
+<div class="logic">华为正式发表“韬（τ）定律”，提出以“时间缩微”替代“几何缩微”，通过逻辑折叠等创新技术实现半导体持续演进。这不仅是技术突破，更是中国首次在全球半导体产业提出指导性发展原则，标志着从“摩尔定律追随者”向“新范式定义者”的转变，将重构全球半导体产业竞争格局。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接引爆以<strong>先进封装、3D集成、Chiplet、EDA、半导体设备</strong>为核心的“新半导体”行情。市场将从单纯追逐制程节点，转向关注系统级优化和异构集成能力。科创50指数暴涨6%即为明证。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">政策背书（人民日报）→ 技术路线确立（华为）→ 资本追捧（相关概念股涨停）→ 产业链重构（设备、材料、EDA需求爆发）。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这是对“摩尔定律”放缓背景下全球半导体发展路径的一次重要补充和挑战。它承认了物理极限，但开辟了通过系统创新提升性能的新赛道。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">短期对美股半导体巨头（如英伟达、台积电）的估值逻辑构成挑战，但长期看，若中国路径成功，将加剧全球半导体产业的竞争和分化。外资可能会重新评估中国半导体设备和材料公司的长期价值。</p>
 <p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>先进封装/3D集成</strong>: 逻辑是“韬定律”的核心实现路径。 → 长电科技(600584)、通富微电(002156)、华天科技(002185)</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>半导体设备/材料</strong>: 新工艺需要新设备和新材料，国产替代逻辑强化。 → 北方华创(002371)、中微公司(688012)、鼎龙股份(300054)</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">3. <strong>EDA/IP</strong>: 系统级设计需要更强大的工具支持。 → 华大九天(301269)、概伦电子(688206)</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于“韬定律”是“换道超车”还是“弯道超车”，分歧在于其商业化落地速度和能否绕过光刻机限制。普遍认为这是中国半导体产业的“独立宣言”，情绪极度亢奋。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中信证券、华泰证券等头部券商火速发布研报，普遍认为“韬定律”将带来半导体工艺发展的新方向，重点关注先进封装、3D集成、Chiplet等方向。预期差在于市场可能低估了对国产EDA和CIM（计算机集成制造）软件的需求。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>中期主线</strong>。这不是短期炒作，而是产业发展的长期方向，预计将持续数月甚至数年。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>先进封装/3D集成</strong>: 逻辑折叠技术依赖先进封装 → 长电科技(600584)、通富微电(002156)、华天科技(002185)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>EDA/IP/设计工具</strong>: 新定律需要新的设计方法论 → 华大九天(301269)、概伦电子(688206)、广立微(301095)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">3. <strong>半导体设备（刻蚀/薄膜）</strong>: 3D集成对刻蚀设备需求倍增 → 中微公司(688012)、北方华创(002371)、盛美上海(688082)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区高度聚焦“韬定律”是否真能替代摩尔定律，分歧在于：1）华为是否有足够生态支撑；2）国内设备材料能否跟上；3）美国是否会加大制裁。部分投资者认为这是“概念炒作”，但多数认可其长期战略意义。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中信证券率先发布研报，认为“韬定律”将带来晶体管、电路、芯片、系统四个层面的深刻变化，关注半导体工艺发展新方向。多家券商预计后续将密集覆盖，预期差在于该定律对成熟制程的价值重估。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>中期主线</strong>（至少3-6个月），后续需关注华为生态合作伙伴的订单落地及更多技术细节披露。</p>
 </div>
 <div class="analysis-card">
 <div class="card-title">2. <span class="card-level">B级</span> 全球最大铝土矿生产国计划下月推出出口管制措施</div>
 <div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 2026年05月26日 2026年5月26日 00:17</span></div>
-<div class="logic">几内亚作为全球铝土矿供应的“超级玩家”，其出口管制将直接冲击全球铝土矿-氧化铝-电解铝的供应链。这是资源民族主义在全球蔓延的又一例证，旨在将资源价值留在国内，将导致上游原材料价格中枢上移。</div>
+<div class="logic">几内亚占全球铝土矿产量逾三分之一，计划6月宣布出口管制以提振价格。当前铝土矿价格较去年高点几乎腰斩，供过于求严重。出口管制将直接减少全球铝土矿供给，推升价格，利好拥有铝土矿资源或氧化铝产能的中国企业。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接利好拥有<strong>国内铝土矿资源</strong>或<strong>海外权益矿</strong>的铝业公司。同时，由于中国对几内亚铝土矿依赖度高（对外依存度约77%），此举将推高国内氧化铝和电解铝价格，利好整个铝产业链。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">几内亚出口管制 → 铝土矿供给收缩 → 氧化铝价格上涨 → 电解铝成本上升、价格跟涨 → 拥有资源/自备电的铝企盈利扩大。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这是继印尼镍矿出口禁令后，资源国对关键矿产进行管控的又一重大案例。可能引发其他资源国效仿，加剧全球供应链的碎片化和“友岸外包”趋势。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接利多LME铝价，利多港股及海外上市的中国铝业公司。同时，会推高全球通胀预期，对依赖铝作为原材料的制造业（如汽车、建筑）构成成本压力。</p>
 <p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>铝土矿/氧化铝/电解铝一体化龙头</strong>: 资源自给率高，充分受益价格上涨。 → 中国铝业(601600)、南山铝业(600219)、云铝股份(000807)</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>拥有海外铝土矿权益的公司</strong>: 直接受益于资源价值重估。 → 天山铝业(002532)</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于管制力度和持续时间，以及是否会有其他国家（如澳大利亚、印尼）跟进。分歧在于电解铝价格能否顺利向下游传导，以及高铝价是否会抑制下游需求。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">多家券商有色团队已发布点评，普遍看好铝价上行周期，认为拥有国内及海外资源的铝企将迎来价值重估。预期差在于市场可能低估了此次管制对全球铝供需平衡表的长期影响。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>中期主线</strong>。资源国政策具有长期性，对铝行业的影响将持续数年。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>铝土矿/氧化铝</strong>: 直接受益于价格上涨 → 中国铝业(601600)、云铝股份(000807)、南山铝业(600219)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>电解铝（氧化铝自给率高）</strong>: 成本优势凸显 → 神火股份(000933)、天山铝业(002532)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区讨论集中在：1）管制力度和持续时间；2）国内是否有足够库存缓冲；3）对电解铝利润的影响。部分投资者认为这是短期事件驱动，但多数认为资源安全逻辑长期成立。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中信建投等券商近期持续看好铝板块，认为供给约束+需求韧性将支撑铝价。预期差在于市场可能低估了出口管制的力度和持续时间。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>，但若管制落地且持续，可能演变为<strong>中期主线</strong>。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">3. <span class="card-level">B级</span> 美军称在伊朗南部实施自卫打击</div>
-<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 2026年05月26日 2026年5月26日 07:08</span></div>
-<div class="logic">此事件是中东紧张局势的“高潮”部分，但随后出现的“美伊就资产解冻达成谅解”、“霍尔木兹海峡将分阶段开放”等消息，共同构成了一个完整的“利空出尽”或“冲突尾声”的叙事。它标志着市场最担忧的全面冲突风险正在快速消退。</div>
+<div class="card-title">3. <span class="card-level">B级</span> 宇树科技科创板IPO将于6月1日上会 拟募资42.02亿元</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 2026年05月26日 2026年5月25日 20:14</span></div>
+<div class="logic">宇树科技作为人形机器人赛道龙头，其科创板IPO上会是该赛道商业化进程的标志性事件。42.02亿元的募资规模显示市场对人形机器人前景的高度认可，将提振整个机器人板块的估值中枢。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接导致<strong>原油、燃料油</strong>等期货暴跌，利空A股石油石化板块。同时，地缘风险溢价消退，利好整体市场风险偏好，尤其是对流动性敏感的科技成长股。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">冲突“最后一击” → 市场预期冲突结束 → 原油暴跌 → 通胀预期降温 → 全球风险资产上涨。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">美伊博弈进入“边打边谈”的新阶段，双方均有达成协议的意愿。这有助于稳定全球能源市场，缓解欧洲能源危机，并可能重塑中东地缘政治版图。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接导致WTI、布伦特原油期货暴跌超5%，利多全球股市（尤其是欧洲和亚洲市场），利空避险资产（黄金、日元）。航运股（尤其是油运）短期承压。</p>
 <p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>成本受益型制造业</strong>: 原油价格下跌降低生产成本，利好航空、化工（尤其是以石脑油为原料的）、物流等行业。 → 中国国航(601111)、万华化学(600309)</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>风险偏好提升受益</strong>: 科技成长股、券商等。 → 科创50ETF(588000)、东方财富(300059)</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于美伊协议能否最终签署，以及伊朗核问题的最终解决方案。部分投资者认为这是“假缓和”，警惕“狼来了”的故事。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">主流观点认为地缘风险溢价将逐步回落，原油价格将回归基本面。预期差在于对伊朗原油回归市场的速度和规模的判断。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>。冲突缓和带来的情绪修复是脉冲式的，后续市场焦点将重新回到基本面。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>核心零部件（减速器/电机）</strong>: 人形机器人量产最大受益环节 → 绿的谐波(688017)、双环传动(002472)、汇川技术(300124)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>AI芯片/传感器</strong>: 机器人智能化核心 → 寒武纪(688256)、奥比中光(688322)、韦尔股份(603501)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区高度关注宇树科技的估值和盈利能力。分歧在于：1）扣非净利润同比下降52.55%是否意味着商业化不及预期；2）42亿募资是否过高；3）对现有机器人概念股是利好兑现还是新起点。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">多家券商认为2026年是人形机器人产业“从0到1”的关键年，产能爬坡和场景验证同步推进。预期差在于市场可能低估了人形机器人在工业场景的落地速度。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>中期主线</strong>，上会前后（6月1日）为关键催化节点。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">4. <span class="card-level">B级</span> 宇树科技科创板IPO将于6月1日上会 拟募资42.02亿元</div>
-<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 20:14</span></div>
-<div class="logic">宇树科技作为人形机器人赛道的明星公司，其IPO上会是该赛道从“概念炒作”走向“资本市场验证”的关键一步。成功过会将为整个板块提供估值锚，并吸引更多资本涌入。</div>
+<div class="card-title">4. <span class="card-level">B级</span> 拓日新能：实控人陈五奎、李粉莉夫妇就股权纠纷将女儿告上法庭</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 2026年05月26日 2026年5月25日 23:00</span></div>
+<div class="logic">上市公司实控人家庭内部股权纠纷公开化，涉及控制权争夺风险。此类事件通常导致公司治理恶化、经营不确定性增加，对股价构成重大利空。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接提振<strong>人形机器人</strong>、<strong>核心零部件（减速器、伺服电机、传感器）</strong> 等板块。市场会提前炒作“宇树供应链”概念。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">IPO上会 → 市场关注度提升 → 对标公司估值提升 → 供应链公司受益。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">人形机器人是AI应用的重要载体，全球科技巨头（特斯拉、波士顿动力）均在布局。宇树科技IPO是中国在这一前沿领域与全球巨头竞争的重要标志。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">与特斯拉Optimus的进展形成联动，共同影响全球人形机器人板块情绪。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>核心零部件供应商</strong>: 减速器、电机、丝杠等。 → 绿的谐波(688017)、汇川技术(300124)、鼎智科技(873593)</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>宇树科技潜在合作伙伴</strong>: 市场会挖掘与宇树有业务往来或技术协同的公司。</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">焦点在于其高达42亿的募资额和下滑的扣非净利润之间的矛盾。分歧在于市场是将其视为“成长性”公司给予高估值，还是因亏损而给予折价。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">普遍看好人形机器人产业趋势，认为宇树科技IPO是行业催化剂。预期差在于对宇树科技自身技术壁垒和商业化前景的判断。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>。上会结果公布前，板块将持续活跃。</p>
+<h4>受益方向及个股</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">无直接受益方，但可能利好光伏行业其他治理结构清晰的公司，如隆基绿能(601012)、晶澳科技(002459)。</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区普遍看空，认为“家丑外扬”是重大利空，建议回避。部分投资者关注后续是否会有股权转让或重组机会。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">券商通常回避此类事件，不会发布正式研报。但内部研究可能提示客户注意公司治理风险。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>，但若诉讼持续，可能演变为长期利空。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">5. <span class="card-level">B级</span> 2连板鹏鼎控股：第一大股东及其一致行动人减持3999.99万股</div>
-<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 19:17</span></div>
-<div class="logic">在股价连续大涨后，第一大股东精准且大额减持，是极其强烈的“高位套现”信号。这将对PCB、光模块等近期热门板块的炒作情绪形成直接打击，引发市场对“主力出货”的担忧。</div>
+<div class="card-title">5. <span class="card-level">B级</span> 收评：科创50指数放量反弹涨近6% 芯片产业链持续走强</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 2026年05月26日 2026年5月25日 15:01</span></div>
+<div class="logic">科创50指数放量大涨近6%，成交额3.21万亿放量3024亿，显示资金大举涌入半导体板块。市场已提前对“韬定律”进行定价，确认芯片产业链为当前最强主线。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利空<strong>PCB板块</strong>和<strong>光模块板块</strong>。鹏鼎控股作为PCB龙头，其减持行为可能导致整个板块出现回调，特别是那些跟风上涨、缺乏业绩支撑的个股。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">龙头股大股东减持 → 市场解读为利空 → 板块情绪降温 → 资金流出。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这更多是A股市场内部的交易行为，但反映了在AI硬件炒作高潮后，产业资本开始兑现利润的普遍心态。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">可能对港股的PCB和光模块公司情绪产生负面影响。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>无直接影响，但需警惕风险</strong>: 持有相关板块个股的投资者应高度警惕。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>反向指标</strong>: 减持行为可能加速板块分化，资金可能流向更具确定性的半导体设备和材料方向。</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论激烈，多数投资者认为这是“吃相难看”的减持，但也有观点认为减持数量相对于总股本不大，影响有限。普遍认为这是板块短期见顶的信号。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">研报通常不会直接评论个股减持，但会提示板块短期过热风险。预期差在于市场对减持行为的解读可能过度悲观，导致错杀优质个股。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>一日游</strong>。减持消息对情绪的冲击是短期的，但会改变板块的短期走势结构。</p>
+<h4>受益方向及个股</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">科创50ETF(588000)、半导体ETF(512480)等指数基金直接受益，个股方面关注中芯国际(688981)、华虹公司(688347)、中微公司(688012)。</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区情绪亢奋，普遍认为半导体行情刚刚启动。分歧在于：1）短期涨幅过大是否需要回调；2）是否应该追涨还是等回调买入。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">多家券商看好半导体国产替代主线，认为“韬定律”是长期催化剂。预期差在于市场可能低估了先进封装环节的投资机会。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>中期主线</strong>，短期可能震荡消化获利盘，但趋势向上。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">6. <span class="card-level">B级</span> 5天3板风华高科：未与英伟达直接开展业务合作</div>
-<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 20:05</span></div>
-<div class="logic">风华高科作为MLCC龙头，近期因“切入英伟达供应链”传闻而大涨。公司主动澄清，揭示了当前市场对AI概念的过度追捧和炒作风险。这将促使投资者重新审视相关公司的“含AI量”。</div>
+<div class="card-title">6. <span class="card-level">B级</span> 美军称在伊朗南部实施自卫打击</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月26日 07:08</span></div>
+<div class="logic">美军在伊朗南部实施自卫打击，但整体美伊谈判仍在推进，特朗普称“进展顺利”。中东局势呈现“边打边谈”的复杂局面，但整体缓和趋势未改。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利空<strong>MLCC板块</strong>和部分“伪AI概念股”。市场将开始“去伪存真”，那些仅靠传闻上涨的个股将面临回调压力。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">传闻炒作 → 股价大涨 → 公司澄清 → 股价承压 → 板块分化。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">反映了全球AI供应链的复杂性，并非所有中国公司都能直接进入英伟达等巨头的核心供应链。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对港股的被动元件板块情绪有负面影响。</p>
 <p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>无直接受益方，但利好“真AI”概念股</strong>: 此事件会强化市场对“真AI”公司的辨识度，如真正进入英伟达供应链的<strong>中际旭创(300308)</strong>、<strong>工业富联(601138)</strong> 等。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>风险提示</strong>: 提醒投资者警惕其他因AI传闻而大涨的公司。</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">投资者普遍感到“被忽悠”，开始反思AI炒作的逻辑。讨论焦点在于风华高科是否间接供货，以及MLCC在AI服务器中的真实价值量。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">研报会强调“业绩为王”，建议投资者关注有真实订单和业绩支撑的AI硬件公司。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>一日游</strong>。澄清公告的冲击是直接的，但市场很快会寻找下一个炒作目标。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>军工（冲突升级对冲）</strong>: 中航沈飞(600760)、航发动力(600893)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>原油（若冲突升级）</strong>: 中国海油(600938)、中曼石油(603619)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区对中东局势关注度较高，但普遍认为对A股影响有限，更多是情绪扰动。分歧在于原油后续走势。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">券商普遍认为中东地缘风险溢价将逐步回落，利好下游用油行业。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>一日游</strong>，需关注后续谈判进展。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">7. <span class="card-level">B级</span> 收评：科创50指数放量反弹涨近6% 芯片产业链持续走强</div>
-<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 15:01</span></div>
-<div class="logic">这是市场对当日所有信息的最终确认。科创50指数放量大涨，成交量突破3.2万亿，表明市场风格已明确转向科技成长，且增量资金正在入场。这是判断后续行情持续性的关键依据。</div>
-<h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">确立<strong>科技成长</strong>为市场主线。资金从红利、周期等板块流向半导体、AI、机器人等。创业板指涨超2%，显示市场风险偏好显著提升。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">主线确立 → 资金聚焦 → 赚钱效应扩散 → 吸引更多场外资金。</p>
-<h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">与全球AI科技股行情形成共振。中国科技股的上涨，尤其是半导体板块，是对全球AI浪潮的积极回应。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对港股的科技股（如中芯国际、华虹半导体）构成直接利好。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>科创50ETF</strong>: 最直接的受益工具。 → 科创50ETF(588000)</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>科创板半导体龙头</strong>: 中芯国际(688981)、中微公司(688012)、华大九天(301269)</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">情绪极度亢奋，普遍认为“牛市旗手”已从券商变为科创板。讨论焦点在于行情能持续多久，以及如何参与。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">普遍看好科创板的投资机会，认为在“韬定律”催化下，科创板有望迎来一轮中期行情。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>中期主线</strong>。放量突破是趋势确立的标志，行情有望延续。</p>
-</div>
-<div class="analysis-card">
-<div class="card-title">8. <span class="card-level">B级</span> 宇树科技第一季度扣非净利润同比下降52.55%</div>
+<div class="card-title">7. <span class="card-level">B级</span> 宇树科技第一季度扣非净利润同比下降52.55%</div>
 <div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 20:27</span></div>
-<div class="logic">与IPO上会消息同时发布，揭示了人形机器人行业“高投入、低产出”的现实。这为市场提供了重要的分歧点，考验投资者对产业“从0到1”阶段的耐心和信仰。</div>
+<div class="logic">宇树科技Q1扣非净利润大幅下降，主要因研发费用和销售费用大幅增加。这显示人形机器人商业化仍处于“烧钱”阶段，盈利压力较大，可能引发市场对板块估值的担忧。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对<strong>人形机器人</strong>板块构成短期情绪压制，可能导致板块内部分化。有真实订单和业绩的公司将更受青睐，纯概念炒作的公司可能回调。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">业绩下滑 → 市场质疑商业化前景 → 板块短期承压 → 去伪存真。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这是全球人形机器人行业的普遍现象，特斯拉Optimus同样面临量产和成本挑战。宇树的财务数据反映了行业早期阶段的特征。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">可能影响全球投资者对人形机器人赛道的短期热情。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>无直接受益方，但提供“黄金坑”机会</strong>: 对于长期看好该赛道的投资者，业绩下滑导致的股价回调可能是布局良机。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>关注有业绩支撑的零部件公司</strong>: 如绿的谐波、汇川技术等，其业绩受单一客户影响较小。</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">分歧巨大。乐观派认为这是“战略性亏损”，是研发投入加大的结果；悲观派认为商业化遥遥无期，估值泡沫严重。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">研报会强调“看长做长”，认为当前是产业爆发前夜，短期亏损不影响长期投资价值。预期差在于市场对亏损的容忍度。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>。业绩冲击是短期的，市场很快会回到对IPO上会本身的关注。</p>
+<h4>受益方向及个股</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">无直接受益方，但可能利好成本控制能力强的机器人零部件企业。</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区分歧较大，看空者认为“增收不增利”是估值泡沫信号；看多者认为“投入期利润不重要，关键是营收和市占率”。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">券商普遍关注营收增速和订单情况，认为短期亏损不影响长期逻辑。预期差在于市场可能低估了人形机器人商业化的时间成本。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>，可能对板块短期情绪形成压制。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">9. <span class="card-level">B级</span> 行云科技：签订3.22亿元企业级SSD硬盘销售框架协议</div>
-<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年05月26日 2026年5月25日 20:36</span></div>
-<div class="logic">这是AI算力需求向存储侧传导的微观验证。AI服务器对高性能、大容量存储的需求正在爆发，国产SSD企业开始获得实质性订单。</div>
+<div class="card-title">8. <span class="card-level">B级</span> 鹏鼎控股：第一大股东大宗交易减持3999.99万股</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 19:17</span></div>
+<div class="logic">鹏鼎控股2连板后，第一大股东高位减持近4000万股，套现意图明显。这显示产业资本对当前股价的估值分歧，可能引发PCB板块短期回调。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好<strong>国产存储</strong>产业链，包括SSD主控芯片、模组、封测等环节。验证了AI对存储需求的拉动逻辑。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">AI算力建设 → 存储需求增加 → 国产SSD获得订单 → 产业链受益。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">全球存储市场由三星、SK海力士、美光主导。国产SSD的突破，是国产替代在存储领域的重要进展。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">与全球存储芯片价格周期形成联动。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>企业级SSD模组厂</strong>: 直接受益于订单增长。 → 行云科技(300209)、朗科科技(300042)</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>存储主控芯片</strong>: 国产替代空间大。 → 国科微(300672)、德明利(001309)</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">关注点在于订单的毛利率和可持续性，以及行云科技的技术实力。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">普遍看好AI驱动下的存储行业景气度回升，建议关注企业级SSD和HBM相关产业链。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>。订单本身是催化剂，但板块的持续性取决于存储行业整体景气度。</p>
+<h4>受益方向及个股</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">无直接受益方，但可能利好其他PCB龙头如深南电路(002916)、沪电股份(002463)，因资金可能从鹏鼎流出后寻找替代标的。</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区普遍认为减持是利空，但分歧在于：1）是否意味着PCB行情结束；2）大宗交易接盘方是谁，是否代表机构看好。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">券商可能下调鹏鼎控股短期评级，但长期仍看好PCB行业景气度。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>，对PCB板块短期形成压制。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">10. <span class="card-level">B级</span> 鼎龙股份：CMP抛光液产品获头部晶圆厂奖项及新订单</div>
-<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年05月26日 2026年5月25日 19:49</span></div>
-<div class="logic">这是半导体材料国产替代加速的微观案例。鼎龙股份在CMP抛光液领域取得突破，获得头部客户认可，验证了国产材料的技术实力和商业化能力。</div>
+<div class="card-title">9. <span class="card-level">B级</span> *ST闻泰：控股股东闻天下所持全部1.54亿股被司法冻结</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 18:03</span></div>
+<div class="logic">*ST闻泰控股股东全部持股被司法冻结，因合同纠纷仲裁案。这显示公司债务风险暴露，可能引发连锁反应，对科技白马股信用形象造成冲击。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好<strong>半导体材料</strong>板块，尤其是CMP材料、光刻胶、电子特气等。强化了“韬定律”下，国产设备和材料将率先受益的逻辑。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">技术突破 → 客户认证 → 批量订单 → 业绩兑现 → 估值提升。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">全球CMP抛光液市场由Cabot、Versum等美日企业主导。鼎龙股份的突破，是中国在半导体材料领域追赶国际先进水平的重要一步。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对全球CMP材料供应商构成竞争压力。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>CMP材料</strong>: 鼎龙股份(300054)是核心标的。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>其他半导体材料</strong>: 安集科技(688019)（CMP抛光液）、彤程新材(603650)（光刻胶）、华特气体(688268)（电子特气）。</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">投资者普遍认可这是“真利好”，关注点在于订单规模和后续增长潜力。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">持续看好半导体材料国产替代，认为鼎龙股份是平台型材料公司的代表。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>中期主线</strong>。半导体材料国产替代是长期趋势，此类消息会不断强化板块逻辑。</p>
+<h4>受益方向及个股</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">无直接受益方，但可能利好闻泰的竞争对手如华勤技术(603296)、龙旗科技(603341)。</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区普遍看空，认为“ST股风险太大”，建议回避。部分投资者关注后续是否有重组机会。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">券商已基本放弃覆盖*ST闻泰，不会发布正式研报。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>长期利空</strong>，直至债务问题解决。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">11. <span class="card-level">B级</span> *ST闻泰：控股股东闻天下所持全部1.54亿股被司法冻结</div>
-<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年05月26日 2026年5月25日 18:03</span></div>
-<div class="logic">个股黑天鹅事件。控股股东股份被司法冻结，可能引发市场对公司控制权稳定性和经营风险的担忧，对股价构成重大利空。</div>
+<div class="card-title">10. <span class="card-level">B级</span> 行云科技：签订3.22亿元企业级SSD硬盘销售框架协议</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 20:36</span></div>
+<div class="logic">行云科技子公司签订3.22亿元企业级SSD框架协议，产品面向AI服务器。这显示国产存储替代在AI算力领域加速落地，验证国产SSD的竞争力。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">直接利空<strong>*ST闻泰</strong>及其所在的ODM和半导体封装板块。可能引发投资者对相关公司治理风险的担忧。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">司法冻结 → 控制权风险 → 市场抛售 → 股价下跌。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">属于公司层面的个体事件，对全球市场影响有限。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">可能对港股相关概念股产生情绪上的负面影响。</p>
 <p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>无直接受益方</strong>。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>风险提示</strong>: 提醒投资者规避存在类似治理风险的公司。</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">投资者普遍感到意外，讨论焦点在于冻结原因（合同纠纷）和对公司后续经营的影响。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">通常会下调评级或提示风险，建议投资者观望。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>中期利空</strong>。在问题解决前，股价将持续承压。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>国产SSD/存储芯片</strong>: 直接受益 → 行云科技(300209)、兆易创新(603986)、北京君正(300223)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>存储控制器芯片</strong>: 国产替代核心环节 → 国科微(300672)、澜起科技(688008)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区关注度较高，认为这是国产存储替代的重要信号。分歧在于：1）订单持续性；2）行云科技能否真正打入主流AI服务器供应链。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">券商看好国产存储替代逻辑，认为AI算力需求将带动企业级SSD市场快速增长。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>，但若后续订单持续落地，可能演变为中期主线。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">12. <span class="card-level">B级</span> 和仁科技：筹划控制权变更事项 股票停牌</div>
-<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年05月26日 2026年5月25日 20:32</span></div>
-<div class="logic">医疗IT领域的并购重组信号。控制权变更通常意味着新股东入主，可能带来新的战略资源和业务方向，是股价的重要催化剂。</div>
+<div class="card-title">11. <span class="card-level">B级</span> 鼎龙股份：CMP抛光液产品获头部晶圆厂奖项及新订单</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 19:49</span></div>
+<div class="logic">鼎龙股份CMP抛光液获头部晶圆厂认可，碳化硅衬底抛光液落地批量订单。这显示国产半导体材料在先进制程和第三代半导体领域取得突破，验证行业高景气。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好<strong>医疗IT</strong>板块，可能引发市场对相关公司并购重组预期的炒作。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">停牌筹划 → 市场预期重组成功 → 复牌后股价上涨 → 带动板块情绪。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">属于A股市场内部的结构性机会。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对港股医疗IT板块有情绪提振作用。</p>
 <p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>医疗IT板块</strong>: 卫宁健康(300253)、创业慧康(300451)等可能因板块情绪提振而受益。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>潜在重组标的</strong>: 市场会挖掘其他有控制权变更预期的公司。</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于接盘方是谁，以及新股东能给公司带来什么。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">通常会提示关注重组进展，但具体影响需待方案公布后才能评估。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>。停牌期间，市场会持续关注和讨论。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>CMP材料</strong>: 直接受益 → 鼎龙股份(300054)、安集科技(688019)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>半导体材料（光刻胶/电子特气）</strong>: 国产替代逻辑扩散 → 彤程新材(603650)、华特气体(688268)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区普遍看好，认为鼎龙股份是半导体材料国产替代的龙头。分歧在于：1）估值是否合理；2）碳化硅抛光液的市场空间。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">多家券商看好鼎龙股份，认为其CMP抛光液业务将进入高速增长期。预期差在于市场可能低估了碳化硅衬底抛光液的市场空间。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>中期主线</strong>，半导体材料国产替代是长期趋势。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">13. <span class="card-level">B级</span> 安徽：支持科技创新 着力投早、投小、投长期、投硬科技</div>
-<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年05月26日 2026年5月25日 17:38</span></div>
-<div class="logic">地方政府积极响应国家“科技自立自强”战略，通过设立政府投资基金，引导社会资本投向早期、小型、长期的硬科技企业。这是对当前科技股行情的政策面背书。</div>
+<div class="card-title">12. <span class="card-level">B级</span> 澜起科技：初步确定本次询价转让价格为250.08元/股</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 18:01</span></div>
+<div class="logic">澜起科技询价转让价格较前一日收盘价折价8%，获20家机构全额认购。这显示机构对半导体龙头的长期信心，但折价转让也暗示短期估值压力。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利好<strong>硬科技</strong>板块，特别是安徽本地的科技公司。政策信号表明，政府将继续为科技创新提供资金支持，有利于提升科技股的估值中枢。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">地方政策出台 → 市场解读为利好 → 科技股情绪提振 → 资金流入。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">反映了全球主要经济体通过政府力量支持科技创新的趋势。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对港股及海外中概科技股构成情绪利好。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>安徽本地科技股</strong>: 科大讯飞(002230)、阳光电源(300274)、国轩高科(002074)</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>创投概念股</strong>: 鲁信创投(600783)、九鼎投资(600053)</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于政策的力度和落地效果，以及哪些细分领域最受益。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">普遍认为这是对“新质生产力”的积极践行，利好科技创新企业。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>中期主线</strong>。政策是长期利好，但短期影响有限。</p>
+<h4>受益方向及个股</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">澜起科技(688008)本身是核心标的，利好内存接口芯片产业链。</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区关注度较高，分歧在于：1）折价8%是否意味着股价短期见顶；2）机构接盘后是否会有拉升。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">券商普遍看好澜起科技，认为DDR5渗透率提升将带动业绩增长。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>，对股价短期影响有限。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">14. <span class="card-level">B级</span> 财联社5月26日早间新闻精选</div>
-<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年05月26日 2026年5月26日 08:21</span></div>
-<div class="logic">作为早间新闻汇总，它确认了昨日收盘后最重要的两件事：华为“韬定律”和几内亚铝土矿出口管制。这为今日市场开盘提供了明确的交易方向。</div>
+<div class="card-title">13. <span class="card-level">B级</span> 风华高科：未与英伟达直接开展业务合作</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 20:05</span></div>
+<div class="logic">风华高科5天3板后澄清未与英伟达直接合作，显示市场存在概念炒作。这可能导致MLCC板块短期回调，投资者需去伪存真。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">强化了今日市场的两大主线：半导体（“韬定律”）和资源（铝土矿）。投资者会据此制定开盘策略。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">信息汇总 → 市场共识形成 → 开盘后资金集中攻击主线。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">帮助投资者快速了解隔夜全球要闻，包括美伊谈判进展、韩国股市创新高等。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">为A股与全球市场的联动提供信息基础。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>半导体板块</strong>: 延续昨日强势。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>铝业板块</strong>: 受几内亚消息刺激。</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">作为信息汇总，本身不产生热议，但为热议提供了素材。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">早间速览，无独立观点。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>一日游</strong>。作为信息汇总，其影响仅限于开盘初期。</p>
+<h4>受益方向及个股</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">无直接受益方，但可能利好真正进入英伟达供应链的MLCC企业如村田（日本）、三星电机（韩国）。</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区普遍认为“炒作结束”，建议回避。部分投资者关注公司是否有其他潜在利好。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">券商可能下调风华高科短期评级，但长期仍看好MLCC国产替代。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>，对MLCC板块短期形成压制。</p>
 </div>
 <div class="analysis-card">
-<div class="card-title">15. <span class="card-level">B级</span> 欧科亿：第二大股东格林美拟询价转让5.5%公司股份</div>
-<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年05月26日 2026年5月25日 18:51</span></div>
-<div class="logic">重要股东减持，对股价构成直接压力。询价转让方式虽然对二级市场冲击较小，但仍反映了股东套现意愿。</div>
+<div class="card-title">14. <span class="card-level">B级</span> 单日涨跌可达±60%！韩国将上市三星电子及SK海力士杠杆ETF</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 15:30</span></div>
+<div class="logic">韩国将上市三星电子和SK海力士的单只杠杆及反向ETF，单日涨跌可达±60%。这将大幅提升全球半导体龙头的波动性，可能对A股半导体板块产生联动效应。</div>
 <h4 class="perspective-domestic">国内视角</h4>
-<h4>对A股影响</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">利空<strong>欧科亿</strong>及<strong>工业刀具</strong>板块。可能引发市场对板块估值过高的担忧。</p>
-<h4>传导链条</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">股东减持 → 供给增加 → 股价承压 → 板块情绪降温。</p>
 <h4 class="perspective-intl">国际视角</h4>
-<h4>全球格局</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">属于公司层面的个体事件。</p>
-<h4>联动关系</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对港股相关刀具公司影响有限。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>无直接受益方</strong>。</p>
-<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>风险提示</strong>: 提醒投资者关注其他有减持计划的工业刀具公司。</p>
-<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于格林美减持的原因（自身资金需求）和转让价格。</p>
-<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">可能会提示短期股价波动风险，但长期仍看好公司发展。</p>
-<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>。减持对股价的压制是短期的，但会影响市场情绪。</p>
+<h4>受益方向及个股</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">无直接受益方，但可能利好A股半导体ETF的波动率交易机会。</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区关注度较高，认为这是韩国政府支持半导体产业的表现。分歧在于：1）高波动是否有利于长期投资；2）对A股半导体板块的影响程度。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">券商可能提示投资者注意全球半导体板块波动性加大的风险。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>一日游</strong>，但长期可能改变全球半导体投资生态。</p>
 </div>
-<h2 class="section-title">三、市场情绪与策略</h2>
-<div class="emotion-item"><span class="label">总体情绪</span><div class="value"><strong>极度乐观</strong>。科创50暴涨、成交量放大、百股涨停，市场赚钱效应极强，投资者风险偏好高涨。</div></div>
-<div class="emotion-item"><span class="label">仓位建议</span><div class="value"><strong>激进(8成+)</strong>。主线明确，量价配合良好，应积极做多。</div></div>
-<div class="emotion-item"><span class="label">节奏判断</span><div class="value"><strong>早盘冲高后分化</strong>。受隔夜美股期货上涨及中东缓和消息影响，早盘可能延续强势。但需警惕高位连板股（如鹏鼎控股、风华高科）的减持/澄清利空带来的分歧和获利盘回吐，日内可能出现“V”型或冲高回落走势。</div></div>
-<h4 class="risk-heading"><strong>风险提示</strong>:</h4>
-<p class="risk-item"><strong>1. 高位股退潮风险：</strong>鹏鼎控股、风华高科等高位股出现减持或澄清利空，可能引发连板股集体炸板和退潮，需警惕追高风险。</p>
-<p class="risk-item"><strong>2. “韬定律”概念分化风险：</strong>板块内部分化将加剧，纯概念炒作的公司可能快速回落，资金将向有核心技术和业绩支撑的龙头集中。</p>
-<p class="risk-item"><strong>3. 中东局势反复风险：</strong>美伊谈判仍存在不确定性，任何谈判破裂的消息都可能导致原油价格报复性反弹，引发市场动荡。</p>
-<p class="risk-item"><strong>4. 资源股“利好出尽”风险：</strong>几内亚铝土矿消息已被市场消化，若后续管制细节不及预期，铝业股可能出现“买预期，卖事实”的调整。</p>
-<p class="risk-item"><strong>5. 量能无法持续风险：</strong>3.21万亿的成交量是行情持续的关键。若后续交易日成交量无法维持或萎缩，则反弹可能夭折。</p>
+<div class="analysis-card">
+<div class="card-title">15. <span class="card-level">B级</span> 博云新材：未与蓝箭航天签署任何框架协议</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年05月26日 2026年5月25日 19:30</span></div>
+<div class="logic">博云新材连续大涨后澄清未与蓝箭航天签署框架协议，也非“朱雀三号”热防护系统供应商。这显示商业航天概念存在伪概念股，投资者需警惕炒作风险。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<h4 class="perspective-intl">国际视角</h4>
+<h4>受益方向及个股</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">无直接受益方，但可能利好真正有商业航天业务的公司如航天电子(600879)、中国卫星(600118)。</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">社区普遍认为“炒作结束”，建议回避。部分投资者关注公司是否有其他潜在利好。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">券商可能提示投资者注意商业航天概念股的炒作风险。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5"><strong>3-5天事件驱动</strong>，对商业航天板块短期形成压制。</p>
+</div>
+<h2 class="section-title">三、全量电报列表（精简）</h2>
 
-
-<h2 class="section-title">四、全量电报列表（精简）</h2>
 <table class="telegram-table">
 <thead><tr>
 <th class="">序号</th>
@@ -644,15 +570,15 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">1137</td>
 <td class="">137</td>
-<td class="content-col">鹏鼎控股：第一大股东及一致行动人减持3999.99万股。</td>
+<td class="content-col">鹏鼎控股2连板，第一大股东大宗减持3999.99万股，光模块概念受关注</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">2</span></td>
 <td class="">16:03</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">4535</td>
+<td class="">4536</td>
 <td class="">102</td>
-<td class="content-col">人民锐评：半导体迎来“韬（τ）定律”，中国定义将改写世界。</td>
+<td class="content-col">人民锐评：华为发表“韬定律”，中国半导体定义将改写世界</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">3</span></td>
@@ -660,7 +586,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">1066</td>
 <td class="">98</td>
-<td class="content-col">收评：科创50涨近6%，芯片产业链持续走强，成交额3.21万亿。</td>
+<td class="content-col">收评：科创50放量反弹涨近6%，芯片产业链持续走强</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">4</span></td>
@@ -668,15 +594,15 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">943</td>
 <td class="">81</td>
-<td class="content-col">*ST闻泰：控股股东闻天下所持全部1.54亿股被司法冻结。</td>
+<td class="content-col">*ST闻泰控股股东闻天下所持1.54亿股全部被司法冻结</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">5</span></td>
 <td class="">20:14</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">3186</td>
+<td class="">3188</td>
 <td class="">74</td>
-<td class="content-col">宇树科技科创板IPO将于6月1日上会，拟募资42.02亿元。</td>
+<td class="content-col">宇树科技科创板IPO将于6月1日上会，拟募资42.02亿元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">6</span></td>
@@ -684,7 +610,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">1915</td>
 <td class="">137</td>
-<td class="content-col">宇树科技Q1扣非净利润同比下降52.55%至4025.36万元。</td>
+<td class="content-col">宇树科技Q1扣非净利润同比下降52.55%，预计上半年2.36-2.83亿</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">7</span></td>
@@ -692,7 +618,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">1003</td>
 <td class="">30</td>
-<td class="content-col">行云科技：签订3.22亿元企业级SSD硬盘销售框架协议。</td>
+<td class="content-col">行云科技签订3.22亿元企业级SSD硬盘销售框架协议</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">8</span></td>
@@ -700,15 +626,15 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">804</td>
 <td class="">24</td>
-<td class="content-col">拓日新能：实控人将女儿告上法庭，涉股权纠纷。</td>
+<td class="content-col">拓日新能实控人夫妇将女儿告上法庭，涉股权纠纷</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">9</span></td>
 <td class="">19:49</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">558</td>
+<td class="">559</td>
 <td class="">13</td>
-<td class="content-col">鼎龙股份：CMP抛光液获头部晶圆厂奖项及新订单。</td>
+<td class="content-col">鼎龙股份CMP抛光液获头部晶圆厂奖项及新订单</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">10</span></td>
@@ -716,7 +642,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">347</td>
 <td class="">22</td>
-<td class="content-col">风华高科：未与英伟达直接开展业务合作。</td>
+<td class="content-col">风华高科5天3板后澄清：未与英伟达直接开展业务合作</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">11</span></td>
@@ -724,15 +650,15 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">402</td>
 <td class="">14</td>
-<td class="content-col">欧科亿：第二大股东格林美拟询价转让5.5%股份。</td>
+<td class="content-col">欧科亿第二大股东格林美拟询价转让5.5%公司股份</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">12</span></td>
 <td class="">19:30</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">342</td>
+<td class="">343</td>
 <td class="">17</td>
-<td class="content-col">博云新材：未与蓝箭航天签署框架协议。</td>
+<td class="content-col">博云新材澄清：未与蓝箭航天签署框架协议</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">13</span></td>
@@ -740,23 +666,23 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">351</td>
 <td class="">15</td>
-<td class="content-col">澜起科技：初步确定询价转让价格为250.08元/股。</td>
+<td class="content-col">澜起科技询价转让价格250.08元/股，20家机构全额认购</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">14</span></td>
 <td class="">07:08</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">973</td>
+<td class="">980</td>
 <td class="">31</td>
-<td class="content-col">美军称在伊朗南部实施自卫打击。</td>
+<td class="content-col">美军称在伊朗南部实施自卫打击</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">15</span></td>
 <td class="">00:17</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">1829</td>
+<td class="">1831</td>
 <td class="">8</td>
-<td class="content-col">全球最大铝土矿生产国几内亚计划下月推出出口管制措施。</td>
+<td class="content-col">全球最大铝土矿生产国几内亚计划下月推出出口管制</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">16</span></td>
@@ -764,7 +690,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">214</td>
 <td class="">21</td>
-<td class="content-col">宏和科技：主要产品电子级玻璃纤维布是PCB基础材料。</td>
+<td class="content-col">宏和科技2连板，主要产品电子级玻璃纤维布是PCB基础材料</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">17</span></td>
@@ -772,7 +698,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">640</td>
 <td class="">23</td>
-<td class="content-col">韩国将上市三星电子及SK海力士杠杆ETF，单日涨跌可达±60%。</td>
+<td class="content-col">韩国将上市三星电子及SK海力士杠杆ETF，单日涨跌±60%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">18</span></td>
@@ -780,15 +706,15 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">416</td>
 <td class="">3</td>
-<td class="content-col">5月25日涨停分析：共103股涨停，宝鼎科技13天8板。</td>
+<td class="content-col">5月25日涨停分析：103股涨停，宝鼎科技13天8板</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">19</span></td>
 <td class="">21:33</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">2202</td>
+<td class="">2205</td>
 <td class="">8</td>
-<td class="content-col">晚间新闻精选：华为发表“韬定律”；安徽印发政府投资基金管理办法。</td>
+<td class="content-col">晚间新闻精选：华为韬定律、安徽政府投资基金、海外卡传闻</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">20</span></td>
@@ -796,7 +722,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">221</td>
 <td class="">8</td>
-<td class="content-col">和仁科技：筹划控制权变更，股票停牌。</td>
+<td class="content-col">和仁科技筹划控制权变更，股票停牌</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">21</span></td>
@@ -804,15 +730,15 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">703</td>
 <td class="">46</td>
-<td class="content-col">安徽：支持科技创新，着力投早、投小、投长期、投硬科技。</td>
+<td class="content-col">安徽印发政府投资基金管理办法，支持科技创新投早投小</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">22</span></td>
 <td class="">06:05</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">1690</td>
+<td class="">1692</td>
 <td class="">2</td>
-<td class="content-col">隔夜全球要闻：几内亚拟出口管制；特朗普称伊朗浓缩铀可销毁。</td>
+<td class="content-col">隔夜全球要闻：几内亚铝土矿出口管制、特朗普称伊朗浓缩铀可销毁</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">23</span></td>
@@ -820,7 +746,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">416</td>
 <td class="">19</td>
-<td class="content-col">特朗普称与伊朗的谈判进展顺利。</td>
+<td class="content-col">特朗普称与伊朗的谈判进展顺利</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">24</span></td>
@@ -828,23 +754,23 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">176</td>
 <td class="">6</td>
-<td class="content-col">龙磁科技：芯片电感产品处于客户端验证及小批量出货阶段。</td>
+<td class="content-col">龙磁科技芯片电感产品产能建设中，处于客户端验证阶段</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">25</span></td>
 <td class="">08:21</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">2211</td>
+<td class="">2217</td>
 <td class="">4</td>
-<td class="content-col">早间新闻精选：华为“韬定律”；几内亚铝土矿出口管制。</td>
+<td class="content-col">早间新闻精选：华为韬定律、几内亚铝土矿管制、安徽投资基金</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">26</span></td>
 <td class="">20:48</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">819</td>
+<td class="">821</td>
 <td class="">4</td>
-<td class="content-col">特朗普要求中东多国与以色列建交。</td>
+<td class="content-col">特朗普要求中东多国与以色列建交</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">27</span></td>
@@ -852,7 +778,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">169</td>
 <td class="">5</td>
-<td class="content-col">九安医疗：不涉及AI业务单独收费，糖尿病诊疗业务占比低。</td>
+<td class="content-col">九安医疗澄清：不涉及AI业务单独收费</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">28</span></td>
@@ -860,7 +786,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">157</td>
 <td class="">5</td>
-<td class="content-col">昂利康：公司不涉及光芯片等半导体领域的业务和投资。</td>
+<td class="content-col">昂利康澄清：不涉及光芯片等半导体领域业务</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">29</span></td>
@@ -868,7 +794,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">351</td>
 <td class="">15</td>
-<td class="content-col">韩国KOSPI指数站上8100点，续创历史新高，涨3.24%。</td>
+<td class="content-col">韩国KOSPI指数站上8100点续创历史新高，涨3.24%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">30</span></td>
@@ -876,7 +802,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">443</td>
 <td class="">9</td>
-<td class="content-col">消息人士：美伊就资产解冻问题达成谅解。</td>
+<td class="content-col">消息人士：美伊就资产解冻问题达成谅解</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">31</span></td>
@@ -884,7 +810,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">181</td>
 <td class="">3</td>
-<td class="content-col">飞亚达：长空齿轮机器人及商业航天业务收入占比较低。</td>
+<td class="content-col">飞亚达澄清：长空齿轮机器人及商业航天业务收入占比低</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">32</span></td>
@@ -892,7 +818,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">323</td>
 <td class="">13</td>
-<td class="content-col">韩国KOSPI指数高开2.8%，刷新历史新高。</td>
+<td class="content-col">韩国KOSPI高开2.8%刷新历史新高，日经高开0.14%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">33</span></td>
@@ -900,7 +826,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">382</td>
 <td class="">8</td>
-<td class="content-col">卡塔尔媒体：霍尔木兹海峡将分阶段开放。</td>
+<td class="content-col">卡塔尔媒体：霍尔木兹海峡将分阶段开放</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">34</span></td>
@@ -908,15 +834,15 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">170</td>
 <td class="">2</td>
-<td class="content-col">四方达：金刚石散热应用相关消息未涉及未公开信息。</td>
+<td class="content-col">四方达澄清：金刚石散热应用消息未涉及未公开信息</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">35</span></td>
 <td class="">07:54</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">532</td>
+<td class="">533</td>
 <td class="">3</td>
-<td class="content-col">投资日历：周二资本市场大事提醒。</td>
+<td class="content-col">投资日历：国新办发布会、广州房地产政策、新型电力系统研讨会</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">36</span></td>
@@ -924,7 +850,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">140</td>
 <td class="">2</td>
-<td class="content-col">交大思诺：拟收购北交信通60.28%股权，股票复牌。</td>
+<td class="content-col">交大思诺拟收购北交信通60.28%股权，股票复牌</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">37</span></td>
@@ -932,7 +858,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">261</td>
 <td class="">8</td>
-<td class="content-col">伊朗格什姆岛上空响起防空警报。</td>
+<td class="content-col">伊朗格什姆岛上空响起防空警报</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">38</span></td>
@@ -940,7 +866,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">255</td>
 <td class="">8</td>
-<td class="content-col">国家能源局：截至4月底全国累计发电装机容量39.9亿千瓦，同比增14.2%。</td>
+<td class="content-col">国家能源局：截至4月底全国发电装机容量39.9亿千瓦，同比增14.2%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">39</span></td>
@@ -948,7 +874,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">132</td>
 <td class="">1</td>
-<td class="content-col">卓锦股份：实控人因犯违规披露重要信息罪被判刑。</td>
+<td class="content-col">卓锦股份实控人兼董事长因违规披露信息被判刑</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">40</span></td>
@@ -956,7 +882,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">125</td>
 <td class="">1</td>
-<td class="content-col">恒林股份：持有海飞科0.8928%股份，持股占比极小。</td>
+<td class="content-col">恒林股份3连板，持有海飞科0.8928%股份，占比极小</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">41</span></td>
@@ -964,7 +890,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">176</td>
 <td class="">0</td>
-<td class="content-col">四会富仕：1.6T光模块用PCB已有小批量订单。</td>
+<td class="content-col">四会富仕：1.6T光模块用PCB已有小批量订单</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">42</span></td>
@@ -972,7 +898,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">228</td>
 <td class="">5</td>
-<td class="content-col">特朗普称美伊协议要么伟大要么没有。</td>
+<td class="content-col">特朗普称美伊协议要么伟大要么没有</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">43</span></td>
@@ -980,7 +906,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">238</td>
 <td class="">3</td>
-<td class="content-col">两部门：2026—2028年新疆棉花目标价格为每吨18600元。</td>
+<td class="content-col">两部门：2026-2028年新疆棉花目标价格每吨18600元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">44</span></td>
@@ -988,7 +914,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">193</td>
 <td class="">4</td>
-<td class="content-col">特朗普称伊朗浓缩铀可运到其他地点销毁。</td>
+<td class="content-col">特朗普称伊朗浓缩铀可运到其他地点销毁</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">45</span></td>
@@ -996,15 +922,15 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">155</td>
 <td class="">5</td>
-<td class="content-col">伊朗外交部：伊美达成共识“不意味着即将签署协议”。</td>
+<td class="content-col">伊朗外交部：伊美达成共识不意味着即将签署协议</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">46</span></td>
 <td class="">08:07</td>
 <td class=""><span class="tag tag-b">B</span></td>
-<td class="">105</td>
+<td class="">106</td>
 <td class="">4</td>
-<td class="content-col">药明生物：计划回购至多4亿美元的股票。</td>
+<td class="content-col">药明生物计划回购至多4亿美元股票</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">47</span></td>
@@ -1012,7 +938,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">237</td>
 <td class="">0</td>
-<td class="content-col">伊朗总统下令：恢复互联网至今年1月大规模断网前状态。</td>
+<td class="content-col">伊朗总统下令恢复互联网至今年1月断网前状态</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">48</span></td>
@@ -1020,15 +946,15 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">548</td>
 <td class="">0</td>
-<td class="content-col">5月25日周一《新闻联播》要闻17条。</td>
+<td class="content-col">新闻联播：习近平会见塞尔维亚总统、巴基斯坦总理</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">49</span></td>
 <td class="">08:22</td>
 <td class=""><span class="tag tag-c">C</span></td>
-<td class="">698</td>
+<td class="">700</td>
 <td class="">8</td>
-<td class="content-col">SK海力士发布控温散热存储技术“iHBM”。</td>
+<td class="content-col">SK海力士发布控温散热存储技术“iHBM”</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">50</span></td>
@@ -1036,7 +962,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">177</td>
 <td class="">6</td>
-<td class="content-col">杰瑞股份：燃气轮机发电机组销售价格上涨，与西门子签约。</td>
+<td class="content-col">杰瑞股份燃气轮机发电机组价格上涨，与西门子签署合作协议</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">51</span></td>
@@ -1044,7 +970,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">135</td>
 <td class="">0</td>
-<td class="content-col">报道称伊美双方均未在协议草案中就核问题作出任何承诺。</td>
+<td class="content-col">报道称伊美双方均未在协议草案中就核问题作出承诺</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">52</span></td>
@@ -1052,7 +978,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">87</td>
 <td class="">1</td>
-<td class="content-col">国内商品期货收盘涨跌不一，焦煤、焦炭涨停。</td>
+<td class="content-col">国内商品期货收盘：焦煤焦炭涨停，燃料油跌超7%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">53</span></td>
@@ -1060,7 +986,7 @@ body {
 <td class=""><span class="tag tag-b">B</span></td>
 <td class="">220</td>
 <td class="">0</td>
-<td class="content-col">习近平会见巴基斯坦总理夏巴兹。</td>
+<td class="content-col">习近平会见巴基斯坦总理夏巴兹</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">54</span></td>
@@ -1068,7 +994,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">82</td>
 <td class="">11</td>
-<td class="content-col">陈克明食品：全面停止生产、销售带有“手擀”相关表述的产品。</td>
+<td class="content-col">陈克明食品全面停止生产销售带有“手擀”表述的产品</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">55</span></td>
@@ -1076,7 +1002,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">161</td>
 <td class="">3</td>
-<td class="content-col">多家半导体上市公司披露重要股东减持计划。</td>
+<td class="content-col">多家半导体上市公司披露重要股东减持计划</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">56</span></td>
@@ -1084,7 +1010,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">115</td>
 <td class="">5</td>
-<td class="content-col">立讯精密：商业航天业务方面，目前已供应部分部件。</td>
+<td class="content-col">立讯精密：商业航天已供应部分部件，人形机器人可配合开发</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">57</span></td>
@@ -1092,7 +1018,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">96</td>
 <td class="">3</td>
-<td class="content-col">帝尔激光：面板级玻璃基板通孔设备已出货。</td>
+<td class="content-col">帝尔激光面板级玻璃基板通孔设备已出货</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">58</span></td>
@@ -1100,7 +1026,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">190</td>
 <td class="">11</td>
-<td class="content-col">中信证券：华为提出“韬定律”，关注半导体工艺发展新方向。</td>
+<td class="content-col">中信证券：华为提出“韬定律”，关注半导体工艺发展新方向</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">59</span></td>
@@ -1108,7 +1034,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">65</td>
 <td class="">4</td>
-<td class="content-col">综艺股份：控股股东拟增持5000万元至1亿元公司股份。</td>
+<td class="content-col">综艺股份控股股东拟增持5000万元至1亿元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">60</span></td>
@@ -1116,7 +1042,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">81</td>
 <td class="">2</td>
-<td class="content-col">昀冢科技：目前公司MLCC产品主要应用于消费电子领域。</td>
+<td class="content-col">昀冢科技MLCC产品主要应用于消费电子，暂未用于AI服务器</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">61</span></td>
@@ -1124,15 +1050,15 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">101</td>
 <td class="">1</td>
-<td class="content-col">派诺科技：董事长李健被取保候审并辞任董事长职务。</td>
+<td class="content-col">派诺科技董事长李健被取保候审并辞任</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">62</span></td>
 <td class="">21:57</td>
 <td class=""><span class="tag tag-c">C</span></td>
-<td class="">323</td>
+<td class="">324</td>
 <td class="">2</td>
-<td class="content-col">6G试验频率正式获批，6G有望在2030年前后正式商用。</td>
+<td class="content-col">6G试验频率正式获批，6G有望在2030年前后正式商用</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">63</span></td>
@@ -1140,7 +1066,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">142</td>
 <td class="">10</td>
-<td class="content-col">业绩不错股价反跌，多家券商被投资者反复追问。</td>
+<td class="content-col">业绩不错股价反跌，多家券商被投资者反复追问</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">64</span></td>
@@ -1148,15 +1074,15 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">200</td>
 <td class="">5</td>
-<td class="content-col">中国盾构机在悉尼征服魔鬼工况，国产盾构机火遍全球。</td>
+<td class="content-col">中国盾构机在悉尼征服魔鬼工况，国产盾构机火遍全球</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">65</span></td>
 <td class="">17:28</td>
 <td class=""><span class="tag tag-c">C</span></td>
-<td class="">239</td>
+<td class="">241</td>
 <td class="">3</td>
-<td class="content-col">消息称三星电子完成900层超高堆叠3D NAND闪存原型开发。</td>
+<td class="content-col">消息称三星电子完成900层超高堆叠3D NAND闪存原型开发</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">66</span></td>
@@ -1164,7 +1090,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">113</td>
 <td class="">0</td>
-<td class="content-col">雷电微力：签订4.43亿元阵列天线产品合同。</td>
+<td class="content-col">雷电微力签订4.43亿元阵列天线产品合同</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">67</span></td>
@@ -1172,7 +1098,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">111</td>
 <td class="">0</td>
-<td class="content-col">三孚新科：已有头部PCB客户mSAP电镀设备订单。</td>
+<td class="content-col">三孚新科已有头部PCB客户mSAP电镀设备订单</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">68</span></td>
@@ -1180,7 +1106,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">142</td>
 <td class="">4</td>
-<td class="content-col">双汇子公司生产的猪肉被检出抗生素超标37.5倍。</td>
+<td class="content-col">双汇子公司猪肉被检出抗生素超标37.5倍</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">69</span></td>
@@ -1188,7 +1114,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">88</td>
 <td class="">0</td>
-<td class="content-col">米奥会展：拟1.5亿元认购上海阶跃星辰智能科技股份。</td>
+<td class="content-col">米奥会展拟1.5亿元认购上海阶跃星辰智能科技股份</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">70</span></td>
@@ -1196,7 +1122,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">85</td>
 <td class="">0</td>
-<td class="content-col">博俊科技：拟5.12亿元增资重庆蓝电科技获5.15%股权。</td>
+<td class="content-col">博俊科技拟5.12亿元增资重庆蓝电科技获5.15%股权</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">71</span></td>
@@ -1204,7 +1130,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">104</td>
 <td class="">6</td>
-<td class="content-col">《给阿嬷的情书》进入2026年度票房榜前四。</td>
+<td class="content-col">《给阿嬷的情书》进入2026年度票房榜前四</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">72</span></td>
@@ -1212,7 +1138,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">53</td>
 <td class="">1</td>
-<td class="content-col">盛达资源：拟收购德运矿业20%股权及部分债权。</td>
+<td class="content-col">盛达资源拟收购德运矿业20%股权及部分债权</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">73</span></td>
@@ -1220,7 +1146,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">117</td>
 <td class="">5</td>
-<td class="content-col">力箭一号遥十四运载火箭顺利出厂。</td>
+<td class="content-col">力箭一号遥十四运载火箭顺利出厂</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">74</span></td>
@@ -1228,7 +1154,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">151</td>
 <td class="">3</td>
-<td class="content-col">英伟达新品价格预期大幅上调，产业上下游博弈进入新阶段。</td>
+<td class="content-col">英伟达新品价格预期大幅上调，产业上下游博弈进入新阶段</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">75</span></td>
@@ -1236,7 +1162,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">153</td>
 <td class="">3</td>
-<td class="content-col">港股IPO储备充足，410家上市申请状态为“处理中”。</td>
+<td class="content-col">港股IPO储备充足，410家上市申请状态为“处理中”</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">76</span></td>
@@ -1244,7 +1170,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">33</td>
 <td class="">3</td>
-<td class="content-col">长春高新：子公司GenSci144片临床试验申请获受理。</td>
+<td class="content-col">长春高新子公司GenSci144片临床试验申请获受理</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">77</span></td>
@@ -1252,7 +1178,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">78</td>
 <td class="">0</td>
-<td class="content-col">锦和商管澄清：公司经营稳定，不存在信息披露违规情形。</td>
+<td class="content-col">锦和商管澄清：公司经营稳定，不存在信息披露违规</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">78</span></td>
@@ -1260,7 +1186,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">77</td>
 <td class="">0</td>
-<td class="content-col">宝武镁业：控股股东宝钢金属拟将26.53%股份无偿划转至中国宝武。</td>
+<td class="content-col">宝武镁业控股股东拟将26.53%股份无偿划转至中国宝武</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">79</span></td>
@@ -1268,7 +1194,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">48</td>
 <td class="">1</td>
-<td class="content-col">嘉友国际：拟以5000万元至1亿元回购股份。</td>
+<td class="content-col">嘉友国际拟以5000万元至1亿元回购股份</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">80</span></td>
@@ -1276,7 +1202,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">132</td>
 <td class="">3</td>
-<td class="content-col">上海：支持微短剧企业租用智能算力，对租用智能算力的主体给予支持。</td>
+<td class="content-col">上海支持微短剧企业租用智能算力</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">81</span></td>
@@ -1284,23 +1210,23 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">212</td>
 <td class="">1</td>
-<td class="content-col">从“能不能飞”转向“划不划算”，低空物流大规模商业化爆发在即。</td>
+<td class="content-col">低空物流大规模商业化爆发在即，美团顺丰开通超1400条航线</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">82</span></td>
+<td class="">19:23</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">112</td>
+<td class="">4</td>
+<td class="content-col">生猪价格跌至近10年低位</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">83</span></td>
 <td class="">17:32</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">154</td>
 <td class="">2</td>
-<td class="content-col">上海：布局市级“AI+微短剧”中试基地，支持“AI+微短剧”应用创新。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">83</span></td>
-<td class="">19:23</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">111</td>
-<td class="">4</td>
-<td class="content-col">生猪价格跌至近10年低位。</td>
+<td class="content-col">上海布局市级“AI+微短剧”中试基地</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">84</span></td>
@@ -1308,7 +1234,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">35</td>
 <td class="">2</td>
-<td class="content-col">茂莱光学：股东询价转让定价429.60元/股。</td>
+<td class="content-col">茂莱光学股东询价转让定价429.60元/股</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">85</span></td>
@@ -1316,7 +1242,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">71</td>
 <td class="">0</td>
-<td class="content-col">A股限售股解禁一览：31.37亿元市值限售股今日解禁。</td>
+<td class="content-col">A股限售股解禁一览：31.37亿元市值限售股今日解禁</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">86</span></td>
@@ -1324,7 +1250,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">68</td>
 <td class="">0</td>
-<td class="content-col">普冉股份：NOR Flash产品已实现批量出货。</td>
+<td class="content-col">普冉股份NOR Flash产品已实现批量出货</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">87</span></td>
@@ -1332,7 +1258,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">91</td>
 <td class="">5</td>
-<td class="content-col">光大证券：首次覆盖剑桥科技给予“买入”评级，光模块业务迎来拐点。</td>
+<td class="content-col">光大证券首次覆盖剑桥科技给予“买入”评级</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">88</span></td>
@@ -1340,7 +1266,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">76</td>
 <td class="">7</td>
-<td class="content-col">伊朗称对通过霍尔木兹海峡船只收“航行服务费”。</td>
+<td class="content-col">伊朗称对通过霍尔木兹海峡船只收“航行服务费”</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">89</span></td>
@@ -1348,7 +1274,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">65</td>
 <td class="">0</td>
-<td class="content-col">鹏鼎控股：竞得深圳宝安土地使用权，将用于PCB产业投资。</td>
+<td class="content-col">鹏鼎控股竞得深圳宝安土地使用权，用于PCB产业投资</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">90</span></td>
@@ -1356,15 +1282,15 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">270</td>
 <td class="">0</td>
-<td class="content-col">今日投资舆情热点：芯片、PCB、商业航天、玻璃基板。</td>
+<td class="content-col">今日投资舆情热点：芯片、铝土矿、人形机器人、商业航天</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">91</span></td>
 <td class="">07:58</td>
 <td class=""><span class="tag tag-c">C</span></td>
-<td class="">100</td>
+<td class="">101</td>
 <td class="">4</td>
-<td class="content-col">华泰证券：SpaceX上市或提升商业航天板块投资情绪。</td>
+<td class="content-col">华泰证券：SpaceX上市或提升商业航天板块投资情绪</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">92</span></td>
@@ -1372,7 +1298,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">138</td>
 <td class="">2</td>
-<td class="content-col">食品防腐剂增加患高血压与心脏病风险。</td>
+<td class="content-col">食品防腐剂增加患高血压与心脏病风险</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">93</span></td>
@@ -1380,7 +1306,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">61</td>
 <td class="">0</td>
-<td class="content-col">晶盛机电：实际控制人邱敏秀拟减持不超0.73%股份。</td>
+<td class="content-col">晶盛机电实控人邱敏秀拟减持不超0.73%股份</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">94</span></td>
@@ -1388,7 +1314,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">82</td>
 <td class="">5</td>
-<td class="content-col">美股期货上涨，纳指期货涨1.40%。</td>
+<td class="content-col">道指期货涨0.98%，标普500期货涨1.00%，纳指期货涨1.40%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">95</span></td>
@@ -1396,7 +1322,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">57</td>
 <td class="">0</td>
-<td class="content-col">深圳新星：实控人陈学敏拟5.57亿元转让岩代投资100%股权。</td>
+<td class="content-col">深圳新星实控人拟5.57亿元转让岩代投资100%股权</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">96</span></td>
@@ -1404,7 +1330,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">37</td>
 <td class="">1</td>
-<td class="content-col">*ST万方：股票终止上市并将于15个交易日内摘牌。</td>
+<td class="content-col">*ST万方股票终止上市，将于15个交易日内摘牌</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">97</span></td>
@@ -1412,7 +1338,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">56</td>
 <td class="">0</td>
-<td class="content-col">珍宝岛：子公司获创新药TRS005中国区销售代理权。</td>
+<td class="content-col">珍宝岛子公司获创新药TRS005中国区销售代理权</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">98</span></td>
@@ -1420,7 +1346,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">52</td>
 <td class="">0</td>
-<td class="content-col">通化东宝：利拉鲁肽注射液获得尼加拉瓜药品注册证书。</td>
+<td class="content-col">通化东宝利拉鲁肽注射液获得尼加拉瓜药品注册证书</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">99</span></td>
@@ -1428,7 +1354,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">51</td>
 <td class="">0</td>
-<td class="content-col">天顺风能：中标约5.68亿元海上浮式生产储油船建造订单。</td>
+<td class="content-col">天顺风能中标约5.68亿元海上浮式生产储油船建造订单</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">100</span></td>
@@ -1436,7 +1362,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">145</td>
 <td class="">1</td>
-<td class="content-col">阿洛酮糖正成为代糖产业“必争之地”，行业产能持续扩容。</td>
+<td class="content-col">阿洛酮糖正成为代糖产业“必争之地”，行业产能持续扩容</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">101</span></td>
@@ -1444,7 +1370,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">112</td>
 <td class="">2</td>
-<td class="content-col">特朗普提出伊朗浓缩铀两种处理方法。</td>
+<td class="content-col">特朗普提出伊朗浓缩铀两种处理方法</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">102</span></td>
@@ -1452,15 +1378,15 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">92</td>
 <td class="">3</td>
-<td class="content-col">中信证券：农产品周期蓄势向上，关注细分赛道景气变化。</td>
+<td class="content-col">中信证券：农产品周期蓄势向上，关注细分赛道景气变化</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">103</span></td>
 <td class="">05:20</td>
 <td class=""><span class="tag tag-c">C</span></td>
-<td class="">214</td>
+<td class="">215</td>
 <td class="">0</td>
-<td class="content-col">特朗普要求先签“亚伯拉罕协议”，沙特方面回应。</td>
+<td class="content-col">特朗普要求先签“亚伯拉罕协议”，沙特方面回应</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">104</span></td>
@@ -1468,7 +1394,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">103</td>
 <td class="">2</td>
-<td class="content-col">中金：从消费电子到光通信，光学厂商迎来新机遇。</td>
+<td class="content-col">中金：从消费电子到光通信，光学厂商迎来新机遇</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">105</span></td>
@@ -1476,7 +1402,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">103</td>
 <td class="">2</td>
-<td class="content-col">伊朗南部阿巴斯港传出连续爆炸声。</td>
+<td class="content-col">伊朗南部阿巴斯港传出连续爆炸声</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">106</span></td>
@@ -1484,7 +1410,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">202</td>
 <td class="">0</td>
-<td class="content-col">霍尔木兹海峡封锁致硫磺价格飙升。</td>
+<td class="content-col">霍尔木兹海峡封锁致硫磺价格飙升</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">107</span></td>
@@ -1492,7 +1418,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">98</td>
 <td class="">2</td>
-<td class="content-col">多伦多股票指数创下盘中历史新高。</td>
+<td class="content-col">多伦多股票指数创下盘中历史新高</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">108</span></td>
@@ -1500,7 +1426,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">46</td>
 <td class="">0</td>
-<td class="content-col">中航重机：拟询价转让上大股份不超过1673万股。</td>
+<td class="content-col">中航重机拟询价转让上大股份不超过1673万股</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">109</span></td>
@@ -1508,7 +1434,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">43</td>
 <td class="">0</td>
-<td class="content-col">湖南黄金：新龙矿业本部恢复生产。</td>
+<td class="content-col">湖南黄金新龙矿业本部恢复生产</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">110</span></td>
@@ -1516,15 +1442,15 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">43</td>
 <td class="">0</td>
-<td class="content-col">华融化学：公司目前与长鑫存储暂无合作。</td>
+<td class="content-col">华融化学目前与长鑫存储暂无合作</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">111</span></td>
 <td class="">07:57</td>
 <td class=""><span class="tag tag-c">C</span></td>
-<td class="">120</td>
+<td class="">121</td>
 <td class="">1</td>
-<td class="content-col">中信建投：铍价中枢有望持续抬升。</td>
+<td class="content-col">中信建投：铍价中枢有望持续抬升</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">112</span></td>
@@ -1532,7 +1458,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">119</td>
 <td class="">1</td>
-<td class="content-col">美股三大股指期货扩大涨幅，纳指期货涨1.2%。</td>
+<td class="content-col">美股三大股指期货扩大涨幅，纳指期货涨1.2%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">113</span></td>
@@ -1540,15 +1466,15 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">179</td>
 <td class="">0</td>
-<td class="content-col">大摩：AI正引爆亚洲5.5万亿美元能源投资超级周期。</td>
+<td class="content-col">大摩：AI正引爆亚洲5.5万亿美元能源投资超级周期</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">114</span></td>
 <td class="">06:28</td>
 <td class=""><span class="tag tag-c">C</span></td>
-<td class="">182</td>
+<td class="">183</td>
 <td class="">0</td>
-<td class="content-col">逾百万亿元贷款到期，银行迎战资产端“大考”。</td>
+<td class="content-col">逾百万亿元贷款到期，银行迎战资产端“大考”</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">115</span></td>
@@ -1556,15 +1482,15 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">39</td>
 <td class="">0</td>
-<td class="content-col">鲁信创投：拟挂牌转让参股公司彼岸电力14.46%股权。</td>
+<td class="content-col">鲁信创投拟挂牌转让参股公司彼岸电力14.46%股权</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">116</span></td>
 <td class="">06:49</td>
 <td class=""><span class="tag tag-c">C</span></td>
-<td class="">172</td>
+<td class="">173</td>
 <td class="">0</td>
-<td class="content-col">特斯拉入局，自动驾驶产业链添动能。</td>
+<td class="content-col">特斯拉入局，自动驾驶产业链添动能</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">117</span></td>
@@ -1572,7 +1498,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">171</td>
 <td class="">0</td>
-<td class="content-col">俄外长告知美方对乌打击计划。</td>
+<td class="content-col">俄外长告知美方对乌打击计划</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">118</span></td>
@@ -1580,7 +1506,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">170</td>
 <td class="">0</td>
-<td class="content-col">世界铂金投资协会：预计到2030年，与氢能经济相关的铂金需求有望增长至约40万盎司。</td>
+<td class="content-col">世界铂金投资协会：预计到2030年氢能相关铂金需求增长至40万盎司</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">119</span></td>
@@ -1588,7 +1514,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">162</td>
 <td class="">0</td>
-<td class="content-col">5月25日连板股分析：连续两个交易日百股涨停，但连板股晋级率不足二成。</td>
+<td class="content-col">5月25日连板股分析：连续两日百股涨停，连板股晋级率不足二成</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">120</span></td>
@@ -1596,7 +1522,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">164</td>
 <td class="">0</td>
-<td class="content-col">超过33℃，英国打破“最热五月天”纪录。</td>
+<td class="content-col">超过33℃，英国打破“最热五月天”纪录</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">121</span></td>
@@ -1604,7 +1530,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">152</td>
 <td class="">0</td>
-<td class="content-col">伊朗媒体披露最高领袖就医情况。</td>
+<td class="content-col">伊朗媒体披露最高领袖就医情况</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">122</span></td>
@@ -1612,7 +1538,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">151</td>
 <td class="">0</td>
-<td class="content-col">嘉兴水果市场二选一涉事公司被约谈。</td>
+<td class="content-col">嘉兴水果市场二选一涉事公司被约谈</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">123</span></td>
@@ -1620,7 +1546,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">34</td>
 <td class="">0</td>
-<td class="content-col">康希诺：24价肺炎球菌多糖结合疫苗启动I/II期临床试验。</td>
+<td class="content-col">康希诺24价肺炎球菌多糖结合疫苗启动I/II期临床试验</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">124</span></td>
@@ -1628,7 +1554,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">96</td>
 <td class="">1</td>
-<td class="content-col">以军称打死一名哈马斯核心情报人员。</td>
+<td class="content-col">以军称打死一名哈马斯核心情报人员</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">125</span></td>
@@ -1636,7 +1562,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">74</td>
 <td class="">2</td>
-<td class="content-col">伊朗官员：武装力量处于最高戒备，若敌人犯错必将回应。</td>
+<td class="content-col">伊朗官员：武装力量处于最高戒备，若敌人犯错必将回应</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">126</span></td>
@@ -1644,7 +1570,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">32</td>
 <td class="">0</td>
-<td class="content-col">兴齐眼药：终止定增事项并撤回申请文件。</td>
+<td class="content-col">兴齐眼药终止定增事项并撤回申请文件</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">127</span></td>
@@ -1652,7 +1578,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">58</td>
 <td class="">3</td>
-<td class="content-col">杭州征求意见：到2028年全市OPC基金总规模超30亿元。</td>
+<td class="content-col">杭州征求意见：到2028年全市OPC基金总规模超30亿元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">128</span></td>
@@ -1660,7 +1586,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">66</td>
 <td class="">2</td>
-<td class="content-col">机构：2025–2030年全球OLED面板出货面积仍将保持约5.6%的复合增速。</td>
+<td class="content-col">机构：2025-2030年全球OLED面板出货面积复合增速约5.6%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">129</span></td>
@@ -1668,7 +1594,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">31</td>
 <td class="">0</td>
-<td class="content-col">双乐股份：子公司发生安全事故致一名操作工死亡。</td>
+<td class="content-col">双乐股份子公司发生安全事故致一名操作工死亡</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">130</span></td>
@@ -1676,7 +1602,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">132</td>
 <td class="">0</td>
-<td class="content-col">伊朗外交部：谈判取得进展，但仍面临困难。</td>
+<td class="content-col">伊朗外交部：谈判取得进展，但仍面临困难</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">131</span></td>
@@ -1684,15 +1610,15 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">30</td>
 <td class="">0</td>
-<td class="content-col">赛恩斯再融资定于6月1日上会。</td>
+<td class="content-col">赛恩斯再融资定于6月1日上会</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">132</span></td>
 <td class="">06:04</td>
 <td class=""><span class="tag tag-c">C</span></td>
-<td class="">130</td>
+<td class="">131</td>
 <td class="">0</td>
-<td class="content-col">WTI原油期货大跌5.7%，至每桶91.15美元。</td>
+<td class="content-col">WTI原油期货大跌5.7%至每桶91.15美元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">133</span></td>
@@ -1700,7 +1626,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">83</td>
 <td class="">1</td>
-<td class="content-col">富时A50期指主连夜盘收涨0.25%，报15617点。</td>
+<td class="content-col">富时A50期指主连夜盘收涨0.25%，报15617点</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">134</span></td>
@@ -1708,7 +1634,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">122</td>
 <td class="">0</td>
-<td class="content-col">消息面扰动供应预期，硫磺价格承压下行。</td>
+<td class="content-col">消息面扰动供应预期，硫磺价格承压下行</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">135</span></td>
@@ -1716,7 +1642,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">78</td>
 <td class="">1</td>
-<td class="content-col">贝莱德分析师：沃什领导下美联储或有足够理由支持一次降息。</td>
+<td class="content-col">贝莱德：沃什领导下美联储或有足够理由支持一次降息</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">136</span></td>
@@ -1724,7 +1650,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">80</td>
 <td class="">1</td>
-<td class="content-col">智利国家铜业公司称，安托法加斯塔大区地震造成影响。</td>
+<td class="content-col">智利国家铜业公司称安托法加斯塔大区地震影响矿区</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">137</span></td>
@@ -1732,7 +1658,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">125</td>
 <td class="">0</td>
-<td class="content-col">黎真主党称使用无人机袭击以军聚集地。</td>
+<td class="content-col">黎真主党称使用无人机袭击以军聚集地</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">138</span></td>
@@ -1740,7 +1666,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">117</td>
 <td class="">0</td>
-<td class="content-col">韩国：AI时代来临，技术蓝领成香饽饽。</td>
+<td class="content-col">韩国：AI时代来临，技术蓝领成香饽饽</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">139</span></td>
@@ -1748,7 +1674,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">77</td>
 <td class="">1</td>
-<td class="content-col">3D打印系统可快速培育更复杂肠道类器官。</td>
+<td class="content-col">3D打印系统可快速培育更复杂肠道类器官</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">140</span></td>
@@ -1756,7 +1682,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">121</td>
 <td class="">0</td>
-<td class="content-col">百亿级私募仓位指数升至82%以上，“科技+能源”均衡布局。</td>
+<td class="content-col">百亿级私募仓位指数升至82%以上，“科技+能源”均衡布局</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">141</span></td>
@@ -1764,7 +1690,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">120</td>
 <td class="">0</td>
-<td class="content-col">内塔尼亚胡指示以军加大对黎真主党打击力度。</td>
+<td class="content-col">内塔尼亚胡指示以军加大对黎真主党打击力度</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">142</span></td>
@@ -1772,7 +1698,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">120</td>
 <td class="">0</td>
-<td class="content-col">中东供应受扰后，印度原油进口版图开始转向拉美与非洲。</td>
+<td class="content-col">中东供应受扰后，印度原油进口版图转向拉美与非洲</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">143</span></td>
@@ -1780,7 +1706,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">117</td>
 <td class="">0</td>
-<td class="content-col">氧化铝期货主力合约涨4.12%，报2829元/吨。</td>
+<td class="content-col">氧化铝期货主力合约涨4.12%，报2829元/吨</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">144</span></td>
@@ -1788,7 +1714,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">60</td>
 <td class="">2</td>
-<td class="content-col">亿仕登控股：IDI Dynamics推出新一代用于半导体晶片封装的高速镭射打标机。</td>
+<td class="content-col">亿仕登控股推出新一代半导体晶片封装高速镭射打标机</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">145</span></td>
@@ -1796,7 +1722,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">43</td>
 <td class="">1</td>
-<td class="content-col">兴业银锡：向香港联交所递交H股发行与上市申请。</td>
+<td class="content-col">兴业银锡向香港联交所递交H股发行与上市申请</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">146</span></td>
@@ -1804,7 +1730,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">116</td>
 <td class="">0</td>
-<td class="content-col">伊朗部分地区传出爆炸声，原因尚不明。</td>
+<td class="content-col">伊朗部分地区传出爆炸声，原因尚不明</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">147</span></td>
@@ -1812,7 +1738,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">114</td>
 <td class="">0</td>
-<td class="content-col">焦煤夜盘收涨约9%，焦炭涨约5.1%，铁矿石跌约1%。</td>
+<td class="content-col">焦煤夜盘收涨约9%，焦炭涨约5.1%，铁矿石跌约1%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">148</span></td>
@@ -1820,7 +1746,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">113</td>
 <td class="">0</td>
-<td class="content-col">白羽鸡养殖行业高景气持续，业内人士建议适度控制产能。</td>
+<td class="content-col">白羽鸡养殖行业高景气持续，建议适度控制产能</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">149</span></td>
@@ -1828,7 +1754,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">114</td>
 <td class="">0</td>
-<td class="content-col">央行加码呵护流动性，资金面将回归均衡偏松。</td>
+<td class="content-col">央行加码呵护流动性，资金面将回归均衡偏松</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">150</span></td>
@@ -1836,31 +1762,31 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">113</td>
 <td class="">0</td>
-<td class="content-col">国际原油持续走低，布伦特原油失守94美元/桶，日内跌超6%。</td>
+<td class="content-col">国际原油持续走低，布伦特原油失守94美元/桶</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">151</span></td>
-<td class="">22:20</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">111</td>
-<td class="">0</td>
-<td class="content-col">巴西总统接受预防性放射治疗。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">152</span></td>
-<td class="">16:01</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">69</td>
-<td class="">1</td>
-<td class="content-col">报道称美伊框架协议“已达成95%”。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">153</span></td>
 <td class="">00:42</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">111</td>
 <td class="">0</td>
-<td class="content-col">美伊磋商持续，美官员称双方对解决争端持乐观态度。</td>
+<td class="content-col">美伊磋商持续，美官员称双方对解决争端持乐观态度</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">152</span></td>
+<td class="">22:20</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">111</td>
+<td class="">0</td>
+<td class="content-col">巴西总统接受预防性放射治疗</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">153</span></td>
+<td class="">16:01</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">69</td>
+<td class="">1</td>
+<td class="content-col">报道称美伊框架协议“已达成95%”</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">154</span></td>
@@ -1868,7 +1794,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">106</td>
 <td class="">0</td>
-<td class="content-col">欧洲主要股指收盘集体大涨。</td>
+<td class="content-col">欧洲主要股指收盘集体大涨，德国DAX涨2.15%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">155</span></td>
@@ -1876,7 +1802,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">53</td>
 <td class="">2</td>
-<td class="content-col">财政部：4月份全国共销售彩票540.73亿元，同比下降6.4%。</td>
+<td class="content-col">财政部：4月份全国共销售彩票540.73亿元，同比下降6.4%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">156</span></td>
@@ -1884,7 +1810,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">106</td>
 <td class="">0</td>
-<td class="content-col">xAI表示，旗下聊天机器人Grok现已面向所有SuperGrok和X Premium+用户开放测试版。</td>
+<td class="content-col">xAI旗下Grok聊天机器人开放测试版</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">157</span></td>
@@ -1892,7 +1818,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">106</td>
 <td class="">0</td>
-<td class="content-col">我国发布伦理指引规范人体基因数据研究。</td>
+<td class="content-col">我国发布伦理指引规范人体基因数据研究</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">158</span></td>
@@ -1900,7 +1826,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">68</td>
 <td class="">1</td>
-<td class="content-col">俄方称将对基辅军工联合体发动打击。</td>
+<td class="content-col">俄方称将对基辅军工联合体发动打击</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">159</span></td>
@@ -1908,7 +1834,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">105</td>
 <td class="">0</td>
-<td class="content-col">伊朗外交部：中国在推动停火谈判进程中发挥了积极作用。</td>
+<td class="content-col">伊朗外交部：中国在推动停火谈判进程中发挥了积极作用</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">160</span></td>
@@ -1916,7 +1842,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">68</td>
 <td class="">1</td>
-<td class="content-col">欧盟据悉计划对谷歌处以数亿欧元罚款。</td>
+<td class="content-col">欧盟据悉计划对谷歌处以数亿欧元罚款</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">161</span></td>
@@ -1924,7 +1850,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">101</td>
 <td class="">0</td>
-<td class="content-col">俄方称将对基辅军工联合体发动打击。</td>
+<td class="content-col">俄方称将对基辅军工联合体发动打击</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">162</span></td>
@@ -1932,7 +1858,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">99</td>
 <td class="">0</td>
-<td class="content-col">受中东战事影响，巴西牛肉产业遭遇挑战。</td>
+<td class="content-col">受中东战事影响，巴西牛肉产业遭遇挑战</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">163</span></td>
@@ -1940,7 +1866,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">54</td>
 <td class="">0</td>
-<td class="content-col">沐曦股份与迈富时签署战略合作协议。</td>
+<td class="content-col">沐曦股份与迈富时签署战略合作协议</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">164</span></td>
@@ -1948,7 +1874,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">22</td>
 <td class="">0</td>
-<td class="content-col">热景生物：子公司创新药SGC001注射液新增适应症临床试验申请获受理。</td>
+<td class="content-col">热景生物子公司创新药SGC001注射液新增适应症获受理</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">165</span></td>
@@ -1956,7 +1882,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">48</td>
 <td class="">2</td>
-<td class="content-col">现货黄金向下跌破4550美元，日内下跌0.46%。</td>
+<td class="content-col">现货黄金向下跌破4550美元，日内下跌0.46%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">166</span></td>
@@ -1964,7 +1890,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">93</td>
 <td class="">0</td>
-<td class="content-col">菲律宾需新增20吉瓦可再生能源以达2040年目标。</td>
+<td class="content-col">菲律宾需新增20吉瓦可再生能源以达2040年目标</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">167</span></td>
@@ -1972,7 +1898,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">90</td>
 <td class="">0</td>
-<td class="content-col">伊朗称使用新型防空手段击落敌方无人机。</td>
+<td class="content-col">伊朗称使用新型防空手段击落敌方无人机</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">168</span></td>
@@ -1980,7 +1906,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">57</td>
 <td class="">1</td>
-<td class="content-col">抖音：AI求真大模型让谣言传播窗口期显著缩短。</td>
+<td class="content-col">抖音：AI求真大模型让谣言传播窗口期显著缩短</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">169</span></td>
@@ -1988,7 +1914,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">57</td>
 <td class="">1</td>
-<td class="content-col">在岸人民币兑美元收盘报6.7837，较上一交易日上涨110点。</td>
+<td class="content-col">在岸人民币兑美元收盘报6.7837，较上一交易日上涨110点</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">170</span></td>
@@ -1996,7 +1922,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">56</td>
 <td class="">1</td>
-<td class="content-col">惠誉表示，北美的公司面临着战争溢出、关税及人工智能带来的信用风险。</td>
+<td class="content-col">惠誉：北美公司面临战争溢出、关税及AI带来的信用风险</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">171</span></td>
@@ -2004,7 +1930,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">89</td>
 <td class="">0</td>
-<td class="content-col">欧股涨幅扩大，德国DAX指数上涨2%至25,388.27点。</td>
+<td class="content-col">欧股涨幅扩大，德国DAX上涨2%至25388点</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">172</span></td>
@@ -2012,7 +1938,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">85</td>
 <td class="">0</td>
-<td class="content-col">国内商品期货夜盘开盘涨跌不一，焦煤涨停，焦炭涨8.98%。</td>
+<td class="content-col">国内商品期货夜盘开盘：焦煤涨停，焦炭涨8.98%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">173</span></td>
@@ -2020,7 +1946,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">84</td>
 <td class="">0</td>
-<td class="content-col">世卫组织：本轮埃博拉疫情已死亡的疑似病例达220例。</td>
+<td class="content-col">世卫组织：本轮埃博拉疫情已死亡疑似病例达220例</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">174</span></td>
@@ -2028,7 +1954,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">83</td>
 <td class="">0</td>
-<td class="content-col">周二（5月26日）重点关注财经事件和经济数据。</td>
+<td class="content-col">周二重点关注：英国CBI零售销售、小米集团财报</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">175</span></td>
@@ -2036,7 +1962,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">83</td>
 <td class="">0</td>
-<td class="content-col">据报道，加纳将于6月起收购大型金矿30%的产量。</td>
+<td class="content-col">加纳将于6月起收购大型金矿30%的产量</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">176</span></td>
@@ -2044,7 +1970,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">80</td>
 <td class="">0</td>
-<td class="content-col">上期所原油期货7月合约夜盘收跌3.04%，报602.80元人民币/桶。</td>
+<td class="content-col">上期所原油期货夜盘收跌3.04%，沪金收涨0.71%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">177</span></td>
@@ -2052,7 +1978,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">76</td>
 <td class="">0</td>
-<td class="content-col">伊朗代表团结束在卡塔尔会谈议程，将返回德黑兰。</td>
+<td class="content-col">伊朗代表团结束在卡塔尔会谈议程，将返回德黑兰</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">178</span></td>
@@ -2060,7 +1986,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">76</td>
 <td class="">0</td>
-<td class="content-col">卡塔尔确认伊朗高级代表团正在多哈会谈。</td>
+<td class="content-col">卡塔尔确认伊朗高级代表团正在多哈会谈</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">179</span></td>
@@ -2068,7 +1994,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">75</td>
 <td class="">0</td>
-<td class="content-col">美股因美国阵亡将士纪念日休市一日。</td>
+<td class="content-col">美股因美国阵亡将士纪念日休市一日</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">180</span></td>
@@ -2076,7 +2002,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">73</td>
 <td class="">0</td>
-<td class="content-col">杭州就打造全国“AI+OPC”创业新高地行动计划及政策措施等征求意见。</td>
+<td class="content-col">杭州就打造全国“AI+OPC”创业新高地行动计划征求意见</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">181</span></td>
@@ -2084,7 +2010,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">76</td>
 <td class="">0</td>
-<td class="content-col">海南省省长刘小明调研跨境算力设施建设工作。</td>
+<td class="content-col">海南省省长刘小明调研跨境算力设施建设工作</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">182</span></td>
@@ -2092,7 +2018,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">73</td>
 <td class="">0</td>
-<td class="content-col">美联储6月维持利率不变的概率为99.9%。</td>
+<td class="content-col">美联储6月维持利率不变的概率为99.9%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">183</span></td>
@@ -2100,7 +2026,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">74</td>
 <td class="">0</td>
-<td class="content-col">卡塔尔埃米尔与阿曼苏丹通电话，讨论地区局势。</td>
+<td class="content-col">卡塔尔埃米尔与阿曼苏丹通电话讨论地区局势</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">184</span></td>
@@ -2108,7 +2034,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">45</td>
 <td class="">1</td>
-<td class="content-col">伊朗方面消息称，伊朗过去一天允许32艘船通过霍尔木兹海峡。</td>
+<td class="content-col">伊朗过去一天允许32艘船通过霍尔木兹海峡</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">185</span></td>
@@ -2116,23 +2042,23 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">68</td>
 <td class="">0</td>
-<td class="content-col">杭州征求意见：支持OPC社区加大AI基础设施投入，用好人工智能服务券。</td>
+<td class="content-col">杭州征求意见：支持OPC社区加大AI基础设施投入</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">186</span></td>
+<td class="">08:14</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">30</td>
+<td class="">3</td>
+<td class="content-col">康希诺生物PCV24启动I/II期临床试验</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">187</span></td>
 <td class="">16:58</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">67</td>
 <td class="">0</td>
-<td class="content-col">商务部：前四个月社会消费品零售总额增长1.9%，服务零售额增长5.6%。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">187</span></td>
-<td class="">08:14</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">29</td>
-<td class="">3</td>
-<td class="content-col">康希诺生物：PCV24启动I/II期临床试验并完成首例受试者入组。</td>
+<td class="content-col">商务部：前四个月社会消费品零售总额增长1.9%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">188</span></td>
@@ -2140,7 +2066,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">69</td>
 <td class="">0</td>
-<td class="content-col">理财资金入市进化论：借道“固收+”“股”中掘金。</td>
+<td class="content-col">理财资金入市进化论：借道“固收+”股中掘金</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">189</span></td>
@@ -2148,7 +2074,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">69</td>
 <td class="">0</td>
-<td class="content-col">TTF基准荷兰天然气期货收跌6.08%，报45.601欧元/兆瓦时。</td>
+<td class="content-col">TTF基准荷兰天然气期货收跌6.08%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">190</span></td>
@@ -2156,7 +2082,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">67</td>
 <td class="">0</td>
-<td class="content-col">欧洲斯托克50指数上涨2%，抹去了自此次中东冲突升级以来的全部跌幅。</td>
+<td class="content-col">欧洲斯托克50上涨2%，抹去中东冲突升级以来全部跌幅</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">191</span></td>
@@ -2164,7 +2090,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">67</td>
 <td class="">0</td>
-<td class="content-col">京港高铁雄商段全线拉通试验正式启动。</td>
+<td class="content-col">京港高铁雄商段全线拉通试验正式启动</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">192</span></td>
@@ -2172,7 +2098,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">67</td>
 <td class="">0</td>
-<td class="content-col">中国地震台网自动测定：05月26日05时52分在智利北部附近发生地震。</td>
+<td class="content-col">智利北部附近发生地震</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">193</span></td>
@@ -2180,15 +2106,15 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">67</td>
 <td class="">0</td>
-<td class="content-col">布伦特原油期货7月合约结算价为每桶96.14美元。</td>
+<td class="content-col">布伦特原油期货7月合约结算价每桶96.14美元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">194</span></td>
 <td class="">19:18</td>
 <td class=""><span class="tag tag-c">C</span></td>
-<td class="">155</td>
+<td class="">157</td>
 <td class="">0</td>
-<td class="content-col">深圳常住人口首破1800万，去年增量居全国城市首位。</td>
+<td class="content-col">深圳常住人口首破1800万，去年增量居全国城市首位</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">195</span></td>
@@ -2196,7 +2122,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">64</td>
 <td class="">0</td>
-<td class="content-col">原华为云AI算法创新Lab主任朱森华创业，押注类脑智能与具身模型。</td>
+<td class="content-col">原华为云AI算法创新Lab主任朱森华创业，押注类脑智能</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">196</span></td>
@@ -2204,7 +2130,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">64</td>
 <td class="">0</td>
-<td class="content-col">伊朗称若再遭袭反击范围或延伸至印度洋。</td>
+<td class="content-col">伊朗称若再遭袭反击范围或延伸至印度洋</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">197</span></td>
@@ -2212,7 +2138,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">41</td>
 <td class="">1</td>
-<td class="content-col">全球芯片LOF(501225)将于2026年5月26日开市起停牌。</td>
+<td class="content-col">全球芯片LOF将于5月26日开市起停牌</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">198</span></td>
@@ -2220,7 +2146,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">31</td>
 <td class="">2</td>
-<td class="content-col">伊朗外交部：当前谈判重点是结束战争，尚未讨论核问题。</td>
+<td class="content-col">伊朗外交部：当前谈判重点是结束战争，尚未讨论核问题</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">199</span></td>
@@ -2228,7 +2154,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">64</td>
 <td class="">0</td>
-<td class="content-col">多伦多股票指数收涨1.04%，报34,830.89点，创收盘新高。</td>
+<td class="content-col">多伦多股票指数收涨1.04%创收盘新高</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">200</span></td>
@@ -2236,7 +2162,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">146</td>
 <td class="">0</td>
-<td class="content-col">美司法部：白宫附近枪击案是针对特朗普的暗杀图谋。</td>
+<td class="content-col">美司法部：白宫附近枪击案是针对特朗普的暗杀图谋</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">201</span></td>
@@ -2244,7 +2170,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">61</td>
 <td class="">0</td>
-<td class="content-col">俄罗斯外交部称，俄罗斯开始对基辅的乌克兰防务工业设施进行一系列打击。</td>
+<td class="content-col">俄罗斯开始对基辅乌克兰防务工业设施进行打击</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">202</span></td>
@@ -2252,7 +2178,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">62</td>
 <td class="">0</td>
-<td class="content-col">俄罗斯挫败一起针对液化天然气运输船的恐袭图谋。</td>
+<td class="content-col">俄罗斯挫败一起针对液化天然气运输船的恐袭图谋</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">203</span></td>
@@ -2260,7 +2186,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">39</td>
 <td class="">1</td>
-<td class="content-col">暴雨橙色预警继续：安徽江苏湖北湖南江西重庆等地部分地区有大暴雨。</td>
+<td class="content-col">暴雨橙色预警继续：安徽江苏湖北湖南重庆等地有大暴雨</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">204</span></td>
@@ -2268,7 +2194,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">63</td>
 <td class="">0</td>
-<td class="content-col">监事会退场，审计委接棒，上市险企优化监督治理体系。</td>
+<td class="content-col">监事会退场审计委接棒，上市险企优化监督治理体系</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">205</span></td>
@@ -2276,7 +2202,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">60</td>
 <td class="">0</td>
-<td class="content-col">伊朗称击落一架敌方无人机。</td>
+<td class="content-col">伊朗称击落一架敌方无人机</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">206</span></td>
@@ -2284,7 +2210,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">57</td>
 <td class="">0</td>
-<td class="content-col">中韩半导体ETF华泰柏瑞(513310)将于2026年5月26日开市起至当日10:30停牌。</td>
+<td class="content-col">中韩半导体ETF将于5月26日开市起停牌</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">207</span></td>
@@ -2292,7 +2218,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">56</td>
 <td class="">0</td>
-<td class="content-col">预告：广州5月26日召开房地产新政系列配套文件新闻发布会。</td>
+<td class="content-col">广州5月26日召开房地产政策系列配套文件新闻发布会</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">208</span></td>
@@ -2300,7 +2226,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">36</td>
 <td class="">1</td>
-<td class="content-col">利弗莫尔证券显示，內蒙古兴业银锡矿业股份有限公司向港交所提交上市申请书。</td>
+<td class="content-col">兴业银锡向港交所提交上市申请书</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">209</span></td>
@@ -2308,7 +2234,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">56</td>
 <td class="">0</td>
-<td class="content-col">巴西米尔斯公司股价飙升15%，此前其控股股东同意出售股份。</td>
+<td class="content-col">巴西米尔斯公司股价飙升15%，控股股东同意出售股份</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">210</span></td>
@@ -2316,7 +2242,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">55</td>
 <td class="">0</td>
-<td class="content-col">荷兰互联网投资公司Prosus请求欧盟终止对德国在线外卖订餐平台Delivery Hero的强制出售。</td>
+<td class="content-col">Prosus请求欧盟终止对Delivery Hero的强制出售</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">211</span></td>
@@ -2324,7 +2250,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">52</td>
 <td class="">0</td>
-<td class="content-col">沙特阿美宣布将其在PrefChem的全部股权转让给马石油。</td>
+<td class="content-col">沙特阿美将其在PrefChem的全部股权转让给马石油</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">212</span></td>
@@ -2332,7 +2258,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">52</td>
 <td class="">0</td>
-<td class="content-col">以总理被曝承认“无力影响特朗普对伊朗决策”。</td>
+<td class="content-col">以总理被曝承认“无力影响特朗普对伊朗决策”</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">213</span></td>
@@ -2340,7 +2266,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">52</td>
 <td class="">0</td>
-<td class="content-col">中金财富一营业部存三项违规问题被责令改正，一从业人员被警示。</td>
+<td class="content-col">中金财富一营业部存三项违规问题被责令改正</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">214</span></td>
@@ -2348,7 +2274,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">53</td>
 <td class="">0</td>
-<td class="content-col">类皮肤智能贴片能实时分析健康数据。</td>
+<td class="content-col">类皮肤智能贴片能实时分析健康数据</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">215</span></td>
@@ -2356,7 +2282,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">52</td>
 <td class="">0</td>
-<td class="content-col">据报道，俄罗斯斯兹里安（Syzran）石油精炼厂在遭受袭击后停止了运营。</td>
+<td class="content-col">俄罗斯斯兹里安石油精炼厂在遭受袭击后停止运营</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">216</span></td>
@@ -2364,7 +2290,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">51</td>
 <td class="">0</td>
-<td class="content-col">摩洛哥将寻求外国资金用于建设高速铁路，计划投资60亿美元。</td>
+<td class="content-col">摩洛哥计划投资60亿美元建设高速铁路</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">217</span></td>
@@ -2372,7 +2298,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">48</td>
 <td class="">0</td>
-<td class="content-col">龙虎榜 麦格米特涨停，六机构净买入6.27亿元。</td>
+<td class="content-col">龙虎榜：麦格米特涨停，六机构净买入6.27亿元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">218</span></td>
@@ -2380,7 +2306,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">31</td>
 <td class="">1</td>
-<td class="content-col">陈茂波：香港是欧洲金融机构和投资者低配了的市场。</td>
+<td class="content-col">陈茂波：香港是欧洲金融机构和投资者低配了的市场</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">219</span></td>
@@ -2388,7 +2314,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">48</td>
 <td class="">0</td>
-<td class="content-col">伊朗央行行长访卡塔尔磋商解冻资金。</td>
+<td class="content-col">伊朗央行行长访卡塔尔磋商解冻资金</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">220</span></td>
@@ -2396,7 +2322,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">48</td>
 <td class="">0</td>
-<td class="content-col">Epic首次曝光虚幻6引擎，首款游戏正式确定。</td>
+<td class="content-col">Epic首次曝光虚幻6引擎，首款游戏正式确定</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">221</span></td>
@@ -2404,7 +2330,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">49</td>
 <td class="">0</td>
-<td class="content-col">欢聚集团第一季度净营收5.557亿美元，预估5.397亿美元。</td>
+<td class="content-col">欢聚集团Q1净营收5.557亿美元超预期</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">222</span></td>
@@ -2412,7 +2338,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">47</td>
 <td class="">0</td>
-<td class="content-col">全球基金于5月25日净买入82.2亿卢比的印度股票。</td>
+<td class="content-col">全球基金于5月25日净买入82.2亿卢比印度股票</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">223</span></td>
@@ -2420,7 +2346,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">47</td>
 <td class="">0</td>
-<td class="content-col">伊朗议长率代表团抵达卡塔尔。</td>
+<td class="content-col">伊朗议长率代表团抵达卡塔尔</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">224</span></td>
@@ -2428,7 +2354,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">47</td>
 <td class="">0</td>
-<td class="content-col">安徽：创投类政府投资基金存续期最长可达20年。</td>
+<td class="content-col">安徽：创投类政府投资基金存续期最长可达20年</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">225</span></td>
@@ -2436,7 +2362,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">44</td>
 <td class="">0</td>
-<td class="content-col">报道称伊朗最高领袖通过“信使网络”对外沟通。</td>
+<td class="content-col">报道称伊朗最高领袖通过“信使网络”对外沟通</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">226</span></td>
@@ -2444,7 +2370,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">69</td>
 <td class="">1</td>
-<td class="content-col">传阿里京东美团竞购朴朴超市：京东否认接触，阿里、美团暂无回应。</td>
+<td class="content-col">传阿里京东美团竞购朴朴超市，京东否认接触</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">227</span></td>
@@ -2452,7 +2378,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">44</td>
 <td class="">0</td>
-<td class="content-col">杭州征求意见：到2028年银行机构每年用于OPC的信贷额度不低于50亿元。</td>
+<td class="content-col">杭州征求意见：到2028年银行机构每年用于OPC信贷不低于50亿</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">228</span></td>
@@ -2460,7 +2386,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">104</td>
 <td class="">0</td>
-<td class="content-col">外交部：通过对话谈判和平解决核不扩散的热点问题。</td>
+<td class="content-col">外交部：通过对话谈判和平解决核不扩散热点问题</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">229</span></td>
@@ -2468,7 +2394,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">40</td>
 <td class="">0</td>
-<td class="content-col">美国针对埃博拉疫情入境限制影响刚果（金）队世界杯备战。</td>
+<td class="content-col">美国埃博拉入境限制影响刚果（金）队世界杯备战</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">230</span></td>
@@ -2476,7 +2402,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">40</td>
 <td class="">0</td>
-<td class="content-col">伊朗革命卫队：波斯湾安全是伊朗的红线。</td>
+<td class="content-col">伊朗革命卫队：波斯湾安全是伊朗的红线</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">231</span></td>
@@ -2484,7 +2410,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">38</td>
 <td class="">0</td>
-<td class="content-col">南非议会宣布成立弹劾委员会。</td>
+<td class="content-col">南非议会宣布成立弹劾委员会</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">232</span></td>
@@ -2492,7 +2418,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">38</td>
 <td class="">0</td>
-<td class="content-col">以色列中央银行将基准利率下调至3.75%，符合市场预期。</td>
+<td class="content-col">以色列央行将基准利率下调至3.75%符合预期</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">233</span></td>
@@ -2500,7 +2426,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">24</td>
 <td class="">1</td>
-<td class="content-col">港股IPO：燕文物流递表港交所。</td>
+<td class="content-col">燕文物流递表港交所</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">234</span></td>
@@ -2508,7 +2434,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">37</td>
 <td class="">0</td>
-<td class="content-col">日本前商社负责人警示石脑油供应趋紧，最早6月底现短缺。</td>
+<td class="content-col">日本前商社负责人警示石脑油供应趋紧，最早6月底现短缺</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">235</span></td>
@@ -2516,7 +2442,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">37</td>
 <td class="">0</td>
-<td class="content-col">机构：预测6月液晶电视面板价格继续全面持平。</td>
+<td class="content-col">机构预测6月液晶电视面板价格继续全面持平</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">236</span></td>
@@ -2524,7 +2450,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">36</td>
 <td class="">0</td>
-<td class="content-col">布伦特原油期货跌幅扩大至6%，报94.202美元/桶。</td>
+<td class="content-col">布伦特原油期货跌幅扩大至6%，报94.202美元/桶</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">237</span></td>
@@ -2532,7 +2458,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">35</td>
 <td class="">0</td>
-<td class="content-col">多重利空打压，乙二醇价格重挫。</td>
+<td class="content-col">多重利空打压，乙二醇价格重挫</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">238</span></td>
@@ -2540,7 +2466,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">34</td>
 <td class="">0</td>
-<td class="content-col">伊朗总统说不会屈服于外部压力和“过分要求”。</td>
+<td class="content-col">伊朗总统说不会屈服于外部压力和“过分要求”</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">239</span></td>
@@ -2548,7 +2474,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">34</td>
 <td class="">0</td>
-<td class="content-col">伊朗称将部署新型防空系统。</td>
+<td class="content-col">伊朗称将部署新型防空系统</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">240</span></td>
@@ -2556,7 +2482,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">34</td>
 <td class="">0</td>
-<td class="content-col">伊朗外交部：目前不讨论霍尔木兹海峡管理权细节。</td>
+<td class="content-col">伊朗外交部：目前不讨论霍尔木兹海峡管理权细节</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">241</span></td>
@@ -2564,7 +2490,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">22</td>
 <td class="">1</td>
-<td class="content-col">基本面偏弱，涤纶短纤价格重心下移。</td>
+<td class="content-col">基本面偏弱，涤纶短纤价格重心下移</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">242</span></td>
@@ -2572,7 +2498,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">34</td>
 <td class="">0</td>
-<td class="content-col">俄总统和巴林国王通电话讨论中东局势。</td>
+<td class="content-col">俄总统和巴林国王通电话讨论中东局势</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">243</span></td>
@@ -2580,7 +2506,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">34</td>
 <td class="">0</td>
-<td class="content-col">纳指ETF国泰(513100)将于2026年5月26日开市起至当日10:30停牌。</td>
+<td class="content-col">纳指ETF国泰将于5月26日开市起停牌</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">244</span></td>
@@ -2588,7 +2514,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">33</td>
 <td class="">0</td>
-<td class="content-col">伊朗全国已有20座机场恢复运营。</td>
+<td class="content-col">伊朗全国已有20座机场恢复运营</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">245</span></td>
@@ -2596,7 +2522,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">33</td>
 <td class="">0</td>
-<td class="content-col">尼日利亚总统提努布获提名参选2027年总统选举。</td>
+<td class="content-col">尼日利亚总统提努布获提名参选2027年总统选举</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">246</span></td>
@@ -2604,7 +2530,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">33</td>
 <td class="">0</td>
-<td class="content-col">多地强降雨持续，国家防总办公室组织多部门滚动会商部署防范应对。</td>
+<td class="content-col">多地强降雨持续，国家防总办公室组织多部门会商</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">247</span></td>
@@ -2612,7 +2538,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">21</td>
 <td class="">1</td>
-<td class="content-col">据我的钢铁网消息，5月25日，截至发稿，25家钢厂上调废钢采购价10-50元。</td>
+<td class="content-col">25家钢厂上调废钢采购价10-50元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">248</span></td>
@@ -2620,7 +2546,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">33</td>
 <td class="">0</td>
-<td class="content-col">印度信实集团4月份俄罗斯原油进口量环比下降38%。</td>
+<td class="content-col">印度信实集团4月俄罗斯原油进口量环比下降38%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">249</span></td>
@@ -2628,7 +2554,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">32</td>
 <td class="">0</td>
-<td class="content-col">纳指科技ETF景顺(159509)将于2026年5月26日开市起停牌。</td>
+<td class="content-col">纳指科技ETF景顺将于5月26日开市起停牌</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">250</span></td>
@@ -2636,39 +2562,39 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">79</td>
 <td class="">0</td>
-<td class="content-col">西班牙新增一例汉坦病毒感染病例。</td>
+<td class="content-col">西班牙新增一例汉坦病毒感染病例</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">251</span></td>
-<td class="">15:40</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">31</td>
-<td class="">0</td>
-<td class="content-col">三星非芯片部门工会申请叫停薪资投票。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">252</span></td>
-<td class="">21:34</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">75</td>
-<td class="">0</td>
-<td class="content-col">中国人民银行行长潘功胜会见法国央行行长德加洛。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">253</span></td>
-<td class="">21:04</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">31</td>
-<td class="">0</td>
-<td class="content-col">尼日利亚第一季度GDP同比增长3.89%。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">254</span></td>
 <td class="">18:49</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">76</td>
 <td class="">0</td>
-<td class="content-col">有研粉材：电子浆料业务有望继续高速放量。</td>
+<td class="content-col">有研粉材：电子浆料业务有望继续高速放量</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">252</span></td>
+<td class="">15:40</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">31</td>
+<td class="">0</td>
+<td class="content-col">三星非芯片部门工会申请叫停薪资投票</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">253</span></td>
+<td class="">21:34</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">75</td>
+<td class="">0</td>
+<td class="content-col">中国人民银行行长潘功胜会见法国央行行长德加洛</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">254</span></td>
+<td class="">21:04</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">31</td>
+<td class="">0</td>
+<td class="content-col">尼日利亚Q1 GDP同比增长3.89%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">255</span></td>
@@ -2676,7 +2602,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">31</td>
 <td class="">0</td>
-<td class="content-col">安徽省引江济淮集团有限公司纪委副书记裴看元接受审查调查。</td>
+<td class="content-col">安徽省引江济淮集团纪委副书记裴看元接受审查调查</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">256</span></td>
@@ -2684,7 +2610,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">30</td>
 <td class="">0</td>
-<td class="content-col">利弗莫尔证券显示，浙江金龙电机股份有限公司在港交所递交上市申请。</td>
+<td class="content-col">浙江金龙电机在港交所递交上市申请</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">257</span></td>
@@ -2692,7 +2618,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">29</td>
 <td class="">0</td>
-<td class="content-col">意大利10年期国债收益率跌至3月18日以来的最低点，报3.648%。</td>
+<td class="content-col">意大利10年期国债收益率跌至3月18日以来最低</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">258</span></td>
@@ -2700,7 +2626,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">70</td>
 <td class="">0</td>
-<td class="content-col">王毅会见巴基斯坦国防军司令兼陆军参谋长穆尼尔。</td>
+<td class="content-col">王毅会见巴基斯坦国防军司令兼陆军参谋长穆尼尔</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">259</span></td>
@@ -2708,7 +2634,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">29</td>
 <td class="">0</td>
-<td class="content-col">住建部：我国已基本实现垃圾分类全覆盖。</td>
+<td class="content-col">住建部：我国已基本实现垃圾分类全覆盖</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">260</span></td>
@@ -2716,7 +2642,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">28</td>
 <td class="">0</td>
-<td class="content-col">美方被曝敦促伊斯兰国家与以关系正常化，但“未获响应”。</td>
+<td class="content-col">美方被曝敦促伊斯兰国家与以关系正常化但未获响应</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">261</span></td>
@@ -2724,7 +2650,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">28</td>
 <td class="">0</td>
-<td class="content-col">尼日利亚2026年第一季度石油产量为155万桶/日。</td>
+<td class="content-col">尼日利亚2026年Q1石油产量155万桶/日</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">262</span></td>
@@ -2732,7 +2658,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">27</td>
 <td class="">0</td>
-<td class="content-col">日本监管机构敦促上市公司将现金用于业务投资，而非提高股东回报。</td>
+<td class="content-col">日本监管机构敦促上市公司将现金用于业务投资</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">263</span></td>
@@ -2740,7 +2666,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">27</td>
 <td class="">0</td>
-<td class="content-col">伊朗外交部：目前暂不派团前往巴基斯坦。</td>
+<td class="content-col">伊朗外交部：目前暂不派团前往巴基斯坦</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">264</span></td>
@@ -2748,7 +2674,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">26</td>
 <td class="">0</td>
-<td class="content-col">龙虎榜 达实智能7天6板，佛山系净卖出2.64亿元。</td>
+<td class="content-col">龙虎榜：达实智能7天6板，佛山系净卖出2.64亿元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">265</span></td>
@@ -2756,7 +2682,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">26</td>
 <td class="">0</td>
-<td class="content-col">德国10年期国债收益率跌至4月8日以来低点2.943%。</td>
+<td class="content-col">德国10年期国债收益率跌至4月8日以来低点</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">266</span></td>
@@ -2764,7 +2690,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">62</td>
 <td class="">0</td>
-<td class="content-col">中矿资源集团与秘鲁金达矿业签署秘鲁拉赫亚铜矿矿权合作协议。</td>
+<td class="content-col">中矿资源与秘鲁金达矿业签署秘鲁拉赫亚铜矿合作协议</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">267</span></td>
@@ -2772,7 +2698,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">61</td>
 <td class="">0</td>
-<td class="content-col">明确超龄劳动者权益，首部专门规章7月1日起施行。</td>
+<td class="content-col">明确超龄劳动者权益，首部专门规章7月1日起施行</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">268</span></td>
@@ -2780,7 +2706,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">25</td>
 <td class="">0</td>
-<td class="content-col">据重庆市纪委监委消息，重庆高新开发集团原党委书记、董事长杜国平被“双开”。</td>
+<td class="content-col">重庆高新开发集团原党委书记杜国平被“双开”</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">269</span></td>
@@ -2788,7 +2714,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">25</td>
 <td class="">0</td>
-<td class="content-col">欧洲央行管委Stournaras表示，必须避免采取过于限制性的政策。</td>
+<td class="content-col">欧洲央行管委：必须避免采取过于限制性的政策</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">270</span></td>
@@ -2796,7 +2722,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">24</td>
 <td class="">0</td>
-<td class="content-col">开源证券：维持哔哩哔哩-W“买入”评级，新游戏上线驱动成长。</td>
+<td class="content-col">开源证券维持哔哩哔哩“买入”评级</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">271</span></td>
@@ -2804,7 +2730,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">24</td>
 <td class="">0</td>
-<td class="content-col">伦敦证券交易所集团数据显示，欧元兑瑞士法郎跌至九周低点0.9095瑞郎。</td>
+<td class="content-col">欧元兑瑞士法郎跌至九周低点0.9095瑞郎</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">272</span></td>
@@ -2812,7 +2738,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">24</td>
 <td class="">0</td>
-<td class="content-col">思必驰科技股份有限公司科创板IPO已获上交所受理。</td>
+<td class="content-col">思必驰科技科创板IPO获受理，拟融资15.55亿元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">273</span></td>
@@ -2820,7 +2746,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">24</td>
 <td class="">0</td>
-<td class="content-col">上交所和中证指数决定修订上证智能家居指数的编制方案。</td>
+<td class="content-col">上交所和中证指数决定修订上证智能家居指数编制方案</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">274</span></td>
@@ -2828,7 +2754,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">23</td>
 <td class="">0</td>
-<td class="content-col">迫击炮弹爆炸致伊拉克民兵武装1死3伤。</td>
+<td class="content-col">迫击炮弹爆炸致伊拉克民兵武装1死3伤</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">275</span></td>
@@ -2836,7 +2762,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">23</td>
 <td class="">0</td>
-<td class="content-col">西班牙IBEX35指数日内涨幅达2%。</td>
+<td class="content-col">西班牙IBEX35指数日内涨幅达2%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">276</span></td>
@@ -2844,7 +2770,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">23</td>
 <td class="">0</td>
-<td class="content-col">意大利的FTSE MIB指数超过了2000年创下的历史收盘高点。</td>
+<td class="content-col">意大利FTSE MIB指数超过2000年历史收盘高点</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">277</span></td>
@@ -2852,7 +2778,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">23</td>
 <td class="">0</td>
-<td class="content-col">日本首相高市早苗表示，追加预算支出将略高于3万亿日元。</td>
+<td class="content-col">日本首相高市早苗：追加预算支出略高于3万亿日元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">278</span></td>
@@ -2860,7 +2786,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">55</td>
 <td class="">0</td>
-<td class="content-col">深圳拟取消垃圾“定时定点”投放，个人乱扔最高罚1000元。</td>
+<td class="content-col">深圳拟取消垃圾“定时定点”投放，个人乱扔最高罚1000元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">279</span></td>
@@ -2868,7 +2794,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">22</td>
 <td class="">0</td>
-<td class="content-col">日本羽田机场一架航班因故障紧急返航。</td>
+<td class="content-col">日本羽田机场一架航班因故障紧急返航</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">280</span></td>
@@ -2876,7 +2802,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">22</td>
 <td class="">0</td>
-<td class="content-col">据马来西亚棕榈油协会（MPOA）发布的数据，马来西亚5月1-20日棕榈油产量预估减少2.19%。</td>
+<td class="content-col">马来西亚5月1-20日棕榈油产量预估减少2.19%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">281</span></td>
@@ -2884,7 +2810,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">22</td>
 <td class="">0</td>
-<td class="content-col">广期所品种仓单及变化如下：碳酸锂期货仓单52143手，环比上个交易日减少904手。</td>
+<td class="content-col">广期所碳酸锂期货仓单52143手，环比减少904手</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">282</span></td>
@@ -2892,55 +2818,55 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">21</td>
 <td class="">0</td>
-<td class="content-col">卡利巴夫再次当选伊朗伊斯兰议会议长。</td>
+<td class="content-col">卡利巴夫再次当选伊朗伊斯兰议会议长</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">283</span></td>
-<td class="">21:30</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">51</td>
-<td class="">0</td>
-<td class="content-col">航行警告，南海实弹射击训练。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">284</span></td>
-<td class="">21:03</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">52</td>
-<td class="">0</td>
-<td class="content-col">大宗商品价格上涨提振加拿大最新季度盈利。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">285</span></td>
-<td class="">20:45</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">52</td>
-<td class="">0</td>
-<td class="content-col">航行警告，渤海执行军事任务。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">286</span></td>
-<td class="">19:38</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">21</td>
-<td class="">0</td>
-<td class="content-col">意大利10年期国债收益率跌至自4月17日以来的最低点，报3.657%。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">287</span></td>
-<td class="">19:05</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">21</td>
-<td class="">0</td>
-<td class="content-col">世卫组织：汉坦病毒疫情已趋于稳定。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">288</span></td>
 <td class="">08:03</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">53</td>
 <td class="">0</td>
-<td class="content-col">直播间摆拍“绑架”吸粉被查处，公安部通报网络谣言典型案例。</td>
+<td class="content-col">直播间摆拍“绑架”吸粉被查处，公安部通报典型案例</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">284</span></td>
+<td class="">21:30</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">51</td>
+<td class="">0</td>
+<td class="content-col">航行警告：南海实弹射击训练</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">285</span></td>
+<td class="">21:03</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">52</td>
+<td class="">0</td>
+<td class="content-col">大宗商品价格上涨提振加拿大最新季度盈利</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">286</span></td>
+<td class="">20:45</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">52</td>
+<td class="">0</td>
+<td class="content-col">航行警告：渤海执行军事任务</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">287</span></td>
+<td class="">19:38</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">21</td>
+<td class="">0</td>
+<td class="content-col">意大利10年期国债收益率跌至4月17日以来最低</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">288</span></td>
+<td class="">19:05</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">21</td>
+<td class="">0</td>
+<td class="content-col">世卫组织：汉坦病毒疫情已趋于稳定</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">289</span></td>
@@ -2948,7 +2874,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">50</td>
 <td class="">0</td>
-<td class="content-col">中国贸促会会长任鸿斌会见新加坡律政部长兼内政部第二部长唐振辉一行。</td>
+<td class="content-col">中国贸促会会长任鸿斌会见新加坡律政部长</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">290</span></td>
@@ -2956,7 +2882,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">19</td>
 <td class="">0</td>
-<td class="content-col">据马来西亚独立检验机构AmSpec，马来西亚5月1-25日棕榈油出口量为947430吨。</td>
+<td class="content-col">马来西亚5月1-25日棕榈油出口量947430吨</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">291</span></td>
@@ -2964,7 +2890,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">31</td>
 <td class="">1</td>
-<td class="content-col">日本计划编制3万亿日元补充预算应对能源涨价冲击。</td>
+<td class="content-col">日本计划编制3万亿日元补充预算应对能源涨价</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">292</span></td>
@@ -2972,7 +2898,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">19</td>
 <td class="">0</td>
-<td class="content-col">利弗莫尔证券显示，国联绿色科技(无锡)股份有限公司向港交所提交上市申请书。</td>
+<td class="content-col">国联绿色科技向港交所提交上市申请</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">293</span></td>
@@ -2980,7 +2906,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">18</td>
 <td class="">0</td>
-<td class="content-col">利弗莫尔证券显示，闪回科技有限公司在港交所提交上市申请。</td>
+<td class="content-col">闪回科技在港交所提交上市申请</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">294</span></td>
@@ -2988,7 +2914,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">18</td>
 <td class="">0</td>
-<td class="content-col">据吉林省纪委监委消息，吉林省粮食和物资储备局原副局长孙浩明被“双开”。</td>
+<td class="content-col">吉林省粮食和物资储备局原副局长孙浩明被“双开”</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">295</span></td>
@@ -2996,7 +2922,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">18</td>
 <td class="">0</td>
-<td class="content-col">欧洲斯托克50指数开盘涨1.1%，德国DAX指数涨1.1%。</td>
+<td class="content-col">欧洲斯托克50开盘涨1.1%，德国DAX涨1.1%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">296</span></td>
@@ -3004,7 +2930,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">17</td>
 <td class="">0</td>
-<td class="content-col">新加坡海峡时报指数收盘价基本持平，报5,070.55点。</td>
+<td class="content-col">新加坡海峡时报指数收盘基本持平</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">297</span></td>
@@ -3012,7 +2938,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">17</td>
 <td class="">0</td>
-<td class="content-col">印度国家证券存管有限公司(NSDL)数据显示，全球基金在上一个交易日净出售526亿卢比印度股票。</td>
+<td class="content-col">全球基金上一个交易日净出售526亿卢比印度股票</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">298</span></td>
@@ -3020,7 +2946,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">16</td>
 <td class="">0</td>
-<td class="content-col">意大利2年期国债收益率下跌12个基点至2.706%。</td>
+<td class="content-col">意大利2年期国债收益率下跌12个基点</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">299</span></td>
@@ -3028,7 +2954,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">16</td>
 <td class="">0</td>
-<td class="content-col">JSW钢铁与Bharatia公司及冰岛碳素公司签署战略备忘录，拟在印度开发绿色甲醇项目。</td>
+<td class="content-col">JSW钢铁与Bharatia公司签署绿色甲醇项目备忘录</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">300</span></td>
@@ -3036,7 +2962,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">16</td>
 <td class="">0</td>
-<td class="content-col">年内公募自购34亿元，权益类基金占比56.14%。</td>
+<td class="content-col">年内公募自购34亿元，权益类基金占比56.14%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">301</span></td>
@@ -3044,7 +2970,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">38</td>
 <td class="">0</td>
-<td class="content-col">国务院任免国家工作人员，任命高松为北京大学校长。</td>
+<td class="content-col">国务院任命高松为北京大学校长</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">302</span></td>
@@ -3052,7 +2978,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">15</td>
 <td class="">0</td>
-<td class="content-col">截至2026年5月25日，上海出口集装箱结算运价指数（欧洲航线）报1863.7点。</td>
+<td class="content-col">上海出口集装箱结算运价指数（欧洲航线）报1863.7点</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">303</span></td>
@@ -3060,7 +2986,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">37</td>
 <td class="">0</td>
-<td class="content-col">武契奇：中国的友谊对塞尔维亚至关重要。</td>
+<td class="content-col">武契奇：中国的友谊对塞尔维亚至关重要</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">304</span></td>
@@ -3068,7 +2994,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">14</td>
 <td class="">0</td>
-<td class="content-col">印尼马鲁古省附近发生5.2级地震。</td>
+<td class="content-col">印尼马鲁古省附近发生5.2级地震</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">305</span></td>
@@ -3076,7 +3002,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">34</td>
 <td class="">0</td>
-<td class="content-col">宜人智科：未开展任何财富管理类相关业务。</td>
+<td class="content-col">宜人智科：未开展任何财富管理类相关业务</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">306</span></td>
@@ -3084,7 +3010,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">14</td>
 <td class="">0</td>
-<td class="content-col">俄称遭乌导弹和无人机袭击。</td>
+<td class="content-col">俄称遭乌导弹和无人机袭击</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">307</span></td>
@@ -3092,7 +3018,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">13</td>
 <td class="">0</td>
-<td class="content-col">惠誉将铠侠评级上调至“BBB-”，展望稳定。</td>
+<td class="content-col">惠誉将铠侠评级上调至“BBB-”，展望稳定</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">308</span></td>
@@ -3100,7 +3026,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">32</td>
 <td class="">0</td>
-<td class="content-col">杜旭亮任杭州市代市长。</td>
+<td class="content-col">杜旭亮任杭州市代市长</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">309</span></td>
@@ -3108,31 +3034,31 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">31</td>
 <td class="">0</td>
-<td class="content-col">习近平举行仪式欢迎塞尔维亚总统武契奇访华。</td>
+<td class="content-col">习近平举行仪式欢迎塞尔维亚总统武契奇访华</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">310</span></td>
-<td class="">18:33</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">12</td>
-<td class="">0</td>
-<td class="content-col">巴基斯坦股指初步收涨2.4%至171,920.80点。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">311</span></td>
-<td class="">17:15</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">12</td>
-<td class="">0</td>
-<td class="content-col">英镑兑美元涨0.5%至1.3494，创5月14日以来高位。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">312</span></td>
 <td class="">19:27</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">12</td>
 <td class="">0</td>
-<td class="content-col">巴西12个月通胀率预计为4.07%，此前预计为3.95%。</td>
+<td class="content-col">巴西12个月通胀率预计为4.07%</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">311</span></td>
+<td class="">18:33</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">12</td>
+<td class="">0</td>
+<td class="content-col">巴基斯坦股指初步收涨2.4%</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">312</span></td>
+<td class="">17:15</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">12</td>
+<td class="">0</td>
+<td class="content-col">英镑兑美元涨0.5%至1.3494</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">313</span></td>
@@ -3140,7 +3066,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">29</td>
 <td class="">0</td>
-<td class="content-col">习近平同塞尔维亚总统武契奇会谈。</td>
+<td class="content-col">习近平同塞尔维亚总统武契奇会谈</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">314</span></td>
@@ -3148,7 +3074,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">29</td>
 <td class="">0</td>
-<td class="content-col">习近平将会见巴基斯坦总理夏巴兹。</td>
+<td class="content-col">习近平将会见巴基斯坦总理夏巴兹</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">315</span></td>
@@ -3156,7 +3082,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">27</td>
 <td class="">0</td>
-<td class="content-col">工信部开展2026年“数字适老中国行”活动。</td>
+<td class="content-col">工信部开展2026年“数字适老中国行”活动</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">316</span></td>
@@ -3164,7 +3090,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">26</td>
 <td class="">0</td>
-<td class="content-col">习近平将举行仪式欢迎塞尔维亚总统武契奇访华。</td>
+<td class="content-col">习近平将举行仪式欢迎塞尔维亚总统武契奇访华</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">317</span></td>
@@ -3172,7 +3098,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">10</td>
 <td class="">0</td>
-<td class="content-col">德国两年期国债收益率日内跌9.7个基点至2.543%。</td>
+<td class="content-col">德国两年期国债收益率日内跌9.7个基点</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">318</span></td>
@@ -3180,7 +3106,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">24</td>
 <td class="">0</td>
-<td class="content-col">珍宝岛药业完成管理层换届，步入“战略+运营”双核治理新阶段。</td>
+<td class="content-col">珍宝岛药业完成管理层换届</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">319</span></td>
@@ -3188,7 +3114,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">9</td>
 <td class="">0</td>
-<td class="content-col">标普维持以色列电气公司的评级为‘BBB+’；展望为稳定。</td>
+<td class="content-col">标普维持以色列电气公司评级为‘BBB+’</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">320</span></td>
@@ -3196,7 +3122,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">23</td>
 <td class="">0</td>
-<td class="content-col">墨西哥对原产于中国的镜用玻璃启动反倾销调查。</td>
+<td class="content-col">墨西哥对原产于中国的镜用玻璃启动反倾销调查</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">321</span></td>
@@ -3204,7 +3130,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">23</td>
 <td class="">0</td>
-<td class="content-col">习近平将同塞尔维亚总统武契奇会谈。</td>
+<td class="content-col">习近平将同塞尔维亚总统武契奇会谈</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">322</span></td>
@@ -3212,7 +3138,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">22</td>
 <td class="">0</td>
-<td class="content-col">王毅同新加坡外长维文会谈。</td>
+<td class="content-col">王毅同新加坡外长维文会谈</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">323</span></td>
@@ -3220,7 +3146,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">22</td>
 <td class="">0</td>
-<td class="content-col">马来西亚5月1日至25日的棕榈油出口量预计下降14.5%至1019777公吨。</td>
+<td class="content-col">马来西亚5月1-25日棕榈油出口量预计下降14.5%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">324</span></td>
@@ -3228,7 +3154,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">21</td>
 <td class="">0</td>
-<td class="content-col">墨西哥对原产于中国的塑料胶带启动反倾销调查。</td>
+<td class="content-col">墨西哥对原产于中国的塑料胶带启动反倾销调查</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">325</span></td>
@@ -3236,7 +3162,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">21</td>
 <td class="">0</td>
-<td class="content-col">中国和塞尔维亚将发表两份联合声明。</td>
+<td class="content-col">中国和塞尔维亚将发表两份联合声明</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">326</span></td>
@@ -3244,7 +3170,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">20</td>
 <td class="">0</td>
-<td class="content-col">以军对黎巴嫩南部10个村庄发布撤离警告。</td>
+<td class="content-col">以军对黎巴嫩南部10个村庄发布撤离警告</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">327</span></td>
@@ -3252,7 +3178,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">19</td>
 <td class="">0</td>
-<td class="content-col">国债期货收盘多数上涨，30年期主力合约涨0.23%。</td>
+<td class="content-col">国债期货收盘多数上涨，30年期主力合约涨0.23%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">328</span></td>
@@ -3260,7 +3186,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">19</td>
 <td class="">0</td>
-<td class="content-col">商务部国际贸易谈判代表兼副部长李成钢会见新加坡永续发展与环境部部长。</td>
+<td class="content-col">商务部国际贸易谈判代表李成钢会见新加坡部长</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">329</span></td>
@@ -3268,7 +3194,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">15</td>
 <td class="">0</td>
-<td class="content-col">习近平会见巴基斯坦总理夏巴兹。</td>
+<td class="content-col">习近平会见巴基斯坦总理夏巴兹</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">330</span></td>
@@ -3276,7 +3202,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">9</td>
 <td class="">1</td>
-<td class="content-col">现货钯金上涨近3%至每盎司1,388.58美元。</td>
+<td class="content-col">现货钯金上涨近3%至每盎司1388.58美元</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">331</span></td>
@@ -3284,7 +3210,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">13</td>
 <td class="">0</td>
-<td class="content-col">以称遭黎真主党无人机袭击，多地拉响防空警报。</td>
+<td class="content-col">以称遭黎真主党无人机袭击，多地拉响防空警报</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">332</span></td>
@@ -3292,7 +3218,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">全球最大铝土矿生产国计划下月推出出口管制措施，2025年我国铝土矿对外依存度升至77%左右。</td>
+<td class="content-col">全球最大铝土矿生产国计划出口管制，我国对外依存度77%</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">333</span></td>
@@ -3300,7 +3226,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">华为以381款芯片证明可行性！半导体迎来“韬（τ）定律”，专家预计封装技术等过去被视为“配角”的领域将逐步站到关键位置。</td>
+<td class="content-col">华为以381款芯片证明“韬定律”，封装技术站上关键位置</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">334</span></td>
@@ -3308,7 +3234,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">PCB+先进封装，mSAP工艺产线已量产，支持多种高密度先进封装技术。</td>
+<td class="content-col">PCB+先进封装，mSAP工艺产线已量产，高端PCB深度绑定CPU</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">335</span></td>
@@ -3316,7 +3242,7 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">海外AI公司商业变现迎来里程碑式突破，盈利能力加速兑现。</td>
+<td class="content-col">海外AI公司商业变现里程碑突破，BBU电芯需求旺盛</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">336</span></td>
@@ -3324,71 +3250,63 @@ body {
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">半导体迎来“韬（τ）定律”，华为论文指明了多个技术方向，快速梳理华为韬定律相关标的。</td>
+<td class="content-col">半导体“韬定律”指明技术方向，快速梳理相关标的</td>
 </tr>
 <tr>
 <td class=""><span class="rank-num">337</span></td>
-<td class="">22:08</td>
-<td class=""><span class="tag tag-c">C</span></td>
-<td class="">0</td>
-<td class="">0</td>
-<td class="content-col">芯片+光通信+液冷+机器人+陶瓷基板+电力+商业航天！这家公司参股光模块产业链陶瓷基板企业。</td>
-</tr>
-<tr>
-<td class=""><span class="rank-num">338</span></td>
 <td class="">21:13</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">全球首个！三星电子完成900层超高堆叠3D NAND闪存原型开发。</td>
+<td class="content-col">三星完成900层3D NAND原型，存储产业链高景气维持</td>
 </tr>
 <tr>
-<td class=""><span class="rank-num">339</span></td>
+<td class=""><span class="rank-num">338</span></td>
 <td class="">20:58</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">宇树科技科创板IPO将于6月1日上会！机构称2026年人形机器人产业已进入核心阶段。</td>
+<td class="content-col">宇树科技IPO上会，人形机器人产业进入核心验证期</td>
 </tr>
 <tr>
-<td class=""><span class="rank-num">340</span></td>
+<td class=""><span class="rank-num">339</span></td>
 <td class="">20:25</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">AI芯片封装+HTCC管壳+光刻机，这家公司产品应用于半导体光刻/刻蚀设备。</td>
+<td class="content-col">AI芯片封装+HTCC管壳+光刻机，受益算力+半导体需求</td>
 </tr>
 <tr>
-<td class=""><span class="rank-num">341</span></td>
+<td class=""><span class="rank-num">340</span></td>
 <td class="">20:19</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">行业持续保持高景气，公司订单量回升，核心产品电子封装材料满产满销。</td>
+<td class="content-col">行业高景气，电子封装材料满产满销，MLCC离型膜批量供货</td>
 </tr>
 <tr>
-<td class=""><span class="rank-num">342</span></td>
+<td class=""><span class="rank-num">341</span></td>
 <td class="">20:02</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">三星电子完成900层超高堆叠3D NAND闪存原型开发，机构称3D NAND对刻蚀设备的需求比例将显著加大。</td>
+<td class="content-col">三星900层3D NAND，刻蚀设备需求加大</td>
 </tr>
 <tr>
-<td class=""><span class="rank-num">343</span></td>
+<td class=""><span class="rank-num">342</span></td>
 <td class="">19:13</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">先进封装+存储芯片封测，处于存储器封测领域国内第一方队。</td>
+<td class="content-col">先进封装+存储芯片封测，国内第一方队，受益AMD业务</td>
 </tr>
 <tr>
-<td class=""><span class="rank-num">344</span></td>
+<td class=""><span class="rank-num">343</span></td>
 <td class="">17:21</td>
 <td class=""><span class="tag tag-c">C</span></td>
 <td class="">0</td>
 <td class="">0</td>
-<td class="content-col">从“成像光学”向“算力光互联”发展，公司去年起积极开展算力光器件和光模块的相关产品研发。</td>
+<td class="content-col">从“成像光学”向“算力光互联”发展，打造第二增长曲线</td>
 </tr>
 </tbody></table>
 <div class="footer">Generated by CLS Daily Summary Tool &copy; 2026年05月26日</div>
