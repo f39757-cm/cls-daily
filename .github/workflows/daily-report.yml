@@ -32,8 +32,33 @@ jobs:
         run: |
           cd cls_tool
           python main.py
-          cp outputs/CLS_早报_*.md ../reports/ 2>/dev/null || true
-          cp outputs/CLS_早报_*.html ../reports/ 2>/dev/null || true
+          # Copy generated files to reports/
+          for f in outputs/CLS_早报_*.md; do cp "$f" ../reports/ 2>/dev/null; done
+          for f in outputs/CLS_早报_*.html; do cp "$f" ../reports/ 2>/dev/null; done
+          # Update reports.js with the new date
+          DATE_STR=$(date +%Y%m%d)
+          DATE_LABEL=$(date +%Y年%m月%d日)
+          python -c "
+import json, os
+js_path = '../reports.js'
+with open(js_path, 'r', encoding='utf-8') as f:
+    content = f.read()
+# Extract existing list
+start = content.index('[')
+end = content.rindex(']') + 1
+arr = json.loads(content[start:end])
+# Prepend new date if not already first
+entry = {'date': '$DATE_STR', 'label': '$DATE_LABEL', 'file': 'reports/CLS_早报_$DATE_STR.html'}
+if not arr or arr[0].get('date') != '$DATE_STR':
+    arr.insert(0, entry)
+    new_json = json.dumps(arr, ensure_ascii=False, indent=2)
+    new_content = content[:start] + new_json + content[end:]
+    with open(js_path, 'w', encoding='utf-8') as f:
+        f.write(new_content)
+    print(f'Updated reports.js with date $DATE_STR')
+else:
+    print(f'Date $DATE_STR already in reports.js')
+"
 
       - name: Commit and push reports
         run: |
