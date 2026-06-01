@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLS 早报</title>
+<style>
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+    background: #f4f5f7;
+    color: #1a1a2e;
+    line-height: 1.6;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 30px 24px; }
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff; padding: 30px 36px; border-radius: 8px; margin-bottom: 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+.header h1 { font-size: 26px; font-weight: 700; margin-bottom: 8px; letter-spacing: 1px; }
+.header .meta { font-size: 13px; opacity: 0.85; margin-top: 10px; }
+.header .meta span { margin-right: 20px; }
+.header .verdict {
+    margin-top: 18px; padding: 14px 18px; background: rgba(255,255,255,0.1);
+    border-left: 3px solid #e94560; border-radius: 0 6px 6px 0;
+    font-size: 14px; line-height: 1.7;
+}
+
+/* Core verdict banner */
+.verdict-banner {
+    background: #fff5f5; padding: 16px 20px; border-radius: 8px;
+    border-left: 4px solid #e94560; margin: 12px 0 20px;
+    font-size: 18px; line-height: 1.8; color: #e94560;
+    box-shadow: 0 1px 6px rgba(233,69,96,0.1);
+}
+
+/* Verdict section (## 核心判断) */
+.verdict-section {
+    background: #fff; border-radius: 8px; padding: 24px 28px;
+    margin: 16px 0 24px; box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    border-top: 4px solid #e94560;
+}
+.verdict-section .section-title {
+    border-bottom: none; margin-top: 0; margin-bottom: 14px;
+    color: #e94560; font-size: 22px;
+}
+.verdict-content p { font-size: 15px; line-height: 1.8; margin: 6px 0; }
+.verdict-content strong { color: #0f3460; }
+.verdict-content ul, .verdict-content ol { margin: 8px 0 8px 20px; font-size: 15px; line-height: 1.7; }
+.verdict-content li { margin-bottom: 4px; }
+
+/* Section titles */
+.section-title {
+    font-size: 20px; font-weight: 700; color: #0f3460;
+    border-bottom: 3px solid #e94560; padding-bottom: 8px;
+    margin: 28px 0 16px;
+}
+
+/* Ranking table */
+.rank-table {
+    width: 100%; border-collapse: collapse; margin: 16px 0 24px;
+    background: #fff; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06); font-size: 14px;
+}
+.rank-table thead th {
+    background: #0f3460; color: #fff; padding: 10px 10px;
+    font-weight: 600; text-align: center; font-size: 13px;
+}
+.rank-table thead th.th-important {
+    color: #ff6b6b; font-size: 15px; font-weight: 800;
+}
+.rank-table tbody td {
+    padding: 8px 10px; border-bottom: 1px solid #eee;
+    text-align: center; vertical-align: middle;
+}
+.rank-table tbody tr:hover { background: #f8f9ff; }
+.rank-table .rank-num { font-weight: 700; color: #e94560; font-size: 16px; }
+.rank-table .title-col { text-align: left; font-weight: 500; }
+.rank-table .impact-col { text-align: left; font-size: 14px; color: #444; max-width: 400px; }
+.rank-table .stars { color: #f5a623; white-space: nowrap; font-size: 14px; letter-spacing: 1px; }
+
+/* Analysis card */
+.analysis-card {
+    background: #fff; border-radius: 8px; padding: 22px 28px;
+    margin: 16px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    border-top: 4px solid #e94560;
+}
+.analysis-card .card-title {
+    font-size: 17px; font-weight: 700; color: #1a1a2e; margin-bottom: 12px;
+}
+.analysis-card .card-level {
+    display: inline-block; padding: 3px 10px; border-radius: 3px;
+    font-size: 16px; font-weight: 800; color: #e94560;
+    background: #fff5f5; border: 1px solid #e94560;
+    margin-right: 4px;
+}
+.analysis-card .card-meta {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 10px;
+    font-size: 13px; color: #777;
+    line-height: 1.4;
+}
+.analysis-card .card-meta-inline {
+    display: inline-block; margin-right: 18px; margin-bottom: 8px;
+    font-size: 13px; color: #777; line-height: 1.4;
+}
+.analysis-card .card-meta .stars { color: #f5a623; font-size: 16px; }
+.analysis-card .logic {
+    background: #fff8f0; padding: 12px 16px; border-radius: 6px;
+    font-size: 14px; color: #8b4513; margin-bottom: 14px;
+    border-left: 3px solid #f5a623;
+}
+.analysis-card h4 {
+    font-size: 15px; font-weight: 700; color: #0f3460;
+    margin: 10px 0 4px; padding-bottom: 2px; border-bottom: 1px dashed #ddd;
+    line-height: 1.4;
+}
+.analysis-card h4.perspective-domestic {
+    color: #c0392b; border-bottom-color: #e94560; font-size: 17px;
+}
+.analysis-card h4.perspective-intl {
+    color: #0e8c6a; border-bottom-color: #0e8c6a; font-size: 17px;
+}
+/* When a perspective h4 is immediately followed by another h4, make it inline */
+.analysis-card h4.perspective-domestic + h4,
+.analysis-card h4.perspective-intl + h4 {
+    margin-top: 0; padding-top: 0; border-top: none;
+}
+.analysis-card h4.perspective-domestic + h4::before {
+    content: 'B8  ';
+    color: #c0392b;
+}
+.analysis-card h4.perspective-intl + h4::before {
+    content: 'B8  ';
+    color: #0e8c6a;
+}
+.analysis-card ul { margin: 4px 0 8px 18px; font-size: 14px; line-height: 1.5; }
+.analysis-card ul li { margin-bottom: 2px; }
+.bull { color: #e94560; font-weight: 600; }
+.bear { color: #2ecc71; font-weight: 600; }
+
+/* Sector tags */
+.tag { display: inline-block; padding: 2px 8px; border-radius: 3px;
+    font-size: 11px; font-weight: 600; margin-right: 4px; }
+.tag-a { background: #ffe0e0; color: #c0392b; }
+.tag-b { background: #fff3cd; color: #856404; }
+.tag-c { background: #e8e8e8; color: #555; }
+
+/* Emotion section */
+.emotion-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin: 16px 0;
+}
+.emotion-item {
+    background: #fff; padding: 18px 20px; border-radius: 8px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+}
+.emotion-item .label { font-size: 11px; color: #999; text-transform: uppercase; }
+.emotion-item .value { font-size: 16px; font-weight: 700; color: #0f3460; margin-top: 4px; }
+
+/* Risk list */
+.risk-list { list-style: none; }
+.risk-list li {
+    padding: 10px 14px; margin: 6px 0; background: #fff5f5;
+    border-left: 3px solid #e94560; border-radius: 0 6px 6px 0;
+    font-size: 13px;
+}
+.risk-list li::before { content: '⚠ '; }
+
+.risk-item {
+    padding: 6px 12px; margin: 3px 0; background: #fff5f5;
+    border-left: 3px solid #e94560; border-radius: 0 6px 6px 0;
+    font-size: 13px; line-height: 1.5;
+}
+.risk-heading {
+    font-size: 15px; font-weight: 800; color: #e94560;
+    margin: 10px 0 4px;
+}
+
+/* Full telegram table */
+.telegram-table {
+    width: 100%; border-collapse: collapse; font-size: 12px;
+    background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+.telegram-table thead th {
+    background: #16213e; color: #fff; padding: 10px 8px;
+    font-weight: 500; font-size: 12px;
+}
+.telegram-table thead th:first-child { width: 42px; }
+.telegram-table thead th:nth-child(2) { width: 48px; }
+.telegram-table thead th:nth-child(3) { width: 38px; }
+.telegram-table thead th:nth-child(4) { width: 48px; }
+.telegram-table thead th:nth-child(5) { width: 48px; }
+.telegram-table thead th:last-child { width: auto; }
+.telegram-table tbody td {
+    padding: 5px 8px; border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+.telegram-table tbody td:first-child,
+.telegram-table tbody td:nth-child(2),
+.telegram-table tbody td:nth-child(3),
+.telegram-table tbody td:nth-child(4),
+.telegram-table tbody td:nth-child(5) {
+    text-align: center;
+}
+.telegram-table tbody td:last-child {
+    text-align: left; white-space: normal; word-break: break-all;
+}
+.telegram-table tbody tr:nth-child(even) { background: #fafafa; }
+.telegram-table .lv-S { background: #c0392b; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
+.telegram-table .lv-A { background: #e74c3c; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
+.telegram-table .lv-B { background: #f39c12; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
+.telegram-table .lv-C { background: #bbb; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 10px; }
+
+.footer {
+    text-align: center; margin-top: 40px; padding: 20px;
+    color: #999; font-size: 12px; border-top: 1px solid #eee;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header"><h1>每日早报深度分析：2026年06月01日（周一）交易日</h1></div>
+
+<div class="verdict-section">
+<h2 class="section-title" style="margin-top:0">核心判断</h2>
+<div class="verdict-content">
+<p>*   <strong>一句话定调</strong>: 今日市场核心矛盾在于<strong>“滞胀”风险升温与AI产业趋势强化的激烈博弈</strong>。中东地缘冲突推高油价，叠加国内PMI数据疲软，压制市场风险偏好；而AI算力产业链（锡、PCB、电子布）供需紧张与科技巨头IPO上会，则构成结构性主线。</p>
+<p>*   <strong>3个关键信号</strong>:</p>
+<p>1.  <strong>WTI原油突破90美元</strong>：中东冲突外溢效应加剧，全球“滞胀”交易逻辑强化，对A股整体估值形成压制，尤其利空中下游制造业。</p>
+<p>2.  <strong>5月PMI回落至50.0%</strong>：经济复苏动能边际减弱，市场对政策加码的预期升温，但短期基本面支撑不足，指数层面难有突破。</p>
+<p>3.  <strong>宇树科技IPO上会 &amp; 锡价暴涨</strong>：AI从“软创新”向“硬制造”传导的产业趋势得到确认，算力基建上游的稀缺资源与核心零部件成为市场最强主线。</p>
+<p>*   <strong>策略一句话</strong>: <strong>防御为主，聚焦AI上游。</strong> 降低整体仓位，规避受油价和利率压制的高估值板块，将核心仓位集中在AI算力基建的上游材料（锡、电子布）和核心硬件（PCB），利用市场震荡逢低布局。</p>
+</div></div>
+<h2 class="section-title">一、重要性排序总览</h2>
+<table class="rank-table">
+<thead><tr>
+<th class="">排名</th>
+<th class="">时间</th>
+<th class="">等级</th>
+<th class="">标题概述</th>
+<th class="">重要度</th>
+<th class="th-important">核心影响</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class=""><span class="rank-num">1</span></td>
+<td class="">06:09</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">WTI原油期货向上触及90美元/桶，日内上涨3.02%</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">全球滞胀风险加剧，压制A股整体估值，利好能源股，利空中下游制造。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">2</span></td>
+<td class="">08:24</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">5月制造业PMI为50.0%，比上月下降0.3个百分点</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">经济复苏动能减弱，市场对政策预期升温，但短期基本面承压。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">3</span></td>
+<td class="">23:23</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">算力金属锡价格暴涨，半年飙涨40%</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">AI算力需求引爆上游稀缺资源，锡成为“新时代石油”，产业链景气度确认。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">4</span></td>
+<td class="">21:52</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">宇树科技科创板IPO将于6月1日上会</td>
+<td class=""><span class="stars">★★★★★</span></td>
+<td class="impact-col">人形机器人龙头登陆A股，标志性事件，将引爆机器人及AI硬件产业链估值。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">5</span></td>
+<td class="">08:05</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">日韩股市创新高，韩国KOSPI指数上升1.1%</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">亚太市场情绪高涨，但A股走势分化，凸显外资对中国资产的谨慎态度。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">6</span></td>
+<td class="">23:40</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">资源存量趋紧，锡产业链加速向循环化发展</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">锡矿供给刚性确认，长期涨价逻辑确立，利好拥有再生锡技术的龙头企业。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">7</span></td>
+<td class="">08:09</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="title-col">招商证券：高端电子布涨价预期充分，持续关注龙头企业</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">AI算力链“卖水人”逻辑扩散，电子布成为继PCB后又一紧缺环节。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">8</span></td>
+<td class="">22:11</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="title-col">MCU巨头意法半导体年内二次涨价</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">半导体周期复苏信号明确，但成本压力向中下游传导，关注国产替代机会。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">9</span></td>
+<td class="">06:28</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="title-col">多家PCB上市公司发布扩产计划</td>
+<td class=""><span class="stars">★★★★☆</span></td>
+<td class="impact-col">AI服务器需求强劲，PCB产业链高景气度得到验证，扩产计划强化业绩确定性。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">10</span></td>
+<td class="">01:54</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">伊朗外长：伊美谈判和信息交换仍在进行中</td>
+<td class=""><span class="stars">★★★☆☆</span></td>
+<td class="impact-col">地缘风险短期难以解除，油价高位震荡格局延续，市场需持续消化不确定性。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">11</span></td>
+<td class="">23:31</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="title-col">6家保险资金押注长鑫科技，科创企业密集冲刺资本市场</td>
+<td class=""><span class="stars">★★★☆☆</span></td>
+<td class="impact-col">长线资金布局硬科技，科创板IPO热潮为市场提供新的投资标的和估值锚。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">12</span></td>
+<td class="">06:14</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="title-col">A股6月将延续高位震荡，科技主线或内部聚焦</td>
+<td class=""><span class="stars">★★★☆☆</span></td>
+<td class="impact-col">机构共识：指数无趋势，结构为王，科技内部将从普涨转向聚焦核心环节。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">13</span></td>
+<td class="">06:31</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="title-col">南向资金密集扫货港股科技股，对多只标的持仓倍增</td>
+<td class=""><span class="stars">★★★☆☆</span></td>
+<td class="impact-col">港股科技股估值洼地效应显现，内外资共振，对A股科技板块有映射作用。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">14</span></td>
+<td class="">08:32</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="title-col">韩国KOSPI指数上升2%至8,646.96点，续创历史新高</td>
+<td class=""><span class="stars">★★★☆☆</span></td>
+<td class="impact-col">韩国芯片出口数据强劲，强化全球半导体景气周期，利好A股半导体设备材料。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">15</span></td>
+<td class="">08:24</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="title-col">《求是》杂志发表习近平总书记重要文章《前瞻布局和发展未来产业》</td>
+<td class=""><span class="stars">★★★☆☆</span></td>
+<td class="impact-col">政策定调未来产业（量子、生物制造），为科技主题投资提供长期政策背书。</td>
+</tr>
+</tbody></table>
+
+<h2 class="section-title">二、TOP 15 重要新闻深度分析</h2>
+<div class="analysis-card">
+<div class="card-title">1. <span class="card-level">B级</span> WTI原油期货向上触及90美元/桶，日内上涨3.02%</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 2026年06月01日 2026年6月1日 06:09</span></div>
+<div class="logic">中东冲突（伊朗袭击美军基地、海上封锁）持续发酵，供给端风险溢价飙升。油价突破90美元是“滞胀”交易的核心信号，直接推高全球通胀预期，并压制风险资产估值。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">油价上涨对A股影响复杂。<strong>利好</strong>：上游石油开采（中国石油、中国海油）、煤炭（替代效应）及新能源（能源安全逻辑）。<strong>利空</strong>：中下游化工、交通运输（航空、物流）、汽车制造等成本敏感型行业。同时，高油价会加剧输入性通胀，压缩货币政策宽松空间，对整体市场估值形成压力。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">油价是当前全球宏观的“风暴眼”。美联储6月维持利率不变的概率高达99.3%，高油价使降息遥遥无期。美股能源板块上涨，但科技成长股承压。美元指数因通胀预期而走强，新兴市场（包括A股）面临资金流出压力。WTI突破90美元是重要的心理和技术关口，若持续站稳，将彻底改变市场交易逻辑。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>石油开采</strong>: 直接受益于油价上涨 → 中国石油(601857), 中国海油(600938)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>新能源</strong>: 能源安全与替代逻辑强化 → 阳光电源(300274), 隆基绿能(601012)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于油价能否持续。分歧在于：供给冲击是短期脉冲还是长期化？美国是否释放战略储备？OPEC+是否会增产？普遍认为，只要中东局势不缓和，油价易涨难跌。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">多家券商上调油价中枢预测。中信建投认为，地缘溢价短期难以消退，三季度油价中枢有望维持在85-95美元区间。预期差在于市场可能低估了伊朗封锁霍尔木兹海峡的潜在影响。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线（取决于中东局势演变）</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">2. <span class="card-level">B级</span> 5月制造业PMI为50.0%，比上月下降0.3个百分点</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 2026年06月01日 2026年6月1日 08:24</span></div>
+<div class="logic">PMI回落至荣枯线，表明经济复苏动能边际减弱，需求不足仍是主要矛盾。这与高油价、高利率环境下的企业成本压力上升相吻合。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">数据公布后，市场对“稳增长”政策加码的预期会立即升温。短期利空顺周期板块（如地产、建材、消费），但利好政策博弈方向（如基建、数字经济）。市场可能解读为“弱现实”倒逼“强政策”，从而在指数层面形成下有底的格局。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中国PMI走弱与全球其他主要经济体（如韩国出口强劲、日本PMI扩张）形成对比，凸显中国内需复苏的脆弱性。这可能导致外资短期对A股配置趋于谨慎，转而流向基本面更确定的日韩及美股科技股。人民币汇率可能承压。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>政策博弈（新基建）</strong>: 经济弱，政策预期强，新基建是抓手 → 特高压(国电南瑞600406), 数据中心(光环新网300383)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>高股息防御</strong>: 经济下行期，确定性溢价提升 → 长江电力(600900), 中国神华(601088)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论集中在“政策何时出手”和“力度如何”。分歧在于：是结构性工具还是总量刺激？市场对“大水漫灌”不抱期望，但对“财政发力”有较强预期。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">普遍认为PMI走弱是暂时性波动，二季度经济仍在修复通道。华泰证券认为，电气化率提升和AI投资是结构性亮点，市场对经济过度悲观是错误定价。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">3-5天事件驱动（政策预期博弈）</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">3. <span class="card-level">B级</span> 算力金属锡价格暴涨，半年飙涨40%</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 2026年06月01日 2026年5月31日 23:23</span></div>
+<div class="logic">AI算力需求爆发式增长，直接拉动先进封装（HBM、Chiplet）对锡焊料的需求。供给端，全球锡矿资源日益枯竭，开采成本上升，供需缺口持续扩大，锡价进入长期上行通道。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这是当前A股最硬核的产业逻辑之一。锡价上涨直接增厚拥有锡矿资源的上市公司业绩。同时，也凸显了AI产业链上游“卖水人”的价值。市场将重新评估有色金属板块的“科技属性”，锡有望成为继锂、铜之后的第三个“能源金属”。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">全球锡矿供给高度集中（中国、印尼、缅甸），地缘政治和资源国政策变动加剧供给不确定性。锡价上涨是全球AI军备竞赛的必然结果，是衡量算力基建实物工作量的重要指标。LME锡价与A股锡业股份走势高度联动。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>锡矿开采</strong>: 直接受益于产品价格上涨 → 锡业股份(000960), 兴业矿业(000426)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>锡回收/再生锡</strong>: 资源循环利用，弥补供给缺口 → 华锡有色(600301)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">热议焦点是锡价能涨到多少。分歧在于：AI对锡的需求增量能否对冲传统需求（如电子、汽车）的下滑？再生锡技术能否大规模放量？普遍认为，锡是当前确定性最高的涨价品种之一。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中信证券、国泰君安等多家券商发布深度报告，看好锡价长期中枢上移。认为本轮锡价上涨由AI需求驱动，与以往周期不同，具有更强的持续性和结构性。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">长期赛道</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">4. <span class="card-level">B级</span> 宇树科技科创板IPO将于6月1日上会</div>
+<div class="card-meta"><span class="stars">★★★★★</span> <span>⏰ 2026年06月01日 2026年5月31日 21:52</span></div>
+<div class="logic">宇树科技是中国人形机器人领域的绝对龙头，其IPO上会是A股人形机器人产业化的里程碑事件。成功过会将为整个板块提供估值锚，并吸引大量资金关注产业链上下游。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这是继长鑫科技过会后，硬科技IPO的又一重磅事件。对A股的影响是结构性的：<strong>直接利好</strong>：宇树科技相关概念股（供应链、投资方）。<strong>间接利好</strong>：整个机器人产业链（减速器、伺服电机、传感器、AI算法）。市场会提前炒作“宇树供应链”和“对标公司”。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对标特斯拉Optimus，宇树科技在运动控制、成本控制方面具有独特优势。其IPO将提升全球资本对中国机器人产业的关注度。若成功上市，有望带动A股机器人板块走出独立于美股的行情。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>宇树供应链</strong>: 直接受益于宇树量产和扩产 → 奥比中光(688322)（3D视觉）, 绿的谐波(688017)（减速器）</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>机器人核心部件</strong>: 行业β受益，国产替代空间大 → 汇川技术(300124)（伺服）, 鸣志电器(603728)（空心杯电机）</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论焦点在于宇树的估值和上市后的表现。分歧在于：市场对机器人产业化的预期是否已经打满？宇树能否复制特斯拉在美股的“神话”？普遍认为，这是今年最重要的科技股IPO之一。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">多家券商机械、电新团队联合覆盖。主流观点认为，人形机器人是十万亿级大赛道，宇树上市将开启板块“从0到1”的新阶段。预期差在于市场可能低估了其灵巧手等核心技术的壁垒。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线（事件驱动+产业趋势）</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">5. <span class="card-level">B级</span> 日韩股市创新高</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年06月01日 2026年6月1日 08:05</span></div>
+<div class="logic">日韩股市创新高，主要由半导体和AI产业链驱动（三星、SK海力士、东京电子等）。这反映了全球资金对AI硬件和半导体周期的强烈看好。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">日韩股市的强势对A股形成“映射效应”和“资金分流效应”。<strong>映射</strong>：强化A股半导体、AI算力板块的上涨逻辑。<strong>分流</strong>：部分外资可能从A股流出，转向确定性更高的日韩市场，导致A股相关板块表现弱于日韩。这解释了为何A股AI板块内部出现分化。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这是全球“K型复苏”的典型体现：AI驱动的科技板块一枝独秀，而传统经济板块表现平平。美联储维持高利率，资金更青睐盈利增长确定的科技巨头。日韩股市创新高，是美股科技牛市的亚太映射。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>半导体设备/材料</strong>: 受益于全球半导体资本开支扩张 → 北方华创(002371), 中微公司(688012)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>存储芯片</strong>: 直接对标三星、海力士，周期反转+AI需求 → 兆易创新(603986), 北京君正(300223)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论A股为何“跟跌不跟涨”。普遍认为，A股受制于国内经济弱、外资流出等自身问题，结构分化严重。投资者更关注如何“出海”投资日韩ETF，或寻找A股中能与日韩龙头对标的公司。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">分析师指出，日韩股市新高强化了全球半导体景气周期的判断，对A股半导体板块构成利好，但需精选个股，关注真正受益于全球产业链分工的龙头。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线（全球科技周期）</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">6. <span class="card-level">B级</span> 资源存量趋紧，锡产业链加速向循环化发展</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年06月01日 2026年5月31日 23:40</span></div>
+<div class="logic">这是对锡价上涨逻辑的进一步强化。全球锡矿仅够开采15年，供给刚性确认。发展再生锡是解决长期供需矛盾的关键，拥有技术和渠道优势的企业将获得超额收益。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这条消息将市场对锡的关注从“矿端”延伸至“回收端”。A股中，具备废旧电路板、锡渣回收能力的企业将迎来价值重估。这不仅是环保概念，更是资源安全和成本优势的体现。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">全球主要经济体都在强调关键矿产供应链安全。锡的循环利用符合ESG投资理念，有助于吸引注重可持续发展的长线资金。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>再生锡龙头</strong>: 技术壁垒高，资源循环利用 → 华锡有色(600301), 锡业股份(000960)（亦有布局）</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论再生锡的技术难点和盈利模式。分歧在于：再生锡的产量能否弥补原生矿的缺口？其成本是否具备经济性？普遍认为，这是锡产业链的长期趋势，但短期对业绩贡献有限。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">招商证券等覆盖，认为再生锡是锡行业的重要补充，看好具备规模化回收能力的龙头企业。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">长期赛道</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">7. <span class="card-level">C级</span> 招商证券：高端电子布涨价预期充分，持续关注龙头企业</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年06月01日 2026年6月1日 08:09</span></div>
+<div class="logic">电子布是PCB的核心原材料，高端电子布（用于AI服务器）供给受限（高端织布机交付周期长），需求爆发，供需缺口巨大，涨价预期强烈。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这是AI算力链“卖水人”逻辑的又一重要分支。继PCB、锡之后，电子布成为市场新挖掘的紧缺环节。相关上市公司将迎来业绩和估值的“戴维斯双击”。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">全球高端电子布产能主要集中在中国台湾和大陆。AI服务器需求拉动下，大陆龙头企业有望加速国产替代，提升全球份额。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>电子布龙头</strong>: 直接受益于产品涨价和产能扩张 → 中国巨石(600176), 中材科技(002080)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论电子布与PCB的联动关系。分歧在于：电子布的涨价能否顺利传导至下游PCB厂商？市场对电子布的认知是否充分？普遍认为，这是继覆铜板之后，又一个值得重点关注的涨价品种。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">招商证券、国泰海通等均有覆盖，看好电子布行业景气度上行，重点推荐具备高端产能的龙头企业。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线（产业趋势+涨价驱动）</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">8. <span class="card-level">C级</span> MCU巨头意法半导体年内二次涨价</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年06月01日 2026年5月31日 22:11</span></div>
+<div class="logic">意法半导体年内二次涨价，确认了半导体周期已从“去库存”进入“涨价”阶段。涨价由成本推动（上游晶圆、封测涨价）和需求复苏（汽车、工业、AI边缘计算）共同驱动。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对A股半导体板块是明确利好。<strong>利好</strong>：MCU设计公司（国产替代+涨价预期）、功率半导体（同样受益于涨价周期）。<strong>利空</strong>：下游终端厂商（成本压力）。市场会预期国内MCU厂商（如中微半导、国民技术）跟进涨价。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">意法半导体、英飞凌、德州仪器等国际巨头相继涨价，标志着全球半导体周期正式进入上行阶段。这为整个科技股投资提供了宏观背景支持。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>国产MCU龙头</strong>: 受益于国产替代和行业涨价周期 → 中微半导(688380), 国民技术(300077)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>功率半导体</strong>: 同样处于涨价周期，新能源车需求支撑 → 斯达半导(603290), 士兰微(600460)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论涨价能否持续以及国产厂商的跟进力度。分歧在于：此轮涨价是供给驱动还是需求驱动？普遍认为，涨价信号积极，但需观察终端需求能否承接。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">多家电子团队认为，半导体周期复苏已从“预期”进入“兑现阶段”，看好MCU、功率半导体等细分领域的投资机会。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线（周期复苏）</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">9. <span class="card-level">C级</span> 多家PCB上市公司发布扩产计划</div>
+<div class="card-meta"><span class="stars">★★★★☆</span> <span>⏰ 2026年06月01日 2026年6月1日 06:28</span></div>
+<div class="logic">PCB公司集体扩产，是对AI服务器、高速交换机等需求高景气的直接回应。扩产计划意味着订单饱满，对未来业绩增长充满信心。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这是对PCB板块景气度的最强验证。扩产计划公布后，市场会重新评估相关公司的远期盈利能力和成长空间。机构密集调研，表明该板块是当前市场最关注的领域之一。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">全球PCB产能向中国大陆和中国台湾集中。AI需求驱动下，高端PCB（HDI、IC载板）的竞争格局正在重塑，大陆龙头有望借此弯道超车。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>高端PCB龙头</strong>: 深度绑定AI客户，扩产确定性最强 → 沪电股份(002463), 深南电路(002916)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>IC载板</strong>: PCB领域皇冠上的明珠，国产替代空间巨大 → 兴森科技(002436)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论扩产是否会引发未来产能过剩。分歧在于：AI需求的增长能否消化如此大规模的扩产？普遍认为，高端PCB产能依然稀缺，龙头公司的扩产是抢占市场份额的明智之举。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">方正证券、天风证券等强烈看好PCB板块，认为AI驱动下行业将迎来3-5年的高景气周期，龙头公司业绩有望持续超预期。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">长期赛道</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">10. <span class="card-level">B级</span> 伊朗外长：伊美谈判和信息交换仍在进行中</div>
+<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年06月01日 2026年6月1日 01:54</span></div>
+<div class="logic">这条消息与油价上涨形成对冲。谈判仍在进行，意味着局势仍有缓和可能，但“尚未取得明确结果”又暗示短期难以达成协议，地缘风险将持续存在。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">对A股而言，地缘风险是“达摩克利斯之剑”。谈判消息会引发油价和避险情绪的短期波动，但无法改变市场对高油价的担忧。军工、黄金等避险板块可能因此获得交易性机会。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这是影响全球风险资产定价的关键变量。谈判的任何进展或破裂，都会引发全球市场的剧烈波动。市场处于“听其言，观其行”的阶段，对任何官方表态都高度敏感。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>黄金</strong>: 避险情绪升温 → 山东黄金(600547), 中金黄金(600489)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>军工</strong>: 地缘紧张局势催化 → 中航沈飞(600760), 航发动力(600893)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论谈判的诚意和前景。普遍认为，双方立场差距巨大，短期内达成全面协议的可能性较低，地缘风险将长期化。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">地缘政治分析师的普遍观点是，油价的地缘溢价短期难以消除，建议投资者保持对相关风险的警惕。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">3-5天事件驱动（取决于谈判进展）</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">11. <span class="card-level">C级</span> 6家保险资金押注长鑫科技，科创企业密集冲刺资本市场</div>
+<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年06月01日 2026年5月31日 23:31</span></div>
+<div class="logic">长线资金（保险）布局硬科技，表明对国产存储芯片产业化的信心。科创企业IPO热潮，为A股市场注入新鲜血液，提供更多优质投资标的。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">保险资金作为“压舱石”，其动向具有风向标意义。长鑫科技作为国产DRAM龙头，其IPO将带动整个存储芯片产业链的估值提升。同时，科创板的活跃度有望提升。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">在全球半导体竞争加剧的背景下，中国硬科技企业加速资本化，是提升国家科技竞争力的重要举措。这有助于吸引全球资本关注中国科技产业。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>存储芯片产业链</strong>: 长鑫科技上市，利好其供应商和合作伙伴 → 兆易创新(603986), 深科技(000021)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>半导体设备/材料</strong>: 受益于国内晶圆厂扩产 → 中微公司(688012), 安集科技(688019)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论长鑫科技的估值和上市后的表现。分歧在于：其技术实力与国际巨头（三星、海力士）的差距有多大？普遍认为，长鑫科技是A股稀缺的存储芯片龙头，具有战略配置价值。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">电子行业分析师普遍看好长鑫科技上市后的表现，认为其将填补A股在DRAM领域的空白，并带动整个国产半导体产业链的估值提升。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线（事件驱动+产业趋势）</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">12. <span class="card-level">C级</span> A股6月将延续高位震荡，科技主线或内部聚焦</div>
+<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年06月01日 2026年6月1日 06:14</span></div>
+<div class="logic">这是多家券商的共识性判断。指数层面，上有顶（经济弱、利率高），下有底（政策预期、估值不高）。结构上，科技仍是主线，但将从普涨转向聚焦核心环节。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这为投资者提供了清晰的策略框架：放弃指数牛市的幻想，专注于结构性机会。科技内部，资金将从概念炒作转向业绩兑现能力强的算力、半导体设备等方向。白酒、地产等传统板块的修复可能只是阶段性反弹。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这与全球市场的“K型分化”一致。A股的结构性行情，本质上是全球AI科技革命在中国资本市场的映射。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>AI算力核心</strong>: 业绩确定性最高的环节 → 中际旭创(300308), 工业富联(601138)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>半导体设备</strong>: 国产替代逻辑最硬 → 北方华创(002371), 拓荆科技(688072)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论如何在科技内部做切换。分歧在于：是继续追高算力，还是布局低位的半导体设计或应用端？普遍认为，算力仍是确定性最高的方向。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">华泰证券、中信证券等均建议，6月配置上应“再平衡”，但科技成长仍是中期主线，逢低布局AI算力链。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线（策略判断）</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">13. <span class="card-level">C级</span> 南向资金密集扫货港股科技股，对多只标的持仓倍增</div>
+<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年06月01日 2026年6月1日 06:31</span></div>
+<div class="logic">南向资金持续流入港股科技板块，表明内地资金对港股科技股估值洼地的认可。这对A股科技板块有积极的映射作用。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">南向资金的动向是A股投资者情绪的重要参考。当内资大举买入港股科技股时，往往意味着A股科技板块的性价比也在提升。这有助于稳定A股科技股的市场情绪。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">港股科技股（如腾讯、美团、小米）的上涨，有助于提升全球资本对中国科技资产的信心。A股和港股科技板块的联动性正在增强。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>A股科技龙头</strong>: 与港股科技股形成联动效应 → 立讯精密(002475), 韦尔股份(603501)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论港股科技股与A股科技股的估值差异。普遍认为，港股更具性价比，但A股流动性更好，各有优劣。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">策略分析师认为，南向资金持续流入是港股市场的重要支撑，也反映了内地投资者对科技产业的长期看好。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线（资金流向）</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">14. <span class="card-level">C级</span> 韩国KOSPI指数上升2%至8,646.96点，续创历史新高</div>
+<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年06月01日 2026年6月1日 08:32</span></div>
+<div class="logic">韩国股市大涨，主要受三星电子、SK海力士等芯片股带动。韩国5月芯片出口飙升至372亿美元历史新高，是直接催化剂。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">韩国芯片出口数据是观察全球半导体景气度的“金丝雀”。数据强劲，确认了全球半导体周期上行趋势，对A股半导体板块构成直接利好，尤其是与韩国企业有竞争或合作关系的公司。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">韩国股市创新高，是“AI卖铲人”逻辑的极致体现。这进一步强化了全球资金对AI硬件和半导体产业链的追捧。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>存储芯片</strong>: 直接对标三星、海力士 → 兆易创新(603986), 北京君正(300223)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>半导体设备/材料</strong>: 受益于全球扩产周期 → 北方华创(002371), 雅克科技(002409)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论A股半导体为何不能像韩国那样大涨。普遍认为，A股半导体公司质地参差不齐，且受制于国内宏观经济和地缘政治因素。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">重申对全球半导体周期的看好，认为A股半导体板块将跟随全球趋势，但表现会更为分化，建议聚焦龙头。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中期主线（全球科技周期）</p>
+</div>
+<div class="analysis-card">
+<div class="card-title">15. <span class="card-level">B级</span> 《求是》杂志发表习近平总书记重要文章《前瞻布局和发展未来产业》</div>
+<div class="card-meta"><span class="stars">★★★☆☆</span> <span>⏰ 2026年06月01日 2026年6月1日 08:24</span></div>
+<div class="logic">最高层定调未来产业方向（量子科技、生物制造），为相关主题投资提供了最强的政策背书。</div>
+<h4 class="perspective-domestic">国内视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">这是科技主题投资的“指挥棒”。文章发表后，量子科技、生物制造等板块有望获得短期情绪催化。但需注意，这些领域尚处早期，商业化路径不清晰，更多是主题炒作，而非业绩驱动。</p>
+<h4 class="perspective-intl">国际视角</h4>
+<p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">中美科技竞争已延伸至未来产业。中国高层定调，表明将集中资源在这些领域实现突破，这有助于提升相关产业的长期发展预期。</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">- <strong>受益方向及个股</strong>:</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">1. <strong>量子科技</strong>: 政策催化，概念炒作 → 国盾量子(688027), 科大国创(300520)</p>
+<p style="font-size:14px;margin:2px 0;line-height:1.5">2. <strong>生物制造</strong>: 合成生物学，政策支持 → 凯赛生物(688065), 华恒生物(688639)</p>
+<h4>韭研公社热议</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">讨论哪些方向能真正落地。分歧在于：量子科技和生物制造，哪个更具投资价值？普遍认为，生物制造的产业化进程可能更快。</p>
+<h4>券商研报视角</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">政策解读类报告会迅速跟进，梳理相关受益标的。但多数分析师认为，这些方向更适合作为长期跟踪的赛道，短期交易难度较大。</p>
+<h4>持续性判断</h4><p style="font-size:14px;margin:2px 0 6px 16px;line-height:1.5">3-5天事件驱动（主题炒作）</p>
+</div>
+<h2 class="section-title">三、全量电报列表（精简）</h2>
+<table class="telegram-table">
+<thead><tr>
+<th class="">序号</th>
+<th class="">时间</th>
+<th class="">Lv</th>
+<th class="">分享</th>
+<th class="">评论</th>
+<th class="">内容摘要40字</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class=""><span class="rank-num">1</span></td>
+<td class="">23:23</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="">2893</td>
+<td class="">16</td>
+<td class="content-col">算力金属锡价格暴涨，半年飙涨40%，因AI先进封装需求旺盛。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">2</span></td>
+<td class="">21:52</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="">2768</td>
+<td class="">13</td>
+<td class="content-col">下周资本市场大事：宇树科技IPO上会，Computex大会，美国非农。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">3</span></td>
+<td class="">23:40</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="">1007</td>
+<td class="">4</td>
+<td class="content-col">资源存量趋紧，锡产业链加速向循环化发展，头部企业布局回收。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">4</span></td>
+<td class="">08:24</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="">1161</td>
+<td class="">2</td>
+<td class="content-col">早间精选：总书记谈未来产业；5月PMI为50.0%；报道称将...</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">5</span></td>
+<td class="">08:05</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="">247</td>
+<td class="">17</td>
+<td class="content-col">日韩股市创新高，韩国KOSPI指数上升1.1%，日经225涨0.36%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">6</span></td>
+<td class="">07:53</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="">568</td>
+<td class="">2</td>
+<td class="content-col">投资日历：宇树科技IPO上会；英伟达GTC；华为nova发布会。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">7</span></td>
+<td class="">06:09</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="">111</td>
+<td class="">2</td>
+<td class="content-col">WTI原油期货向上触及90美元/桶，日内上涨3.02%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">8</span></td>
+<td class="">01:54</td>
+<td class=""><span class="tag tag-b">B</span></td>
+<td class="">214</td>
+<td class="">0</td>
+<td class="content-col">伊朗外长：伊美谈判和信息交换仍在进行中，尚未有明确结果。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">9</span></td>
+<td class="">22:11</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">450</td>
+<td class="">2</td>
+<td class="content-col">MCU巨头意法半导体年内二次涨价，英飞凌、TI等也相继涨价。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">10</span></td>
+<td class="">23:31</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">274</td>
+<td class="">2</td>
+<td class="content-col">6家保险资金押注长鑫科技，科创企业密集冲刺资本市场。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">11</span></td>
+<td class="">08:09</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">82</td>
+<td class="">0</td>
+<td class="content-col">招商证券：高端电子布涨价预期充分，持续关注龙头企业。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">12</span></td>
+<td class="">01:36</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">205</td>
+<td class="">1</td>
+<td class="content-col">Polymarket：Anthropic的Claude Mythos模型6月底前上线概率28%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">13</span></td>
+<td class="">22:55</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">245</td>
+<td class="">0</td>
+<td class="content-col">国泰海通：维持海外AI算力及应用产业链“增持”评级。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">14</span></td>
+<td class="">03:35</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">141</td>
+<td class="">1</td>
+<td class="content-col">知情人士称伊朗可能将对谅解备忘录文本提出新的修订意见。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">15</span></td>
+<td class="">04:11</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">119</td>
+<td class="">1</td>
+<td class="content-col">据报道，SpaceX购入特斯拉Cybertruck总量的8%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">16</span></td>
+<td class="">06:01</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">101</td>
+<td class="">1</td>
+<td class="content-col">周一重点关注：英伟达CEO黄仁勋演讲；欧美PMI数据。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">17</span></td>
+<td class="">01:50</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">152</td>
+<td class="">0</td>
+<td class="content-col">伊朗袭击科威特美军基地致7人轻伤，均已恢复执勤。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">18</span></td>
+<td class="">06:58</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">99</td>
+<td class="">1</td>
+<td class="content-col">5月新基金发行破千亿，科技主题基金吸金，业绩表现亮眼。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">19</span></td>
+<td class="">04:33</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">154</td>
+<td class="">0</td>
+<td class="content-col">伊朗总统府再度否认佩泽希齐扬辞职传闻。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">20</span></td>
+<td class="">21:39</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">137</td>
+<td class="">0</td>
+<td class="content-col">美联储理事沃勒：稳定币将扩大美国货币政策的影响范围。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">21</span></td>
+<td class="">06:28</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">95</td>
+<td class="">1</td>
+<td class="content-col">多家PCB上市公司发布扩产计划，AI算力需求驱动高景气。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">22</span></td>
+<td class="">06:34</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">71</td>
+<td class="">2</td>
+<td class="content-col">南向资金密集扫货港股科技股，对多只标的持仓倍增。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">23</span></td>
+<td class="">22:13</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">126</td>
+<td class="">0</td>
+<td class="content-col">美国财长贝森特宣称，市场看淡“暂时性的”通胀飙升现象。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">24</span></td>
+<td class="">06:14</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">137</td>
+<td class="">0</td>
+<td class="content-col">A股6月将延续高位震荡，科技主线或内部聚焦。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">25</span></td>
+<td class="">22:18</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">113</td>
+<td class="">0</td>
+<td class="content-col">刚果（金）埃博拉疫情累计确诊病例超260例。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">26</span></td>
+<td class="">06:03</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">61</td>
+<td class="">2</td>
+<td class="content-col">国际油价涨幅扩大至2%，WTI报89.114美元/桶。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">27</span></td>
+<td class="">08:32</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">70</td>
+<td class="">2</td>
+<td class="content-col">韩国KOSPI指数上升2%至8,646.96点，续创历史新高。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">28</span></td>
+<td class="">08:10</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">80</td>
+<td class="">1</td>
+<td class="content-col">中金：钨的新兴需求及战略属性增强，钨价有望企稳回升。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">29</span></td>
+<td class="">21:45</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">105</td>
+<td class="">0</td>
+<td class="content-col">印尼巴布亚省发生爆炸，造成5死3失踪。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">30</span></td>
+<td class="">21:30</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">107</td>
+<td class="">0</td>
+<td class="content-col">德媒称美计划加快从欧洲撤军步伐，下月提交方案。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">31</span></td>
+<td class="">06:30</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">74</td>
+<td class="">1</td>
+<td class="content-col">下半年车市进入智驾“下半场”，高阶辅助驾驶下探至15万元级。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">32</span></td>
+<td class="">07:44</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">26</td>
+<td class="">0</td>
+<td class="content-col">A股限售股解禁一览：118.78亿元市值限售股今日解禁。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">33</span></td>
+<td class="">04:22</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">107</td>
+<td class="">0</td>
+<td class="content-col">以方消息称以色列寻求美国支持扩大对黎真主党打击。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">34</span></td>
+<td class="">08:11</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">53</td>
+<td class="">2</td>
+<td class="content-col">三星电子股价上涨逾3%，创纪录新高。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">35</span></td>
+<td class="">07:52</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">24</td>
+<td class="">0</td>
+<td class="content-col">汇源通信：终止向特定对象发行股票事项，控制权变更终止。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">36</span></td>
+<td class="">02:48</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">102</td>
+<td class="">0</td>
+<td class="content-col">美称正继续执行对伊海上封锁，已迫使118艘船只改道。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">37</span></td>
+<td class="">01:03</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">100</td>
+<td class="">0</td>
+<td class="content-col">伊朗军官：将与敌人的过分要求和霸权行径战斗到最后一刻。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">38</span></td>
+<td class="">21:53</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">90</td>
+<td class="">0</td>
+<td class="content-col">乌方否认袭击扎波罗热核电站。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">39</span></td>
+<td class="">03:02</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">91</td>
+<td class="">0</td>
+<td class="content-col">俄方称扎波罗热地区大面积断电。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">40</span></td>
+<td class="">06:51</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">92</td>
+<td class="">0</td>
+<td class="content-col">太阳能新技术实现海水淡化及固体盐分离，可提取锂等矿物。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">41</span></td>
+<td class="">04:38</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">88</td>
+<td class="">0</td>
+<td class="content-col">伯克希尔以每股72.50美元现金收购住宅建筑公司泰勒莫里森。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">42</span></td>
+<td class="">03:53</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">86</td>
+<td class="">0</td>
+<td class="content-col">伊官员称伊朗在核问题上对美方没有任何承诺。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">43</span></td>
+<td class="">04:53</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">81</td>
+<td class="">0</td>
+<td class="content-col">穆迪：美国家庭平均每月的能源支出增加约450美元。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">44</span></td>
+<td class="">21:12</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">71</td>
+<td class="">0</td>
+<td class="content-col">2026年5月总票房达27.88亿元。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">45</span></td>
+<td class="">06:33</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">69</td>
+<td class="">0</td>
+<td class="content-col">私募业规模站上23万亿元，证券类产品不断“上新”。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">46</span></td>
+<td class="">08:06</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">45</td>
+<td class="">1</td>
+<td class="content-col">华泰证券：国内电气化率持续提升，锂电、储能等赛道有望受益。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">47</span></td>
+<td class="">06:49</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">68</td>
+<td class="">0</td>
+<td class="content-col">遭遇潜在安全威胁，美国一航班返航。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">48</span></td>
+<td class="">06:13</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">68</td>
+<td class="">0</td>
+<td class="content-col">美联储6月维持利率不变的概率为99.3%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">49</span></td>
+<td class="">06:49</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">154</td>
+<td class="">0</td>
+<td class="content-col">人民日报钟声：推动人工智能成为中美合作的新疆域。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">50</span></td>
+<td class="">07:30</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">63</td>
+<td class="">0</td>
+<td class="content-col">华泰证券A股策略：配置上沿再平衡线索展开，科技仍是中期主线。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">51</span></td>
+<td class="">06:45</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">40</td>
+<td class="">1</td>
+<td class="content-col">中央气象台继续发布台风蓝色预警，台风“蔷薇”来袭。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">52</span></td>
+<td class="">08:20</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">43</td>
+<td class="">1</td>
+<td class="content-col">铠侠股价涨幅扩大至10%，此前高盛上调评级至买入。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">53</span></td>
+<td class="">07:53</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">39</td>
+<td class="">1</td>
+<td class="content-col">今日申购指南：1只新股申购，为北交所的金戈新材。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">54</span></td>
+<td class="">06:52</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">58</td>
+<td class="">0</td>
+<td class="content-col">新工艺可在室温下提取硬岩矿物中的锂，MIT开发。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">55</span></td>
+<td class="">08:30</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">65</td>
+<td class="">0</td>
+<td class="content-col">韩国LG电子股价上涨近30%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">56</span></td>
+<td class="">06:31</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">52</td>
+<td class="">0</td>
+<td class="content-col">哥伦比亚将举行总统选举第二轮投票。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">57</span></td>
+<td class="">07:14</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">47</td>
+<td class="">0</td>
+<td class="content-col">中央气象台发布强对流天气蓝色预警。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">58</span></td>
+<td class="">21:46</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">100</td>
+<td class="">0</td>
+<td class="content-col">航行警告：黄海南部6月1日至14日实弹射击，禁止驶入。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">59</span></td>
+<td class="">07:56</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">46</td>
+<td class="">0</td>
+<td class="content-col">深化改革方案已下发，多地密集部署新一轮国资国企改革启动。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">60</span></td>
+<td class="">02:37</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">101</td>
+<td class="">0</td>
+<td class="content-col">刚果（金）5名埃博拉患者痊愈。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">61</span></td>
+<td class="">07:38</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">42</td>
+<td class="">0</td>
+<td class="content-col">超50部影片定档2026暑期档，年度票房已超157亿元。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">62</span></td>
+<td class="">06:01</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">38</td>
+<td class="">0</td>
+<td class="content-col">布伦特原油期货开盘上涨1.8%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">63</span></td>
+<td class="">06:46</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">37</td>
+<td class="">0</td>
+<td class="content-col">现货白银向下跌破75美元/盎司，日内下跌0.37%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">64</span></td>
+<td class="">08:00</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">30</td>
+<td class="">0</td>
+<td class="content-col">高盛将2026年底LME铜价预测上调至13,735美元/吨。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">65</span></td>
+<td class="">07:34</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">26</td>
+<td class="">0</td>
+<td class="content-col">阿盟秘书长谴责以色列对黎巴嫩军事行动，呼吁立即停火。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">66</span></td>
+<td class="">08:23</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">22</td>
+<td class="">0</td>
+<td class="content-col">中信证券：测算当前AI与科技交易虽极致但尚未到极端。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">67</span></td>
+<td class="">08:29</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">18</td>
+<td class="">0</td>
+<td class="content-col">韩国5月芯片月度出口飙升至372亿美元的历史新高。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">68</span></td>
+<td class="">08:01</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">15</td>
+<td class="">0</td>
+<td class="content-col">韩国5月进口同比增长20.8%，出口同比增长53.2%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">69</span></td>
+<td class="">07:40</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">15</td>
+<td class="">0</td>
+<td class="content-col">以军空袭加沙城海边人群，致两死多伤。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">70</span></td>
+<td class="">06:24</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">37</td>
+<td class="">0</td>
+<td class="content-col">智利中部沿岸远海发生6.0级地震。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">71</span></td>
+<td class="">08:24</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">16</td>
+<td class="">0</td>
+<td class="content-col">哥伦比亚现总统佩特罗拒绝承认总统大选初步计票结果。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">72</span></td>
+<td class="">08:30</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">15</td>
+<td class="">0</td>
+<td class="content-col">日本5月制造业PMI终值报54.5，前值54.5。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">73</span></td>
+<td class="">08:00</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">13</td>
+<td class="">0</td>
+<td class="content-col">日经225指数开盘跌0.12%，韩国KOSPI指数开盘上涨0.1%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">74</span></td>
+<td class="">08:00</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">12</td>
+<td class="">0</td>
+<td class="content-col">韩国5月贸易帐初值269.5亿美元，预期243亿美元。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">75</span></td>
+<td class="">08:24</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">13</td>
+<td class="">0</td>
+<td class="content-col">标准普尔500指数期货上涨0.1%；纳斯达克指数期货上升0.3%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">76</span></td>
+<td class="">08:32</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">12</td>
+<td class="">0</td>
+<td class="content-col">美联储理事鲍威尔未对货币政策与经济前景发表评论。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">77</span></td>
+<td class="">08:17</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">9</td>
+<td class="">0</td>
+<td class="content-col">丰田汽车股价下挫4%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">78</span></td>
+<td class="">07:50</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">8</td>
+<td class="">0</td>
+<td class="content-col">日本第一季度资本支出同比持平，预估为4.0%。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">79</span></td>
+<td class="">08:14</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">0</td>
+<td class="">0</td>
+<td class="content-col">首款搭载英伟达芯片的WindowsPC本周亮相，利好消费电子。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">80</span></td>
+<td class="">07:32</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">0</td>
+<td class="">0</td>
+<td class="content-col">这家公司超级电容核心材料已取得订单，英伟达+光模块概念。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">81</span></td>
+<td class="">06:56</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">0</td>
+<td class="">0</td>
+<td class="content-col">金刚石是新一代半导体、AI芯片散热核心材料，战略价值突出。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">82</span></td>
+<td class="">22:19</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">0</td>
+<td class="">0</td>
+<td class="content-col">钠离子电池今年进入规模量产，这家企业已新建数GWh产能。</td>
+</tr>
+<tr>
+<td class=""><span class="rank-num">83</span></td>
+<td class="">22:06</td>
+<td class=""><span class="tag tag-c">C</span></td>
+<td class="">0</td>
+<td class="">0</td>
+<td class="content-col">光通信+MLCC+算力+液冷+机器人+数据中心+商业航天概念梳理。</td>
+</tr>
+</tbody></table>
+<div class="footer">Generated by CLS Daily Summary Tool &copy; 2026年06月01日</div>
+</div>
+</body>
+</html>
